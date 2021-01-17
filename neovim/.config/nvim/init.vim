@@ -6,7 +6,7 @@
 "    By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/07/26 21:26:49 by cempassi          #+#    #+#              "
-"    Updated: 2021/09/11 16:56:22 by cempassi         ###   ########.fr        "
+"    Updated: 2021/09/22 10:13:54 by cempassi         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -74,7 +74,7 @@ let g:terminal_color_7 = '#E5E9F0'
 "" Plugin Management
 lua require('init')
 lua require('plugins')
-"lua require'colorizer'.setup()
+lua require'colorizer'.setup()
 
 "Save all the files, all the times
 augroup save
