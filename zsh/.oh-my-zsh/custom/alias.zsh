@@ -2,8 +2,6 @@ alias ls="exa --icons "
 
 alias ll="exa -1 --icons "
 
-alias l="exa -1 --icons "
-
 alias lt="exa -T --icons "
 
 alias le="exa -lah --icons "

@@ -10,9 +10,10 @@ PYTHON_PATH=$HOME/.pyenv/shims
 RUST_PATH=$HOME/.cargo/bin
 BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
+SNAP_PATH=/snap/bin
 BASE_PATH=$HOME/local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
 
-export PATH=$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
+export PATH=$LUA_PATH:$RUST_PATH:$BREW_PATH:$LOCAL_PATH:$SNAP_PATH:$LOCAL_PATH:$BASE_PATH
 
 ZSH_THEME=personal
 
@@ -56,6 +57,10 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#nvr setup
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # Pyenv setup
 eval "$(pyenv init -)"
