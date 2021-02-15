@@ -1,6 +1,7 @@
 vim.cmd[[packadd nvim-lspconfig]]
 vim.cmd[[packadd lspsaga.nvim]]
 
+local api = vim.api
 local lspconfig = require("lspconfig")
 local mappings = require("modules.lsp._mappings")
 
@@ -17,6 +18,7 @@ local custom_on_attach = function(client, bufnr)
     client.config.flags.allow_incremental_sync = true
   end
 
+  api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 end
 
 local custom_on_init = function()
@@ -178,27 +180,5 @@ lspconfig.clangd.setup({
 require'lspconfig'.pyright.setup{
   on_attach = custom_on_attach,
   on_init = custom_on_init,
-<<<<<<< HEAD
   capabilities = capabilities
-=======
-  settings = {
-    Lua = {
-      runtime = { version = "LuaJIT", path = vim.split(package.path, ";"), },
-      diagnostics = {
-        enable = true,
-        globals = {
-          "vim", "describe", "it", "before_each", "after_each",
-          "awesome", "theme", "client", "P", "use"
-        },
-        workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-        },
-      },
-    }
-  }
-  }
->>>>>>> d513d59... Change rust-analyzer lsp configuration
 }
