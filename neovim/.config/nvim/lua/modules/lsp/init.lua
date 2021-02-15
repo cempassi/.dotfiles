@@ -178,5 +178,27 @@ lspconfig.clangd.setup({
 require'lspconfig'.pyright.setup{
   on_attach = custom_on_attach,
   on_init = custom_on_init,
+<<<<<<< HEAD
   capabilities = capabilities
+=======
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT", path = vim.split(package.path, ";"), },
+      diagnostics = {
+        enable = true,
+        globals = {
+          "vim", "describe", "it", "before_each", "after_each",
+          "awesome", "theme", "client", "P", "use"
+        },
+        workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = {
+          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+          [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+        },
+      },
+    }
+  }
+  }
+>>>>>>> d513d59... Change rust-analyzer lsp configuration
 }
