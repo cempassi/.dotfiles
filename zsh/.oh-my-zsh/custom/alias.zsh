@@ -2,9 +2,9 @@ alias ls="exa --icons "
 
 alias ll="exa -1 --icons "
 
-alias le="exa -l --icons "
-
 alias lt="exa -T --icons "
+
+alias le="exa -l --icons "
 
 alias status="git status"
 
