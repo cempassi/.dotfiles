@@ -71,3 +71,4 @@ Thumbs.db
 secrets.zsh
 *.gpg
 neovim/.config/nvim/plugin/packer_compiled.lua
+neovim/.config/nvim/plugin/packer_compiled.vim
