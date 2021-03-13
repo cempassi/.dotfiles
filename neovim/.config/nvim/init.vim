@@ -6,7 +6,7 @@
 "    By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/07/26 21:26:49 by cempassi          #+#    #+#              "
-"    Updated: 2021/09/22 10:53:37 by cempassi         ###   ########.fr        "
+"    Updated: 2021/09/22 10:58:00 by cempassi         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -212,7 +212,6 @@ if exists("g:loaded_webdevicons")
 endif
 
 au TextYankPost * silent! lua require'vim.highlight'.on_yank{"Substract", 200}
-
 
 " Replace netrw
 let g:loaded_netrwPlugin = 1
