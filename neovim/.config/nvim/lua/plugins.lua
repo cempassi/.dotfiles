@@ -17,7 +17,6 @@ return require('packer').startup({function()
   -- Completion
   use 'hrsh7th/nvim-compe'
   use 'onsails/lspkind-nvim'
-  --use 'nvim-lua/completion-nvim'
 
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
