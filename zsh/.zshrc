@@ -10,6 +10,7 @@ PYTHON_PATH=$HOME/.pyenv/shims
 RUST_PATH=$HOME/.cargo/bin
 BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
+TF_PATH=$HOME/.tfenv/bin
 SNAP_PATH=/snap/bin
 GO_PATH=/usr/local/go/bin:$HOME/.go
 BASE_PATH=$HOME/local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
