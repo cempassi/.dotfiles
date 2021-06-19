@@ -12,7 +12,7 @@ zle -N zle-keymap-select
 if [[ -z "$SSH_CLIENT" ]]; then
         PROMPT_SSH=""
 else
-        PROMPT_SSH="[$(hostname -s)]"
+        PROMPT_SSH="[%F{196}$(hostname -s)]"
 fi
 
 PERSONAL_DATE="%F{222}%D %T%f"
