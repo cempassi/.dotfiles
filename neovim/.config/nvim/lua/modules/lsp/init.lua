@@ -181,9 +181,3 @@ require'lspconfig'.pyright.setup{
   on_init = custom_on_init,
   capabilities = capabilities
 }
-
-require'lspconfig'.pyright.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities
-}
