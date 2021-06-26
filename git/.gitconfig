@@ -34,6 +34,7 @@
 
 	ls = log -n 20 --relative-date --graph --abbrev-commit --decorate
     resolve = ! git diff --name-only | uniq | xargs nvim
+    tree = log --all --graph --date=relative --pretty=format:'%C(auto,yellow)[%h][%ad]%C(auto,white) %s %C(auto, blue)%d %C(auto,red)[%an]' 
 
 [color "branch"]
 
