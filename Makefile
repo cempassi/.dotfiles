@@ -10,6 +10,7 @@ APP += neomutt
 APP += scripts
 APP += tmux
 APP += zsh
+APP += gh
 
 install:
 	stow -Sv -t ~ $(APP)
