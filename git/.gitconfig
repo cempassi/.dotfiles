@@ -5,12 +5,13 @@
 [core]
 	excludesFile = ~/.dotfiles/git/.gitignore
 	pager = delta
+	editor = nvim
 
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
-    features = line-numbers decorations
+    features = side-by-side line-numbers decorations
     whitespace-error-style = 22 reverse
 
 [delta "decorations"]
