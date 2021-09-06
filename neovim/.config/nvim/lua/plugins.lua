@@ -33,7 +33,7 @@ return require('packer').startup(function()
 
 	-- File Navigation
 	--use {'ms-jpq/chadtree', branch = 'chad'}
-	use 'justinmk/vim-dirvish'
+  use 'justinmk/vim-dirvish'
 
 	-- Git integration
 	use 'tpope/vim-fugitive'
@@ -59,6 +59,7 @@ return require('packer').startup(function()
   --use {'glacambre/firenvim'}
 
 	-- Misc
+  use 'szw/vim-maximizer'
 	use 'pbondoer/vim-42header'
 	use 'liuchengxu/vim-which-key'
   use 'kyazdani42/nvim-web-devicons'
