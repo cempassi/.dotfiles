@@ -52,3 +52,8 @@
 	changed = blue
 	untracked = red
 
+[commit]
+	gpgsign = false
+
+[push]
+	default = current

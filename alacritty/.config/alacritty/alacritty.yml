@@ -30,16 +30,16 @@ background_opacity: 1.0
 
 font:
   normal:
-    family: "Hasklug Nerd Font"
+    family: "Hasklug Nerd Font Mono"
     style: Light
   bold:
-    family: "Hasklug Nerd Font"
+    family: "Hasklug Nerd Font Mono"
     style: Medium
   italic:
-    family: "Hasklug Nerd Font"
+    family: "Hasklug Nerd Font Mono"
     style: Italic
   bold_italic:
-    family: "Hasklug Nerd Font"
+    family: "Hasklug Nerd Font Mono"
     style: Bold Italic
 
   # Point size
@@ -80,14 +80,3 @@ live_config_reload: true
 # Thin strokes are suitable for retina displays, but for non-retina screens
 # it is recommended to set `use_thin_strokes` to `false`.
 use_thin_strokes: true
-
-shell:
-  program: /bin/zsh
-  #  args:
-#    - -l
-#    - -c
-#    - "tmux attach -t Main || tmux new -s Main"
-
-key_bindings:
-  - { key: V, mods: Control|Shift, action: Paste }
-  - { key: C, mods: Control|Shift, action: Copy }

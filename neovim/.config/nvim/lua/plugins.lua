@@ -10,12 +10,30 @@ return require('packer').startup(function()
 	-- Completion
 	use {'neoclide/coc.nvim', branch = 'release'}
 
-	-- Floating Lists
-  use {'nvim-lua/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
+	-- LSP
+  use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
+
+	-- Telescope
+  use {
+    'nvim-lua/telescope.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {'nvim-lua/popup.nvim'}}
+  }
+
+  -- Treesitter
+  use 'nvim-treesitter/nvim-treesitter'
+
+  -- dap
+  use 'mfussenegger/nvim-dap'
+
+  -- Notes
+  --use {'oberblastmeister/neuron.nvim', branch = 'unstable'}
 
 	-- File Navigation
-	use {'ms-jpq/chadtree', branch = 'chad'}
-	use 'justinmk/vim-dirvish.git'
+	--use {'ms-jpq/chadtree', branch = 'chad'}
+	use 'justinmk/vim-dirvish'
 
 	-- Git integration
 	use 'tpope/vim-fugitive'
