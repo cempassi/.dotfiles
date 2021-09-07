@@ -301,7 +301,7 @@ hi link GitGutterChangeDelete       LineNr
 
 " Rust
 hi! link rustSigil        Noise
-hi! link rustModPath      Noise
+hi! link rustModPath      PreProc
 hi! link rustRepeat 			Repeat
 hi! link rustDerive 			PreProc
 hi! link rustDeriveTrait 	PreProc

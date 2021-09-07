@@ -18,3 +18,4 @@ set foldmethod=syntax
 set suffixesadd=.c,.h
 set tabstop=4
 set shiftwidth=4
+set expandtab

@@ -120,38 +120,39 @@ nnoremap <silent><leader>nh :let @/ = ""<cr>
 " Goyo
 nnoremap <silent> <leader>zz :Goyo<cr>
 
-" Coc
-nnoremap <silent> <leader>c<leader> :Clap coc_commands<cr> 
-nnoremap <silent> <leader>x<leader> :Clap coc_extensions<cr>
-nnoremap <silent> <leader>s<leader> :Clap coc_symbols<cr>
-
-" Language server mappings
-nmap <silent> <leader>cd <Plug>(coc-definition)
-nmap <silent> <leader>ct <Plug>(coc-type-definition)
-nmap <silent> <leader>ci <Plug>(coc-implementation)
-nmap <silent> <leader>cr <Plug>(coc-references)
-nmap <silent> <leader>en <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>ep <Plug>(coc-diagnostic-prev)
-
-" Formating
-nmap <silent> <leader>cf <Plug>(coc-format)
-
-" Apply AutoFix to problem on the current line.
-nmap <silent> <leader>ef  <Plug>(coc-fix-current)
-
-" Symbol renaming.
-nmap <silent> <leader>cn <Plug>(coc-rename)
-
-" Rust InlayHints togle
-nmap <silent> <leader>ch :CocCommand rust-analyzer.toggleInlayHints<cr>
-
-" Highlight the symbol and its references when holding the cursor.
-nmap <silent> <leader>* :call CocActionAsync('highlight')<cr>
+" " Coc
+" nnoremap <silent> <leader>c<leader> :Clap coc_commands<cr> 
+" nnoremap <silent> <leader>x<leader> :Clap coc_extensions<cr>
+" nnoremap <silent> <leader>s<leader> :Clap coc_symbols<cr>
+" 
+" " Language server mappings
+" nmap <silent> <leader>cd <Plug>(coc-definition)
+" nmap <silent> <leader>ct <Plug>(coc-type-definition)
+" nmap <silent> <leader>ci <Plug>(coc-implementation)
+" nmap <silent> <leader>cr <Plug>(coc-references)
+" nmap <silent> <leader>en <Plug>(coc-diagnostic-next)
+" nmap <silent> <leader>ep <Plug>(coc-diagnostic-prev)
+" 
+" " Formating
+" nmap <silent> <leader>cf <Plug>(coc-format)
+" 
+" " Apply AutoFix to problem on the current line.
+" nmap <silent> <leader>ef  <Plug>(coc-fix-current)
+" 
+" " Symbol renaming.
+" nmap <silent> <leader>cn <Plug>(coc-rename)
+" 
+" " Rust InlayHints togle
+" nmap <silent> <leader>ch :CocCommand rust-analyzer.toggleInlayHints<cr>
+" 
+" " Highlight the symbol and its references when holding the cursor.
+" nmap <silent> <leader>* :call CocActionAsync('highlight')<cr>
 
 " Git
 nnoremap <silent> <leader>d<leader> :Clap git_diff_files<cr>
-nmap <leader>ga :Gwrite<cr>
-nmap <leader>gc :Git commit<cr>
+nmap <leader>ga :Git commit --amend --no-edit<cr>
+nmap <leader>gcm :Git commit<cr>
+nmap <leader>gca :Git commit<cr>
 nmap <leader>gp :Git push<cr>
 nmap <leader>gf :Git fetch<cr>
 
@@ -190,15 +191,15 @@ nnoremap <silent> <leader>fl :Clap lines<cr>
 nnoremap <silent> <leader>fj :Clap jumps<cr>
 
 " Floaterm 
-nnoremap   <silent>   <leader>tc    :FloatermNew<CR>
-tnoremap   <silent>   <leader>tc    <C-\><C-n>:FloatermNew<CR>
-tnoremap   <silent>   <leader>q    <C-\><C-n>:FloatermKill<CR>
- noremap   <silent>   <leader>tp    :FloatermPrev<CR>
-tnoremap   <silent>   <leader>tp    <C-\><C-n>:FloatermPrev<CR>
-nnoremap   <silent>   <leader>tn    :FloatermNext<CR>
-tnoremap   <silent>   <leader>tn    <C-\><C-n>:FloatermNext<CR>
-nnoremap   <silent>   <leader><leader>   :FloatermToggle<CR>
-tnoremap   <silent>   <leader><leader>   <C-\><C-n>:FloatermToggle<CR>
+nnoremap   <silent>   <leader>tc        :FloatermNew<CR>
+tnoremap   <silent>   <leader>tc        <C-\><C-n>:FloatermNew<CR>
+tnoremap   <silent>   <leader>q         <C-\><C-n>:FloatermKill<CR>
+ noremap   <silent>   <leader>tp        :FloatermPrev<CR>
+tnoremap   <silent>   <leader>tp        <C-\><C-n>:FloatermPrev<CR>
+nnoremap   <silent>   <leader>tn        :FloatermNext<CR>
+tnoremap   <silent>   <leader>tn        <C-\><C-n>:FloatermNext<CR>
+nnoremap   <silent>   <leader><leader>  :FloatermToggle<CR>
+tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
 
 " Session
 nmap <leader>sl :SLoad<cr>
@@ -206,14 +207,18 @@ nmap <leader>ss :SSave!<cr>
 
 " AsyncTask 
 nnoremap <silent><leader>mk :AsyncTask build<cr>
+nnoremap <silent><leader>mK :AsyncTask debug<cr>
 nnoremap <silent><leader>mc :AsyncTask clean<cr>
 nnoremap <silent><leader>mr :AsyncTask run<cr>
+nnoremap <silent><leader>mR :AsyncTask run-debug<cr>
 nnoremap <silent><leader>mt :AsyncTask test<cr>
 nnoremap <silent><leader>me :AsyncTask -e<cr><cr>
 nnoremap <silent><leader>mE :AsyncTask -E<cr><cr>
-nnoremap <silent><leader>mn :cn<CR>
-nnoremap <silent><leader>mp :cp<CR>
-nnoremap <silent><leader>mw :cw<CR>
+
+nnoremap <silent><leader>/n :cn<CR>
+nnoremap <silent><leader>/p :cp<CR>
+nnoremap <silent><leader>/<leader> :cw<CR>
+nnoremap <silent><leader>// :ccl<CR>
 
 " Comment
 nnoremap <Leader>cm <Esc>:set opfunc=DoCommentOp<CR>g@

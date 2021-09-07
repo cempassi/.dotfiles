@@ -7,8 +7,12 @@ return require('packer').startup(function()
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
 
-	-- Completion
-	use {'neoclide/coc.nvim', branch = 'release'}
+  -- Completion
+  use 'hrsh7th/nvim-compe'
+  --use 'nvim-lua/completion-nvim'
+
+  -- Treesitter
+  use 'nvim-treesitter/nvim-treesitter'
 
 	-- LSP
   use 'neovim/nvim-lspconfig'
@@ -22,14 +26,8 @@ return require('packer').startup(function()
       {'nvim-lua/popup.nvim'}}
   }
 
-  -- Treesitter
-  use 'nvim-treesitter/nvim-treesitter'
-
   -- dap
   use 'mfussenegger/nvim-dap'
-
-  -- Notes
-  --use {'oberblastmeister/neuron.nvim', branch = 'unstable'}
 
 	-- File Navigation
 	--use {'ms-jpq/chadtree', branch = 'chad'}
@@ -53,7 +51,6 @@ return require('packer').startup(function()
 	use 'dstein64/vim-startuptime'
 
 	-- Lua development
-  use 'nvim-treesitter/nvim-treesitter'
 	--use 'bfredl/nvim-luadev'
 	--use 'nvim-treesitter/playground'
   --use {'glacambre/firenvim'}
@@ -63,13 +60,14 @@ return require('packer').startup(function()
 	use 'pbondoer/vim-42header'
 	use 'liuchengxu/vim-which-key'
   use 'kyazdani42/nvim-web-devicons'
-	use 'wincent/corpus'
 	use 'junegunn/goyo.vim'
 	use 'wellle/targets.vim'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'honza/vim-snippets'
   use 'hashivim/vim-terraform'
-  use 'tami5/sql.nvim'
+  use 'tjdevries/astronauta.nvim'
+  use 'rust-lang/rust.vim'
+  use 'editorconfig/editorconfig-vim'
 
   --local development, only use at home
   --use '~/Programming/nvim/nvim-dap'
@@ -78,7 +76,4 @@ return require('packer').startup(function()
   --use '~/Programming/nvim/telescope.nvim'
   --use '~/Programming/nvim/telescope-packer.nvim'
   --use '~/Programming/nvim/telescope-github.nvim'
-
-  -- local development, at 42
-  use '~/Programming/nvim/stats.nvim'
 	end)
