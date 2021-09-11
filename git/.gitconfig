@@ -33,6 +33,7 @@
 [alias]
 
 	ls = log -n 20 --relative-date --graph --abbrev-commit --decorate
+    resolve = ! git diff --name-only | uniq | xargs nvim
 
 [color "branch"]
 
