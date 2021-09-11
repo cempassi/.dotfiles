@@ -5,18 +5,14 @@
 export ZSH=~/.oh-my-zsh
 
 #Path export
-<<<<<<< Updated upstream
-export PATH=$HOME/.luarocks/bin:$HOME/.cargo/bin:$HOME/.brew/bin:$HOME/Applications/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
-=======
 LUA_PATH=$HOME/.luarocks/bin
 PYTHON_PATH=$HOME/.pyenv/shims
 RUST_PATH=$HOME/.cargo/bin
 BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
-BASE_PATH=/usr/local/sbin:/usr/local/bin:$(getconf PATH)
+BASE_PATH=$HOME/local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
 
 export PATH=$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
->>>>>>> Stashed changes
 
 ZSH_THEME=personal
 
@@ -32,10 +28,11 @@ bindkey -v
  DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git zsh-autosuggestions vi-mode zsh-syntax-highlighting rust docker)
+plugins=(zsh-autosuggestions zsh-completions vi-mode zsh-syntax-highlighting rust docker)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=230'
 
+zstyle ':completion:*:*:git:*' script ~/.oh-my-zsh/custom/git-completion.bash
 
 # FROM: https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2609770
 # On slow systems, checking the cached .zcompdump file to see if it must be
