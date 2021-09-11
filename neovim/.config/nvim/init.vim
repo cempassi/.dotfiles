@@ -6,7 +6,7 @@
 "    By: cempassi <cempassi@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2020/07/26 21:26:49 by cempassi          #+#    #+#              "
-"    Updated: 2021/07/05 16:51:03 by cempassi         ###   ########.fr        "
+"    Updated: 2021/09/11 16:56:22 by cempassi         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -142,6 +142,8 @@ set wildignore=*.o,*.pyc
 set complete-=i
 
 " Folding and windows
+set foldmethod=syntax
+
 if has ('folding')
 	if has ('windows')
 		set fillchars=vert:\│ 			"Box drawing
@@ -211,8 +213,6 @@ endif
 
 au TextYankPost * silent! lua require'vim.highlight'.on_yank{"Substract", 200}
 
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
 
 " Replace netrw
 let g:loaded_netrwPlugin = 1
