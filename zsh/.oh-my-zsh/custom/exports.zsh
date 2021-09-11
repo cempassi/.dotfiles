@@ -10,15 +10,6 @@ export MANPAGER="col -b | nvim -RO  '+set ft=man ts=8 nomod nolist nonu' '+nnore
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
-# preferred editor for local and remote sessions
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-    export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-    export EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-else
-    export VISUAL="nvim"
-    export EDITOR="nvim"
-fi
-
 export CDPATH=:..:~:~/Programming:~/Programming/42:~/Programming/Web:~/Programming/C:~/Programming/nvim
 
 export BAT_THEME=Nord
