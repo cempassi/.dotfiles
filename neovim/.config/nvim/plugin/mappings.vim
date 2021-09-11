@@ -149,11 +149,11 @@ nnoremap <silent> <leader>zz :Goyo<cr>
 " nmap <silent> <leader>* :call CocActionAsync('highlight')<cr>
 
 " Git
-nnoremap <silent> <leader>d<leader> :Clap git_diff_files<cr>
 nmap <leader>ga :Git commit --amend --no-edit<cr>
 nmap <leader>gcm :Git commit<cr>
 nmap <leader>gca :Git commit<cr>
-nmap <leader>gp :Git push<cr>
+nmap <leader>gpu :Git push<cr>
+nmap <leader>gpl :Git pull<cr>
 nmap <leader>gf :Git fetch<cr>
 
 "Gitgutter
@@ -212,6 +212,7 @@ nnoremap <silent><leader>mc :AsyncTask clean<cr>
 nnoremap <silent><leader>mr :AsyncTask run<cr>
 nnoremap <silent><leader>mR :AsyncTask run-debug<cr>
 nnoremap <silent><leader>mt :AsyncTask test<cr>
+nnoremap <silent><leader>ml :AsyncTask lint<cr>
 nnoremap <silent><leader>me :AsyncTask -e<cr><cr>
 nnoremap <silent><leader>mE :AsyncTask -E<cr><cr>
 
@@ -242,13 +243,13 @@ nnoremap <silent> <Leader>e.        :DashboardNewFile<CR>
 
 " Telescope
 nnoremap <Leader>f<leader> <cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git<CR>
-nnoremap <Leader>fh<leader> <cmd>Telescope oldfiles<CR>
+nnoremap <Leader>o<leader> <cmd>Telescope oldfiles<CR>
 nnoremap <Leader>. <cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git cwd=~/.dotfiles<CR>
 nnoremap <Leader>/ <cmd>Telescope live_grep<CR>
 nnoremap <Leader>? <cmd>Telescope help_tags<CR>
 nnoremap <Leader>cr <cmd>Telescope lsp_references<CR>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
-nnoremap <leader>gb<leader> <cmd>Telescope git_branches<CR>
-nnoremap <leader>gc<leader> <cmd>Telescope git_commits<CR>
-nnoremap <leader>gcb<leader> <cmd>Telescopre git_bcommits<CR>
+nnoremap <leader>b<leader> <cmd>Telescope git_branches<CR>
+nnoremap <leader>c<leader> <cmd>Telescope git_commits<CR>
+nnoremap <leader>d<leader> <cmd>Telescope git_bcommits<CR>
