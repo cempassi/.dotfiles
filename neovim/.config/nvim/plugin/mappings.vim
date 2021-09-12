@@ -149,9 +149,10 @@ nnoremap <silent> <leader>zz :Goyo<cr>
 " nmap <silent> <leader>* :call CocActionAsync('highlight')<cr>
 
 " Git
-nmap <leader>ga :Git commit --amend --no-edit<cr>
-nmap <leader>gcm :Git commit<cr>
-nmap <leader>gca :Git commit<cr>
+nmap <leader>ga :Git add %<cr>
+nmap <leader>g<Enter> :Git commit<cr>
+nmap <leader>G<Enter> :Git commit --all<cr>
+nmap <leader>g<BS> :Git commit --amend --no-edit<cr>
 nmap <leader>gpu :Git push<cr>
 nmap <leader>gpl :Git pull<cr>
 nmap <leader>gf :Git fetch<cr>
@@ -250,6 +251,7 @@ nnoremap <Leader>? <cmd>Telescope help_tags<CR>
 nnoremap <Leader>cr <cmd>Telescope lsp_references<CR>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
+nnoremap <leader>G<leader> <cmd>FloatermNew --disposable git status<cr>
 nnoremap <leader>b<leader> <cmd>Telescope git_branches<CR>
 nnoremap <leader>c<leader> <cmd>Telescope git_commits<CR>
 nnoremap <leader>d<leader> <cmd>Telescope git_bcommits<CR>
