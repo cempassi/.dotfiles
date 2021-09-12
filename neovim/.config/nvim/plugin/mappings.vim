@@ -153,8 +153,9 @@ nmap <leader>ga :Git add %<cr>
 nmap <leader>g<Enter> :Git commit<cr>
 nmap <leader>G<Enter> :Git commit --all<cr>
 nmap <leader>g<BS> :Git commit --amend --no-edit<cr>
-nmap <leader>gpu :Git push<cr>
-nmap <leader>gpl :Git pull<cr>
+nmap <leader><PageUp> <cmd>FloatermNew --disposable git push<cr>
+nmap <leader><PageDown> <cmd>FloatermNew --disposable git pull<cr>
+nmap <leader>gl<leader> <cmd>FloatermNew --disposable git ls<cr>
 nmap <leader>gf :Git fetch<cr>
 
 "Gitgutter
@@ -248,7 +249,6 @@ nnoremap <Leader>o<leader> <cmd>Telescope oldfiles<CR>
 nnoremap <Leader>. <cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git cwd=~/.dotfiles<CR>
 nnoremap <Leader>/ <cmd>Telescope live_grep<CR>
 nnoremap <Leader>? <cmd>Telescope help_tags<CR>
-nnoremap <Leader>cr <cmd>Telescope lsp_references<CR>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
 nnoremap <leader>G<leader> <cmd>FloatermNew --disposable git status<cr>
