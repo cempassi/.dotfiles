@@ -1,6 +1,13 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+local config = {
+  git = {
+    default_url_format = 'git@github.com:%s' -- Lua format string used for "aaa/bbb" style plugins
+  },
+}
+ 
+
+return require('packer').startup({function()
 	use {'wbthomason/packer.nvim', opt = true}
 
 	-- Status bar
@@ -50,6 +57,9 @@ return require('packer').startup(function()
   use 'glepnir/dashboard-nvim'
 	use 'dstein64/vim-startuptime'
 
+  -- Syntax Higlighting
+  use 'cespare/vim-toml'
+
 	-- Lua development
 	--use 'bfredl/nvim-luadev'
 	--use 'nvim-treesitter/playground'
@@ -76,4 +86,6 @@ return require('packer').startup(function()
   --use '~/Programming/nvim/telescope.nvim'
   --use '~/Programming/nvim/telescope-packer.nvim'
   --use '~/Programming/nvim/telescope-github.nvim'
-	end)
+	end,
+  config = config
+})
