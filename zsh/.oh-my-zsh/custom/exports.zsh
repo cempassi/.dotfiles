@@ -21,3 +21,5 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export KEYTIMEOUT=1
 
 export GPG_TTY=${TTY}
+
+export PAGER="bat --paging=auto --plain"

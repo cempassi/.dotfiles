@@ -4,7 +4,7 @@ alias ll="exa -1 --icons "
 
 alias lt="exa -T --icons "
 
-alias le="exa -lah --icons "
+alias le="exa -lah --icons --ignore-glob='.git' "
 
 alias status="git status"
 
