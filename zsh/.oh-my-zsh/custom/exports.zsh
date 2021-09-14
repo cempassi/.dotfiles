@@ -10,7 +10,7 @@ export MANPAGER="col -b | nvim -RO  '+set ft=man ts=8 nomod nolist nonu' '+nnore
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
-export CDPATH=:..:~:~/Programming:~/Programming/42:~/Programming/Web:~/Programming/C:~/Programming/nvim
+export CDPATH=:..:~:~/Programming:~/Programming/PMU:~/Programming/42:~/Programming/Web:~/Programming/C:~/Programming/nvim
 
 export BAT_THEME=Nord
 
