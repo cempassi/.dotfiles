@@ -1,6 +1,6 @@
 [user]
 	name = Cedric M'Passi
-	email = cempassi@student.42.fr
+	email = Cedric.Mpassi@pmu.fr
 
 [core]
 	excludesFile = ~/.dotfiles/git/.gitignore
