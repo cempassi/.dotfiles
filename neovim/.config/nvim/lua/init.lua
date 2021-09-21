@@ -2,6 +2,7 @@ require('_telescope')
 require('_treesitter')
 require('_neuron')
 require('_compe')
+require('_rust_tools')
 require('modules.lsp')
 
 -- CHADTree settings

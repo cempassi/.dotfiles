@@ -66,6 +66,7 @@ return require('packer').startup({function()
   --use {'glacambre/firenvim'}
 
 	-- Misc
+  use 'simrat39/rust-tools.nvim'
   use 'szw/vim-maximizer'
 	use 'pbondoer/vim-42header'
 	use 'liuchengxu/vim-which-key'
