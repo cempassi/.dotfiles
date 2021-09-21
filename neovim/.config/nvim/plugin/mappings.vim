@@ -255,3 +255,5 @@ nnoremap <leader>G<leader> <cmd>FloatermNew --disposable git status<cr>
 nnoremap <leader>b<leader> <cmd>Telescope git_branches<CR>
 nnoremap <leader>c<leader> <cmd>Telescope git_commits<CR>
 nnoremap <leader>d<leader> <cmd>Telescope git_bcommits<CR>
+nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
+nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
