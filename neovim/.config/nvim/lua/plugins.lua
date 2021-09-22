@@ -16,6 +16,7 @@ return require('packer').startup({function()
 
   -- Completion
   use 'hrsh7th/nvim-compe'
+  use 'onsails/lspkind-nvim'
   --use 'nvim-lua/completion-nvim'
 
   -- Treesitter
@@ -66,6 +67,7 @@ return require('packer').startup({function()
   --use {'glacambre/firenvim'}
 
 	-- Misc
+  use 'simrat39/rust-tools.nvim'
   use 'szw/vim-maximizer'
 	use 'pbondoer/vim-42header'
 	use 'liuchengxu/vim-which-key'

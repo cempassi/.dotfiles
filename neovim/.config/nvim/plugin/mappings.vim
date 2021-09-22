@@ -153,6 +153,7 @@ nmap <leader>ga :Git add %<cr>
 nmap <leader>g<Enter> :Git commit<cr>
 nmap <leader>G<Enter> :Git commit --all<cr>
 nmap <leader>g<BS> :Git commit --amend --no-edit<cr>
+nmap <leader>g<Del> :Git restore %<cr>
 nmap <leader><PageUp> <cmd>FloatermNew --disposable git push<cr>
 nmap <leader><PageDown> <cmd>FloatermNew --disposable git pull<cr>
 nmap <leader>gl<leader> <cmd>FloatermNew --disposable git ls<cr>
@@ -255,3 +256,5 @@ nnoremap <leader>G<leader> <cmd>FloatermNew --disposable git status<cr>
 nnoremap <leader>b<leader> <cmd>Telescope git_branches<CR>
 nnoremap <leader>c<leader> <cmd>Telescope git_commits<CR>
 nnoremap <leader>d<leader> <cmd>Telescope git_bcommits<CR>
+nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
+nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
