@@ -2,9 +2,30 @@
 local actions = require('telescope.actions')
 
 require('telescope').setup {
+  pickers = {
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      theme = "dropdown",
+      previewer = false,
+      initial_mode = "normal",
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer",
+        },
+        n = {
+          ["d"] = "delete_buffer",
+        }
+      }
+    }
+  },
   defaults = {
     file_previewer = require('telescope.previewers').vim_buffer_cat.new,
     layout_strategy = "horizontal",
+    layout_config = {
+      prompt_position = "top"
+    },
+    sorting_strategy = "ascending",
     git_icons = {added = "☺", changed = "ƣ", deleted = "ㄐ"},
     mappings = {
 	i = {
@@ -27,7 +48,6 @@ require('telescope').setup {
     },
 
     n = {
-      ["jk"] = actions.close,
       ["<leader>q"] = actions.close,
       ["<CR>"] = actions.select_default + actions.center,
       ["<C-x>"] = actions.select_horizontal,
