@@ -59,6 +59,7 @@ return require('packer').startup({function()
 
   -- Syntax Higlighting
   use 'cespare/vim-toml'
+  use 'rodjek/vim-puppet'
 
 	-- Lua development
 	--use 'bfredl/nvim-luadev'
