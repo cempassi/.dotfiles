@@ -31,9 +31,8 @@ require('telescope').setup {
     file_previewer = require('telescope.previewers').vim_buffer_cat.new,
     layout_strategy = "horizontal",
     layout_config = {
-      prompt_position = "top"
+      prompt_position = "bottom"
     },
-    sorting_strategy = "ascending",
     git_icons = {added = "☺", changed = "ƣ", deleted = "ㄐ"},
     mappings = {
 	i = {
