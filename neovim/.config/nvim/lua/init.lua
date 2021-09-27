@@ -4,6 +4,7 @@ require('_neuron')
 require('_compe')
 require('_rust_tools')
 require('modules.lsp')
+require('_neoscroll')
 
 require('lspkind').init({
     -- enables text annotations
