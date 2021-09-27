@@ -90,18 +90,6 @@ augroup END
 let g:python_host_prog='/Users/cempassi/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog='/Users/cempassi/.pyenv/versions/neovim3/bin/python'
 
-"Formating options
-set formatoptions-=a    " Turn off auto formating.
-set formatoptions-=t    " Turn off auto formating.
-set formatoptions+=c    " Comment respect textwidth
-set formatoptions+=q    " Allow formatting comments w/ gq
-set formatoptions-=o    " O and o, don't continue comments
-set formatoptions+=r    " But do continue when pressing enter.
-set formatoptions+=n    " Indent past the formatlistpat, not underneath it.
-set formatoptions+=j    " Auto-remove comments if possible.
-set formatoptions-=2    " Useless option
-set nojoinspaces        " Useless option 2
-
 " Turn bell off
 set belloff=all
 
@@ -202,6 +190,18 @@ au BufReadPost *
 			\ |   exe "normal! g`\""
 			\ | endif
 
+
+"Formating options
+set formatoptions-=a    " Turn off auto formating.
+set formatoptions-=t    " Turn off auto formating.
+set formatoptions+=c    " Comment respect textwidth
+set formatoptions+=q    " Allow formatting comments w/ gq
+set formatoptions-=o    " O and o, don't continue comments
+set formatoptions+=r    " But do continue when pressing enter.
+set formatoptions+=n    " Indent past the formatlistpat, not underneath it.
+set formatoptions+=j    " Auto-remove comments if possible.
+set formatoptions-=2    " Useless option
+set nojoinspaces        " Useless option 2
 
 " ------------------------------------- Testing -------------------------------
 
