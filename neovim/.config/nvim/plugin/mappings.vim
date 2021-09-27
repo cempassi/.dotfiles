@@ -120,6 +120,7 @@ nmap <leader>g<Enter> :Git commit<cr>
 nmap <leader>G<Enter> :Git commit --all<cr>
 nmap <leader>g<BS> :Git commit --amend --no-edit<cr>
 nmap <leader>g<Del> :Git restore %<cr>
+nmap <leader><Home> :Gcd<cr>
 nmap <leader><PageUp> <cmd>FloatermNew --disposable git push<cr>
 nmap <leader><PageDown> <cmd>FloatermNew --disposable git pull<cr>
 nmap <leader>gl<leader> <cmd>FloatermNew --disposable git ls<cr>
