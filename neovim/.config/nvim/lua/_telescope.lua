@@ -17,6 +17,14 @@ require('telescope').setup {
           ["d"] = "delete_buffer",
         }
       }
+    },
+    lsp_code_actions = {
+      theme = "cursor",
+      previewer = false,
+      initial_mode = "normal",
+      layout_config = {
+        prompt_position = "top"
+      }
     }
   },
   defaults = {
