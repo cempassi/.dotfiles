@@ -62,12 +62,6 @@ nnoremap <silent><leader>j :wincmd j<CR>
 nnoremap <silent><leader>k :wincmd k<CR>
 nnoremap <silent><leader>l :wincmd l<CR>
 
-"Scroll window
-nnoremap <silent><leader>mf <C-f>
-nnoremap <silent><leader>mb <C-b>
-nnoremap <silent><leader>mu <C-u>
-nnoremap <silent><leader>md <C-d>
-
 " Shift panes to horizontal or vertical
 nnoremap <silent><leader>H <C-w>K
 nnoremap <silent><leader>V <C-w>H
