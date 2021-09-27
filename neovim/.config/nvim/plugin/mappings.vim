@@ -62,12 +62,6 @@ nnoremap <silent><leader>j :wincmd j<CR>
 nnoremap <silent><leader>k :wincmd k<CR>
 nnoremap <silent><leader>l :wincmd l<CR>
 
-"Scroll window
-nnoremap <silent><leader>mf <C-f>
-nnoremap <silent><leader>mb <C-b>
-nnoremap <silent><leader>mu <C-u>
-nnoremap <silent><leader>md <C-d>
-
 " Shift panes to horizontal or vertical
 nnoremap <silent><leader>H <C-w>K
 nnoremap <silent><leader>V <C-w>H
@@ -119,34 +113,6 @@ nnoremap <silent><leader>nh :let @/ = ""<cr>
 
 " Goyo
 nnoremap <silent> <leader>zz :Goyo<cr>
-
-" " Coc
-" nnoremap <silent> <leader>c<leader> :Clap coc_commands<cr> 
-" nnoremap <silent> <leader>x<leader> :Clap coc_extensions<cr>
-" nnoremap <silent> <leader>s<leader> :Clap coc_symbols<cr>
-" 
-" " Language server mappings
-" nmap <silent> <leader>cd <Plug>(coc-definition)
-" nmap <silent> <leader>ct <Plug>(coc-type-definition)
-" nmap <silent> <leader>ci <Plug>(coc-implementation)
-" nmap <silent> <leader>cr <Plug>(coc-references)
-" nmap <silent> <leader>en <Plug>(coc-diagnostic-next)
-" nmap <silent> <leader>ep <Plug>(coc-diagnostic-prev)
-" 
-" " Formating
-" nmap <silent> <leader>cf <Plug>(coc-format)
-" 
-" " Apply AutoFix to problem on the current line.
-" nmap <silent> <leader>ef  <Plug>(coc-fix-current)
-" 
-" " Symbol renaming.
-" nmap <silent> <leader>cn <Plug>(coc-rename)
-" 
-" " Rust InlayHints togle
-" nmap <silent> <leader>ch :CocCommand rust-analyzer.toggleInlayHints<cr>
-" 
-" " Highlight the symbol and its references when holding the cursor.
-" nmap <silent> <leader>* :call CocActionAsync('highlight')<cr>
 
 " Git
 nmap <leader>ga :Git add %<cr>
