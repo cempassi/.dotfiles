@@ -124,6 +124,7 @@ nmap <leader><Home> :Gcd<cr>
 nmap <leader><PageUp> <cmd>FloatermNew --disposable git push<cr>
 nmap <leader><PageDown> <cmd>FloatermNew --disposable git pull<cr>
 nmap <leader>gl<leader> <cmd>FloatermNew --disposable git ls<cr>
+nmap <leader>gL<leader> <cmd>FloatermNew --disposable git log<cr>
 nmap <leader>gf :Git fetch<cr>
 
 "Gitgutter
