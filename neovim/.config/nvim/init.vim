@@ -77,6 +77,7 @@ let g:terminal_color_7 = '#E5E9F0'
 "" Plugin Management
 lua require('init')
 lua require('plugins')
+lua require('after')
 "lua require'colorizer'.setup()
 
 "Save all the files, all the times
