@@ -77,6 +77,8 @@ let g:terminal_color_7 = '#E5E9F0'
 lua require('init')
 lua require('plugins')
 lua require'colorizer'.setup()
+"lua require('after')
+"lua require'colorizer'.setup()
 
 "Save all the files, all the times
 augroup save
