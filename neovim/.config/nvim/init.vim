@@ -58,7 +58,7 @@ filetype plugin indent on
 syntax on 
 
 color default
-set guifont=Hasklig\ Light:h15
+set guifont=Hasklig\ Light:h13
 set termguicolors
 colorscheme deep-sea
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
