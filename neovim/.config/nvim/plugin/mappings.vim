@@ -149,19 +149,6 @@ omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
 xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
-" Vim internals
-nnoremap <silent> <leader>r<lealder> :Clap registers<cr>
-nnoremap <silent><leader>y<leader> :Clap yanks<cr>
-nnoremap <silent><leader>m<leader> :Clap maps<cr>
-
-" Errors mappings
-nnoremap <silent> <leader>e<leader> :Clap coc_diagnostics<cr>
-
-" Find mapping
-nnoremap <silent> <leader>fb :Clap blines<cr>
-nnoremap <silent> <leader>fl :Clap lines<cr>
-nnoremap <silent> <leader>fj :Clap jumps<cr>
-
 " Floaterm 
 nnoremap   <silent>   <leader>tc        :FloatermNew<CR>
 tnoremap   <silent>   <leader>tc        <C-\><C-n>:FloatermNew<CR>
@@ -227,3 +214,5 @@ nnoremap <leader>c<leader> <cmd>Telescope git_commits<CR>
 nnoremap <leader>d<leader> <cmd>Telescope git_bcommits<CR>
 nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
 nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
+nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
+nnoremap <leader>r<leader> <cmd>Telescope registers<CR>
