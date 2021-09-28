@@ -209,9 +209,9 @@ nnoremap <Leader>? <cmd>Telescope help_tags<CR>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
 nnoremap <leader>G<leader> <cmd>FloatermNew --disposable git status<cr>
-nnoremap <leader>b<leader> <cmd>Telescope git_branches<CR>
+nnoremap <leader>B<leader> <cmd>Telescope git_branches<CR>
 nnoremap <leader>c<leader> <cmd>Telescope git_commits<CR>
-nnoremap <leader>d<leader> <cmd>Telescope git_bcommits<CR>
+nnoremap <leader>v<leader> <cmd>Telescope git_bcommits<CR>
 nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
 nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
 nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
