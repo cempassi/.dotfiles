@@ -1,0 +1,17 @@
+Applications i have to configure installation in Makefile for ease of config installation
+ bat
+ cmake
+ delta
+ dust
+ exa
+ fd
+ floaterm
+ gh
+ git
+ neovide
+ nvim
+ rg
+ rust-analyzer
+ tokei
+ Alacritty
+ Bear
