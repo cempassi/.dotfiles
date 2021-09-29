@@ -10,7 +10,7 @@ PYTHON_PATH=$HOME/.pyenv/shims
 RUST_PATH=$HOME/.cargo/bin
 BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
-BASE_PATH=$HOME/local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
+BASE_PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
 
 export PATH=$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
 
