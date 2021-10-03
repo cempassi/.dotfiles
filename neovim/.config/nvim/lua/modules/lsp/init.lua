@@ -94,7 +94,7 @@ lspconfig.rust_analyzer.setup{
   on_init = custom_on_init,
   capabilities = capabilities,
 
-settings = {
+  settings = {
     ["rust-analyzer"] = {
       assist = {
         importMergeBehaviour = "full",
