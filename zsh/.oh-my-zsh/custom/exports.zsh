@@ -6,6 +6,8 @@ export PYENV_ROOT=$HOME/.pyenv
 
 export PATH=$PYENV_ROOT/bin:$PATH:./node_modules/.bin
 
+export EDITOR=vim
+
 export MANPAGER="col -b | nvim -RO  '+set ft=man ts=8 nomod nolist nonu' '+nnoremap i <nop>' -"
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
