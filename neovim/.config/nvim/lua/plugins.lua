@@ -66,14 +66,10 @@ return require('packer').startup({function()
 
     -- Misc
     use 'simrat39/rust-tools.nvim'
-    use 'szw/vim-maximizer'
     use 'pbondoer/vim-42header'
     use 'liuchengxu/vim-which-key'
     use 'kyazdani42/nvim-web-devicons'
-    use 'junegunn/goyo.vim'
-    use 'wellle/targets.vim'
     use 'norcalli/nvim-colorizer.lua'
-    use 'honza/vim-snippets'
     use 'hashivim/vim-terraform'
     use 'tjdevries/astronauta.nvim'
     use 'rust-lang/rust.vim'
