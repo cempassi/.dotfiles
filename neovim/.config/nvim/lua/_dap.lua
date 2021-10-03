@@ -10,7 +10,7 @@ dap.adapters.c = {
         pidProperty = "pid",
         pidSelect = "ask"
       },
-      command = 'lldb-vscode', -- my binary was called 'lldb-vscode-11'
+      command = '/Users/cempassi/.vscode/extensions/lanza.lldb-vscode-0.2.3/bin/darwin/bin/lldb-vscode', -- my binary was called 'lldb-vscode-11'
       env = {
         LLDB_LAUNCH_FLAG_LAUNCH_IN_TTY = "YES"
       },
@@ -44,9 +44,9 @@ dap.configurations.rust = {
       {
         type = 'c';
         request = 'launch';
-        name = "day05";
-        program = "./target/debug/deps/day05";
-        args = {"google.fr"}
+        name = "gbmu";
+        program = "/Users/cempassi/Programming/42/GBMU/target/debug/deps/gbmu";
+        args = {""}
       },
     }
 
