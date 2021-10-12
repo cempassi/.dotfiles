@@ -58,6 +58,7 @@ return require('packer').startup({function()
 
     -- Syntax Higlighting
     use 'cespare/vim-toml'
+    use 'rodjek/vim-puppet'
 
     -- Window scrolling
     use 'karb94/neoscroll.nvim'
