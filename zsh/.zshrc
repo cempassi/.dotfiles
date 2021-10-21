@@ -6,7 +6,7 @@ export ZSH=~/.oh-my-zsh
 
 #Path export
 LUA_PATH=$HOME/.luarocks/bin
-PYTHON_PATH=$HOME/.pyenv/shims
+PYTHON_PATH=$HOME/.pyenv/shims:/Users/cempassi/Library/Python/3.7/bin
 RUST_PATH=$HOME/.cargo/bin
 BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
