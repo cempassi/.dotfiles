@@ -1,7 +1,7 @@
 require('_telescope')
 require('_treesitter')
 require('_neuron')
-require('_compe')
+require('_cmp')
 require('_rust_tools')
 require('modules.lsp')
 require('_neoscroll')
@@ -46,19 +46,3 @@ require('lspkind').init({
       Struct = "",
     },
 })
-
--- CHADTree settings
--- api.nvim_set_var("chadtree_settings",{
--- 		open_left = true,
--- 		keymap = {
--- 			quit = "_",
--- 			smaller = "(",
--- 			bigger = ")",
--- 			change_focus = ">",
--- 			change_focus_up = "<",
--- 			refocus = "="
--- 		}
--- 	}
--- )
-
-
