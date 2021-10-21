@@ -27,6 +27,9 @@ return require('packer').startup({function()
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
 
+  -- Code Navigation
+  use 'ggandor/lightspeed.nvim'
+
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
