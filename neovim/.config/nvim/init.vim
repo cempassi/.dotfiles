@@ -63,22 +63,55 @@ colorscheme deep-sea
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
-" Color scheme for :Term
-let g:terminal_color_0 = '#3B4252'
-let g:terminal_color_1 = '#BF616A'
-let g:terminal_color_2 = '#A3BE8C'
-let g:terminal_color_3 = '#EBCB8B'
-let g:terminal_color_4 = '#81A1C1'
-let g:terminal_color_5 = '#B48EAD'
-let g:terminal_color_6 = '#88C0D0'
-let g:terminal_color_7 = '#E5E9F0'
-  
+"Color scheme for :Term
+let g:terminal_color_0 = '#3B4252' "Black
+let g:terminal_color_1 = '#81A1C1' "Dark Blue
+let g:terminal_color_2 = '#A3BE8C' "Dark Green
+let g:terminal_color_3 = '#88C0D0' "Dark Cyan
+let g:terminal_color_4 = '#BF616A' "Dark Red
+let g:terminal_color_5 = '#B48EAD' "Dark Magenta
+let g:terminal_color_6 = '#EBCB8B' "Dark Yellow/ Brown
+let g:terminal_color_7 = '#E5E9F0' "Light Gray
+let g:terminal_color_8 = '#4C566A' "Black
+let g:terminal_color_9 = '#81A1C1' "Light Blue
+let g:terminal_color_10 = '#A3BE8C' "Light Green
+let g:terminal_color_11 = '#48bfe3' "Light Cyan
+let g:terminal_color_12 = '#BF616A' "Light Red
+let g:terminal_color_13 = '#B48EAD' "Light Magenta
+let g:terminal_color_14 = '#EBCB8B' "Light Yellow/ Brown
+let g:terminal_color_15 = '#ECEFF4' "Light Gray
+let g:terminal_color_45 = '#caf0f8' "Lightest Blue
+
+" let g:terminal_color_0 = '#222222'
+" let g:terminal_color_243 = '#767676'
+" let g:terminal_color_15 = '#F5F5F5'
+" let g:terminal_color_8 = '#424242'
+" let g:terminal_color_240 = '#545454'
+" let g:terminal_color_20 = '#1F262D'
+" let g:terminal_color_236 = '#303030'
+" let g:terminal_color_249 = '#999999'
+" let g:terminal_color_251 = '#CCCCCC'
+" let g:terminal_color_251 = '#E5E5E5'
+" let g:terminal_color_1 = '#bb010b'
+" let g:terminal_color_1 = '#b23a48'
+" let g:terminal_color_1 = '#9EC5E6'
+" let g:terminal_color_4 = '#005CA3 '
+" let g:terminal_color_153 = '#339CFF'
+" let g:terminal_color_45 = '#caf0f8'
+" let g:terminal_color_6 = '#005d5d'
+" let g:terminal_color_14 = '#48bfe3'
+" let g:terminal_color_2 = '#74AA80'
+" let g:terminal_color_10 = '#AAf683'
+" let g:terminal_color_5 = '#523C79'
+" let g:terminal_color_13 = '#6855DE'
+" let g:terminal_color_11 = '#F3E430'
+" let g:terminal_color_3 = '#FED485'
+
 "" Plugin Management
 lua require('init')
 lua require('plugins')
+lua require('after')
 lua require'colorizer'.setup()
-"lua require('after')
-"lua require'colorizer'.setup()
 
 "Save all the files, all the times
 augroup save
@@ -199,6 +232,9 @@ set formatoptions-=2    " Useless option
 set nojoinspaces        " Useless option 2
 
 " ------------------------------------- Testing -------------------------------
+
+" Unmap Gitmessenger
+let g:git_messenger_no_default_mappings = v:true
 
 " Omnisharp configuration
 let g:OmniSharp_server_stdio = 1
