@@ -50,7 +50,6 @@ return require('packer').startup({function()
     use 'mfussenegger/nvim-dap'
 
     -- File Navigation
-    --use {'ms-jpq/chadtree', branch = 'chad'}
     use 'justinmk/vim-dirvish'
 
     -- Git integration
