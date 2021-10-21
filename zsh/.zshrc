@@ -6,13 +6,14 @@ export ZSH=~/.oh-my-zsh
 
 #Path export
 LUA_PATH=$HOME/.luarocks/bin
-PYTHON_PATH=$HOME/.pyenv/shims
+PYTHON_PATH=$HOME/.pyenv/shims:/Users/cempassi/Library/Python/3.7/bin
 RUST_PATH=$HOME/.cargo/bin
 BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
+GIT_PATH=$HOME/usr/local/git/libexec/git-core
 BASE_PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
 
-export PATH=$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
+export PATH=$GIT_PATH:$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
 
 ZSH_THEME=personal
 
