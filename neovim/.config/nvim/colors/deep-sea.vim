@@ -36,20 +36,20 @@ let s:subtle_black    = { "gui": "#303030", "cterm": "236" }
 let s:light_gray      = { "gui": "#999999", "cterm": "249" }
 let s:lighter_gray    = { "gui": "#CCCCCC", "cterm": "251" }
 let s:lightest_gray   = { "gui": "#E5E5E5", "cterm": "251" }
-let s:dark_red        = { "gui": "#bb010b", "cterm": "1"   }
-let s:light_red       = { "gui": "#b23a48", "cterm": "1"   }
+let s:dark_red        = { "gui": "#bb010b", "cterm": "4"   }
+let s:light_red       = { "gui": "#b23a48", "cterm": "4"   }
 let s:subtle_blue 	  = { "gui": "#9EC5E6", "cterm": "1"   }
 let s:dark_blue       = { "gui": "#005CA3 ", "cterm": "4"  }
 let s:light_blue      = { "gui": "#339CFF", "cterm": "153" }
 let s:lightest_blue   = { "gui": "#caf0f8", "cterm": "45"  }
-let s:dark_cyan       = { "gui": "#005d5d", "cterm": "6"   }
-let s:light_cyan      = { "gui": "#48bfe3", "cterm": "14"  }
+let s:dark_cyan       = { "gui": "#005d5d", "cterm": "3"   }
+let s:light_cyan      = { "gui": "#48bfe3", "cterm": "11"  }
 let s:dark_green      = { "gui": "#74AA80", "cterm": "2"   }
 let s:light_green     = { "gui": "#AAf683", "cterm": "10"  }
 let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
 let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
-let s:light_yellow    = { "gui": "#F3E430", "cterm": "11"  }
-let s:dark_yellow     = { "gui": "#FED485", "cterm": "3"   }
+let s:light_yellow    = { "gui": "#F3E430", "cterm": "14"  }
+let s:dark_yellow     = { "gui": "#FED485", "cterm": "6"   }
 
 if &background == "dark"
   let s:bg               = s:lightest_black
@@ -254,19 +254,23 @@ hi! link helpHyperTextJump  String
 
 " __StatusLine__
 call s:h("StatusLine",        {"gui": "underline", "bg": s:bg, "fg": s:norm_very_subtle})
+
 " __StatusLineNC__
 call s:h("StatusLineNC",      {"gui": "underline", "bg": s:bg, "fg": s:bg_subtle})
-" __WildMenu__
-call s:h("WildMenu",          {"gui": "underline,bold", "bg": s:bg, "fg": s:norm})
+
 
 call s:h("StatusLineOk",      {"gui": "underline", "bg": s:bg, "fg": s:ok})
 call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:error})
 call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:warning})
 
+" __WildMenu__
+call s:h("WildMenu",          {"gui": "underline,bold", "bg": s:bg, "fg": s:norm})
+
 " __Pmenu__
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:cursor_line})
 hi! link PmenuSbar        Pmenu
 hi! link PmenuThumb       Pmenu
+
 
 " __PmenuSel__
 call s:h("PmenuSel",      {"fg": s:norm, "bg": s:bg_subtle, "gui": "bold"})
@@ -277,6 +281,7 @@ hi! link TabLineFill      Normal
 
 " __CursorLine__
 call s:h("CursorLine",    {"bg": s:cursor_line})
+
 " __CursorColumn__
 call s:h("ColorColumn",   {"bg": s:cursor_line})
 
@@ -305,6 +310,10 @@ hi! link rustModPath      PreProc
 hi! link rustRepeat 			Repeat
 hi! link rustDerive 			PreProc
 hi! link rustDeriveTrait 	PreProc
+
+"CmpMenu
+hi! link CmpItemKind PreProc
+hi! link CmpItemAbbr Noise
 
 hi link jsFlowTypeKeyword Statement
 hi link jsFlowImportType Statement
