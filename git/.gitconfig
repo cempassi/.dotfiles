@@ -1,13 +1,18 @@
 [user]
-	name = Cedric M'Passi
+	name = Cedric M'PASSI
 	email = cempassi@student.42.fr
 
 [core]
-	excludesFile = ~/.dotfiles/git/.gitignore
-	pager = delta
+	excludesfile = /Users/cempassi/.gitignore
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta --color-only --feature=interactive
 
 [delta]
     features = line-numbers decorations
