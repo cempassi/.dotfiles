@@ -128,6 +128,19 @@ nmap <leader>gL<leader> <cmd>FloatermNew --disposable git log<cr>
 nmap <leader>gf :Git fetch<cr>
 nmap <leader>gr :GRename <cr>
 
+nmap <leader>B<leader> <cmd>Telescope git_branches<CR>
+nmap <leader>c<leader> <cmd>Telescope git_commits<CR>
+nmap <leader>v<leader> <cmd>Telescope git_bcommits<CR>
+nmap <leader>p<leader> <cmd>Telescope gh pull_request<CR>
+nmap <leader>G<leader> <cmd>FloatermNew --disposable git status<cr>
+
+"Gh (Github cli integration, needs gh and nvr instaled)
+nmap <silent><leader>gp :AsyncTask pr-create<cr>
+nmap <silent><leader>gm :AsyncTask pr-merge<cr>
+nmap <silent><leader>gw :AsyncTask pr-watch<cr>
+
+nmap <silent><leader>gg <Plug>(git-messenger)
+
 "Gitgutter
 nmap <leader>ge :GitGutterToggle<cr>
 nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
@@ -208,10 +221,6 @@ nnoremap <Leader>/ <cmd>Telescope live_grep<CR>
 nnoremap <Leader>? <cmd>Telescope help_tags<CR>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
-nnoremap <leader>G<leader> <cmd>FloatermNew --disposable git status<cr>
-nnoremap <leader>B<leader> <cmd>Telescope git_branches<CR>
-nnoremap <leader>c<leader> <cmd>Telescope git_commits<CR>
-nnoremap <leader>v<leader> <cmd>Telescope git_bcommits<CR>
 nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
 nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
 nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
