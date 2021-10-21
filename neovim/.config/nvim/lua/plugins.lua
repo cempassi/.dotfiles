@@ -14,9 +14,15 @@ return require('packer').startup({function()
   use 'vim-airline/vim-airline-themes'
 
   -- Completion
-  use 'hrsh7th/nvim-compe'
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+    }
+  }
   use 'onsails/lspkind-nvim'
-  --use 'nvim-lua/completion-nvim'
 
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
