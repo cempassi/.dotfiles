@@ -76,6 +76,9 @@ return require('packer').startup({function()
     -- Window scrolling
     use 'karb94/neoscroll.nvim'
 
+    -- Rust
+    use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+
     -- Misc
     use 'simrat39/rust-tools.nvim'
     use 'pbondoer/vim-42header'
