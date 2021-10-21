@@ -44,6 +44,7 @@ return require('packer').startup({function()
       {'nvim-lua/plenary.nvim'},
       {'nvim-lua/popup.nvim'}}
     }
+    use 'nvim-telescope/telescope-github.nvim'
 
     -- Debugger
     use 'mfussenegger/nvim-dap'
