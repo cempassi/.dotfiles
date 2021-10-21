@@ -49,8 +49,8 @@ require('telescope').setup {
         ["<leader>vs"] = actions.select_vertical,
         ["<leader>te"] = actions.select_tab,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<PageUp>"] = actions.preview_scrolling_up,
+        ["<PageDown>"] = actions.preview_scrolling_down,
 
       },
 
@@ -70,3 +70,5 @@ require('telescope').setup {
     }
   }
 }
+
+require('telescope').load_extension('gh')
