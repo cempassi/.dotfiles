@@ -34,6 +34,9 @@ return require('packer').startup({function()
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
 
+  -- Notification
+  use 'rcarriga/nvim-notify'
+
   -- Telescope
   use {
     'nvim-lua/telescope.nvim',
