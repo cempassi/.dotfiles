@@ -50,7 +50,6 @@ return require('packer').startup({function()
     use 'mfussenegger/nvim-dap'
 
     -- File Navigation
-    --use {'ms-jpq/chadtree', branch = 'chad'}
     use 'justinmk/vim-dirvish'
 
     -- Git integration
@@ -72,7 +71,6 @@ return require('packer').startup({function()
 
     -- Syntax Higlighting
     use 'cespare/vim-toml'
-
 
     -- Window scrolling
     use 'karb94/neoscroll.nvim'
