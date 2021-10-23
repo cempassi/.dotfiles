@@ -11,10 +11,10 @@ require('neoscroll').setup({
 
 local t = {}
 
-t['<leader>mu'] = {'scroll', {'-vim.wo.scroll', 'true', '350'}}
-t['<leader>md'] = {'scroll', {'vim.wo.scroll', 'true', '350'}}
-t['<leader>mb'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '550'}}
-t['<leader>mf'] = {'scroll', {'vim.api.nvim_win_get_height(0)', 'true', '550'}}
+t['[['] = {'scroll', {'-vim.wo.scroll', 'true', '350'}}
+t[']]'] = {'scroll', {'vim.wo.scroll', 'true', '350'}}
+t['{{'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '550'}}
+t['}}'] = {'scroll', {'vim.api.nvim_win_get_height(0)', 'true', '550'}}
 t['<C-y>'] = {'scroll', {'-0.10', 'false', '100'}}
 t['<C-e>'] = {'scroll', { '0.10', 'false', '100'}}
 t['zt']    = {'zt', {'250'}}
