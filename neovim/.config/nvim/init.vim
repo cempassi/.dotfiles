@@ -57,31 +57,31 @@ set guicursor=
 filetype plugin indent on
 syntax on 
 
-color default
 set guifont=Hasklig\ Light:h13
 set termguicolors
-colorscheme deep-sea
+let g:monochrome_style="subtle"
+colorscheme monochrome
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 "Color scheme for :Term
-let g:terminal_color_0 = '#3B4252' "Black
-let g:terminal_color_1 = '#81A1C1' "Dark Blue
-let g:terminal_color_2 = '#A3BE8C' "Dark Green
-let g:terminal_color_3 = '#88C0D0' "Dark Cyan
-let g:terminal_color_4 = '#BF616A' "Dark Red
-let g:terminal_color_5 = '#B48EAD' "Dark Magenta
-let g:terminal_color_6 = '#EBCB8B' "Dark Yellow/ Brown
-let g:terminal_color_7 = '#E5E9F0' "Light Gray
-let g:terminal_color_8 = '#4C566A' "Black
-let g:terminal_color_9 = '#81A1C1' "Light Blue
-let g:terminal_color_10 = '#A3BE8C' "Light Green
-let g:terminal_color_11 = '#48bfe3' "Light Cyan
-let g:terminal_color_12 = '#BF616A' "Light Red
-let g:terminal_color_13 = '#B48EAD' "Light Magenta
-let g:terminal_color_14 = '#EBCB8B' "Light Yellow/ Brown
-let g:terminal_color_15 = '#ECEFF4' "Light Gray
-let g:terminal_color_45 = '#caf0f8' "Lightest Blue
+" let g:terminal_color_0 = '#3B4252' "Black
+" let g:terminal_color_1 = '#81A1C1' "Dark Blue
+" let g:terminal_color_2 = '#A3BE8C' "Dark Green
+" let g:terminal_color_3 = '#88C0D0' "Dark Cyan
+" let g:terminal_color_4 = '#BF616A' "Dark Red
+" let g:terminal_color_5 = '#B48EAD' "Dark Magenta
+" let g:terminal_color_6 = '#EBCB8B' "Dark Yellow/ Brown
+" let g:terminal_color_7 = '#E5E9F0' "Light Gray
+" let g:terminal_color_8 = '#4C566A' "Black
+" let g:terminal_color_9 = '#81A1C1' "Light Blue
+" let g:terminal_color_10 = '#A3BE8C' "Light Green
+" let g:terminal_color_11 = '#48bfe3' "Light Cyan
+" let g:terminal_color_12 = '#BF616A' "Light Red
+" let g:terminal_color_13 = '#B48EAD' "Light Magenta
+" let g:terminal_color_14 = '#EBCB8B' "Light Yellow/ Brown
+" let g:terminal_color_15 = '#ECEFF4' "Light Gray
+" let g:terminal_color_45 = '#caf0f8' "Lightest Blue
 
 " let g:terminal_color_0 = '#222222'
 " let g:terminal_color_243 = '#767676'
@@ -207,6 +207,8 @@ function! SynGroup()
     let l:s = synID(line('.'), col('.'), 1)                                       
     echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
+
+nnoremap <leader><F10> :call SynGroup()<CR>
 
 "mutt syntax
 autocmd BufNewFile,BufRead *.mutt set syntax=neomuttrc

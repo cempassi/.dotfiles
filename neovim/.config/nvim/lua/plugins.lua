@@ -58,65 +58,72 @@ return require('packer').startup({function()
     'nvim-lua/telescope.nvim',
     requires = {
       {'nvim-lua/plenary.nvim'},
-      {'nvim-lua/popup.nvim'}}
+      {'nvim-lua/popup.nvim'}
     }
-    use 'nvim-telescope/telescope-github.nvim'
+  }
 
-    -- Debugger
-    use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-github.nvim'
 
-    -- File Navigation
-    use 'justinmk/vim-dirvish'
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
 
-    -- Git integration
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-git'
-    use 'airblade/vim-gitgutter'
-    use 'rhysd/git-messenger.vim'
+  -- File Navigation
+  use 'justinmk/vim-dirvish'
 
-    -- Floating terminal
-    use 'voldikss/vim-floaterm'
+  -- Git integration
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-git'
+  use 'airblade/vim-gitgutter'
+  use 'rhysd/git-messenger.vim'
 
-    -- Async tasks
-    use 'skywind3000/asynctasks.vim'
-    use 'skywind3000/asyncrun.vim'
+  -- Floating terminal
+  use 'voldikss/vim-floaterm'
 
-    -- Startup
-    use 'glepnir/dashboard-nvim'
-    use 'dstein64/vim-startuptime'
+  -- Async tasks
+  use 'skywind3000/asynctasks.vim'
+  use 'skywind3000/asyncrun.vim'
 
-    -- Syntax Higlighting
-    use 'cespare/vim-toml'
+  -- Startup
+  use 'glepnir/dashboard-nvim'
+  use 'dstein64/vim-startuptime'
 
-    -- Window scrolling
-    use 'karb94/neoscroll.nvim'
+  -- Theme
+  use 'shaunsingh/nord.nvim'
+  use 'kdheepak/monochrome.nvim'
+  
 
-    -- Rust
-    use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  -- Syntax Higlighting
+  use 'cespare/vim-toml'
 
-    -- Misc
-    use 'simrat39/rust-tools.nvim'
-    use 'pbondoer/vim-42header'
-    use 'liuchengxu/vim-which-key'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'hashivim/vim-terraform'
-    use 'tjdevries/astronauta.nvim'
-    use 'rust-lang/rust.vim'
-    use 'editorconfig/editorconfig-vim'
+  -- Window scrolling
+  use 'karb94/neoscroll.nvim'
 
-    -- Lua development
-    --use 'bfredl/nvim-luadev'
-    --use 'nvim-treesitter/playground'
-    --use {'glacambre/firenvim'}
+  -- Rust
+  use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
-    --local development, only use at home
-    --use '~/Programming/nvim/nvim-dap'
-    --use '~/Programming/nvim/nvim-dap-virtual-text'
-    --use '~/Programming/nvim/plenary.nvim'
-    --use '~/Programming/nvim/telescope.nvim'
-    --use '~/Programming/nvim/telescope-packer.nvim'
-    --use '~/Programming/nvim/telescope-github.nvim'
-  end,
-  config = config
+  -- Misc
+  use 'simrat39/rust-tools.nvim'
+  use 'pbondoer/vim-42header'
+  use 'liuchengxu/vim-which-key'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'hashivim/vim-terraform'
+  use 'tjdevries/astronauta.nvim'
+  use 'rust-lang/rust.vim'
+  use 'editorconfig/editorconfig-vim'
+
+  -- Lua development
+  --use 'bfredl/nvim-luadev'
+  --use 'nvim-treesitter/playground'
+  --use {'glacambre/firenvim'}
+
+  --local development, only use at home
+  --use '~/Programming/nvim/nvim-dap'
+  --use '~/Programming/nvim/nvim-dap-virtual-text'
+  --use '~/Programming/nvim/plenary.nvim'
+  --use '~/Programming/nvim/telescope.nvim'
+  --use '~/Programming/nvim/telescope-packer.nvim'
+  --use '~/Programming/nvim/telescope-github.nvim'
+end,
+config = config
 })
