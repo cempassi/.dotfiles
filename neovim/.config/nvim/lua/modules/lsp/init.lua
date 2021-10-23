@@ -1,8 +1,6 @@
-vim.cmd[[packadd nvim-lspconfig]]
-vim.cmd[[packadd lspsaga.nvim]]
-
 local lspconfig = require("lspconfig")
 local mappings = require("modules.lsp._mappings")
+local lspsaga = require 'lspsaga'
 
 require("modules.lsp._diagnostic") -- diagnostic stuff
 
@@ -109,6 +107,10 @@ lspconfig.rust_analyzer.setup{
 
       checkOnSave = {
         allFeatures = true,
+        overrideCommand = {
+          'cargo', 'clippy', '--workspace', '--message-format=json',
+          '--all-targets', '--all-features'
+        }
       },
 
       procMacro = {
