@@ -229,3 +229,4 @@ nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
 nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
 nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
 nnoremap <leader>r<leader> <cmd>Telescope registers<CR>
+nnoremap <leader>n<leader> <cmd>Telescope notify<CR>
