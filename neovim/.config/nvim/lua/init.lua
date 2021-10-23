@@ -1,4 +1,5 @@
 require('_telescope')
+require('_lualine')
 require('_treesitter')
 require('_neuron')
 require('_cmp')

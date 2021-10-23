@@ -10,8 +10,11 @@ return require('packer').startup({function()
   use {'wbthomason/packer.nvim', opt = true}
 
   -- Status bar
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = {'kyazdani42/nvim-web-devicons', opt = true}
+}
+
 
   -- Completion
   use {
