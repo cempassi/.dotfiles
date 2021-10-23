@@ -22,8 +22,8 @@ M.lsp_mappings = function()
   nnoremap{'<leader>cn', rename.rename, { silent = true }}
   nnoremap{'<leader>cf', vim.lsp.buf.formatting, { silent = true }}
   nnoremap{'<leader>ce', diagnostic.show_line_diagnostics, { silent = true }}
-  nnoremap{ '<leader>ep', diagnostic.lsp_jump_diagnostic_prev, {silent = true}}
-  nnoremap{ '<leader>en', diagnostic.lsp_jump_diagnostic_next, {silent = true}}
+  nnoremap{ '[e', diagnostic.lsp_jump_diagnostic_prev, {silent = true}}
+  nnoremap{ ']e', diagnostic.lsp_jump_diagnostic_next, {silent = true}}
   nnoremap{
     '<C-k>',
     function()

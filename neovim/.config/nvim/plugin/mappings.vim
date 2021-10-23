@@ -45,10 +45,12 @@ nnoremap <silent><S-tab> :bp<cr>
 nnoremap <silent><leader>bd :bp\|bdelete! #<cr>
 
 " Previous buffer
-nnoremap <silent><leader>p <C-^>
+nnoremap [p <C-^>
 
-" File exploration
-nnoremap <silent><leader>fe :Dirvish<CR>
+" Quickfix list
+nnoremap [q :cprevious<cr>
+nnoremap ]q :cnext<cr>
+
 
 " Registers 
 nnoremap <silent><leader>re i<C-r>
@@ -153,8 +155,8 @@ nmap <leader>gs <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
 
 "Move between hunks
-nmap <leader>gj <Plug>(GitGutterNextHunk)
-nmap <leader>gk <Plug>(GitGutterPrevHunk)
+nmap ]g <Plug>(GitGutterNextHunk)
+nmap [g <Plug>(GitGutterPrevHunk)
 
 "Hunk text object
 omap ih <Plug>(GitGutterTextObjectInnerPending)
@@ -168,8 +170,8 @@ tnoremap   <silent>   <leader>tc        <C-\><C-n>:FloatermNew<CR>
 tnoremap   <silent>   <leader>q         <C-\><C-n>:FloatermKill<CR>
  noremap   <silent>   <leader>tp        :FloatermPrev<CR>
 tnoremap   <silent>   <leader>tp        <C-\><C-n>:FloatermPrev<CR>
-nnoremap   <silent>   <leader>tn        :FloatermNext<CR>
-tnoremap   <silent>   <leader>tn        <C-\><C-n>:FloatermNext<CR>
+nnoremap   <silent>   ]t       :FloatermNext<CR>
+tnoremap   <silent>   [t        <C-\><C-n>:FloatermNext<CR>
 nnoremap   <silent>   <leader><leader>  :FloatermToggle<CR>
 tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
 
@@ -219,6 +221,8 @@ nnoremap <Leader>o<leader> <cmd>Telescope oldfiles<CR>
 nnoremap <Leader>. <cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git cwd=~/.dotfiles<CR>
 nnoremap <Leader>/ <cmd>Telescope live_grep<CR>
 nnoremap <Leader>? <cmd>Telescope help_tags<CR>
+nnoremap <leader>[<leader> <cmd>Telescope quickfix<cr>
+nnoremap <leader>]<leader> <cmd>Telescope loclist<cr>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
 nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
