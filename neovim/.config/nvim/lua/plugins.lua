@@ -45,7 +45,10 @@ return require('packer').startup({function()
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
+  use { 
+    'tami5/lspsaga.nvim',
+    branch = 'nvim51'
+  } 
 
   -- Notification
   use 'rcarriga/nvim-notify'
