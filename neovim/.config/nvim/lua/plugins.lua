@@ -11,9 +11,9 @@ return require('packer').startup({function()
 
   -- Status bar
   use {
-  'nvim-lualine/lualine.nvim',
-  requires = {'kyazdani42/nvim-web-devicons', opt = true}
-}
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 
 
   -- Completion
@@ -58,7 +58,7 @@ return require('packer').startup({function()
     'nvim-lua/telescope.nvim',
     requires = {
       {'nvim-lua/plenary.nvim'},
-      {'nvim-lua/popup.nvim'}}
+      {'nvim-lua/popup.nvim'}
     }
     use 'nvim-telescope/telescope-github.nvim'
 
@@ -91,6 +91,10 @@ return require('packer').startup({function()
 
     -- Window scrolling
     use 'karb94/neoscroll.nvim'
+
+    -- Theme
+    use 'shaunsingh/nord.nvim'
+    use 'kdheepak/monochrome.nvim'
 
     -- Rust
     use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
