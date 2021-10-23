@@ -2,6 +2,8 @@
 
 #Vim mode color Autoupdate
 
+VIMODE=75
+
 function zle-keymap-select {
     VIMODE="${${KEYMAP/vicmd/196}/(main|viins)/75}"
     zle reset-prompt
