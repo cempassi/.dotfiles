@@ -6,9 +6,13 @@ require('telescope').setup {
     buffers = {
       show_all_buffers = true,
       sort_lastused = true,
-      theme = "dropdown",
+      layout_strategy = center,
       previewer = false,
-      initial_mode = "normal",
+      initial_mode = "insert",
+      layout_config = {
+        height = 0.5,
+        width = 0.6,
+      },
       mappings = {
         i = {
           ["<c-d>"] = "delete_buffer",
@@ -51,11 +55,14 @@ require('telescope').setup {
 
         ["<PageUp>"] = actions.preview_scrolling_up,
         ["<PageDown>"] = actions.preview_scrolling_down,
-
+        ["<Up>"] = actions.preview_scrolling_up,
+        ["<Down>"] = actions.preview_scrolling_down,
       },
 
       n = {
         ["<leader>q"] = actions.close,
+        ["[["] =  actions.send_to_qflist,
+        ["[]"] =  actions.add_to_qflist,
         ["<CR>"] = actions.select_default + actions.center,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
@@ -64,8 +71,8 @@ require('telescope').setup {
         ["j"] = actions.move_selection_next,
         ["k"] = actions.move_selection_previous,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<Up>"] = actions.preview_scrolling_up,
+        ["<Down>"] = actions.preview_scrolling_down,
       }
     }
   }
