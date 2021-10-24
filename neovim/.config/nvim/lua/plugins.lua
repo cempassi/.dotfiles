@@ -89,8 +89,7 @@ return require('packer').startup({function()
 
   -- Theme
   use 'shaunsingh/nord.nvim'
-  use 'kdheepak/monochrome.nvim'
-  
+  use 'cempassi/monochrome.nvim'
 
   -- Zen mode
   use "Pocco81/TrueZen.nvim"
