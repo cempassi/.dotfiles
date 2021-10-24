@@ -92,6 +92,9 @@ return require('packer').startup({function()
   use 'kdheepak/monochrome.nvim'
   
 
+  -- Zen mode
+  use "Pocco81/TrueZen.nvim"
+  
   -- Syntax Higlighting
   use 'cespare/vim-toml'
 
