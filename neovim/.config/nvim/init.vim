@@ -179,6 +179,7 @@ if has ('folding')
 	set foldenable
 	set foldnestmax=1
 	set foldmethod=syntax
+  set foldlevelstart=5
 endif
 
 " backspace
