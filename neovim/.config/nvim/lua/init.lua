@@ -7,6 +7,7 @@ require('_rust_tools')
 require('modules.lsp')
 require('_neoscroll')
 require('_dap')
+require('_true_zen')
 
 require('lspkind').init({
     -- enables text annotations
