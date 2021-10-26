@@ -111,12 +111,11 @@ return require('packer').startup({function()
   use 'norcalli/nvim-colorizer.lua'
   use 'hashivim/vim-terraform'
   use 'tjdevries/astronauta.nvim'
-  use 'rust-lang/rust.vim'
   use 'editorconfig/editorconfig-vim'
 
   -- Lua development
   --use 'bfredl/nvim-luadev'
-  --use 'nvim-treesitter/playground'
+  use 'nvim-treesitter/playground'
   --use {'glacambre/firenvim'}
 
   --local development, only use at home
