@@ -116,7 +116,7 @@ return require('packer').startup({function()
 
     -- Lua development
     --use 'bfredl/nvim-luadev'
-    --use 'nvim-treesitter/playground'
+    use 'nvim-treesitter/playground'
     --use {'glacambre/firenvim'}
 
     --local development, only use at home
@@ -128,5 +128,4 @@ return require('packer').startup({function()
     --use '~/Programming/nvim/telescope-github.nvim'
   end,
   config = config
-
 })
