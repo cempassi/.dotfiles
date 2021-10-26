@@ -51,11 +51,8 @@ nnoremap [p <C-^>
 nnoremap [q :cprevious<cr>
 nnoremap ]q :cnext<cr>
 
-
-" Registers 
-nnoremap <silent><leader>re i<C-r>
-nnoremap <silent><leader>rp i<C-r>0<esc>
-nnoremap <silent><Leader>rc :let @a=@" \| let @"=@+ \| let @+=@a<CR>
+" Path
+nnoremap <silent><leader>fk <C-g>
 
 " Window shortcuts
 " Move between windows
@@ -89,6 +86,7 @@ noremap Q <nop>
 
 " save files and quit
 nnoremap <silent><leader>x :x<cr>
+nnoremap <silent><leader>X :xa<cr>
 nnoremap <silent><leader>q :q<cr>
 nnoremap <silent><leader>Q :qa!<cr>
 
@@ -96,8 +94,8 @@ nnoremap <silent><leader>Q :qa!<cr>
 nnoremap <silent><leader>u <c-r>
 
 " Split window
-nnoremap <silent><leader>vs :vsplit<cr>
-nnoremap <silent><leader>hs :split<cr>
+nnoremap <silent><leader>sv :vsplit<cr>
+nnoremap <silent><leader>sh :split<cr>
 
 " Old cursor
 nnoremap <silent><leader>o <C-o>
@@ -108,13 +106,9 @@ nnoremap <leader>vb <C-v>
 
 " vimrc shortcuts
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr> :echom ".vimrc sourced successfully!"<cr>
 
 "delete previous hilighting turn of hilighting
 nnoremap <silent><leader>nh :let @/ = ""<cr>
-
-" Goyo
-nnoremap <silent> <leader>zz :Goyo<cr>
 
 " Git
 nmap <leader>ga :Git add %<cr>
@@ -141,7 +135,7 @@ nmap <silent><leader>gp :AsyncTask pr-create<cr>
 nmap <silent><leader>gm :AsyncTask pr-merge<cr>
 nmap <silent><leader>gw :AsyncTask pr-watch<cr>
 
-nmap <silent><leader>gg <Plug>(git-messenger)
+nmap <silent><leader>gk <Plug>(git-messenger)
 
 "Gitgutter
 nmap <leader>ge :GitGutterToggle<cr>
@@ -175,10 +169,6 @@ tnoremap   <silent>   [t        <C-\><C-n>:FloatermNext<CR>
 nnoremap   <silent>   <leader><leader>  :FloatermToggle<CR>
 tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
 
-" Session
-nmap <leader>sl :SLoad<cr>
-nmap <leader>ss :SSave!<cr>
-
 " AsyncTask 
 nnoremap <silent><leader>mk :AsyncTask build<cr>
 nnoremap <silent><leader>mK :AsyncTask debug<cr>
@@ -190,19 +180,11 @@ nnoremap <silent><leader>ml :AsyncTask lint<cr>
 nnoremap <silent><leader>me :AsyncTask -e<cr><cr>
 nnoremap <silent><leader>mE :AsyncTask -E<cr><cr>
 
-nnoremap <silent><leader>/n :cn<CR>
-nnoremap <silent><leader>/p :cp<CR>
-nnoremap <silent><leader>/<leader> :cw<CR>
-nnoremap <silent><leader>// :ccl<CR>
-
 " Comment
 nnoremap <Leader>cm <Esc>:set opfunc=DoCommentOp<CR>g@
 nnoremap <Leader>C <Esc>:set opfunc=UnCommentOp<CR>g@
 vnoremap <Leader>cm <Esc>:call CommentMark(1,'<','>')<CR>
 vnoremap <Leader>C <Esc>:call CommentMark(0,'<','>')<CR>
-
-" CHADtree
-nnoremap _ :CHADopen<cr>
 
 "Dashboard mappings
 nmap <Leader>ss :<C-u>SessionSave<CR>
