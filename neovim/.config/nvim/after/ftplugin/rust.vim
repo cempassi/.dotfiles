@@ -9,3 +9,4 @@ set formatoptions+=n    " Indent past the formatlistpat, not underneath it.
 set formatoptions+=j    " Auto-remove comments if possible.
 set formatoptions-=2    " Useless option
 set nojoinspaces        " Useless option 2
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab

@@ -15,7 +15,6 @@ return require('packer').startup({function()
   requires = {'kyazdani42/nvim-web-devicons', opt = true}
 }
 
-
   -- Completion
   use {
     'hrsh7th/nvim-cmp',
@@ -42,6 +41,7 @@ return require('packer').startup({function()
 
   -- Code Navigation
   use 'ggandor/lightspeed.nvim'
+  use 'tpope/vim-repeat'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -88,8 +88,13 @@ return require('packer').startup({function()
   use 'dstein64/vim-startuptime'
 
   -- Theme
-  use 'shaunsingh/nord.nvim'
   use 'cempassi/monochrome.nvim'
+  use {
+      "mcchrish/zenbones.nvim",
+      -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+      requires = "rktjmp/lush.nvim"
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+  }
 
   -- Zen mode
   use "Pocco81/TrueZen.nvim"
@@ -103,8 +108,10 @@ return require('packer').startup({function()
   -- Rust
   use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
+  -- Poject Management
+  use 'ahmedkhalf/project.nvim'
+
   -- Misc
-  use 'simrat39/rust-tools.nvim'
   use 'pbondoer/vim-42header'
   use 'liuchengxu/vim-which-key'
   use 'kyazdani42/nvim-web-devicons'

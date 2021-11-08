@@ -27,6 +27,11 @@ inoremap <left> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 
+nnoremap <right> <nop>
+nnoremap <left> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+
 " Normal mode
 
 "Invert colon and semicolon

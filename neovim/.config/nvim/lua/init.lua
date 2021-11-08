@@ -3,11 +3,12 @@ require('_lualine')
 require('_treesitter')
 require('_neuron')
 require('_cmp')
-require('_rust_tools')
+--require('_rust_tools')
 require('modules.lsp')
 require('_neoscroll')
 require('_dap')
 require('_true_zen')
+require('_project')
 
 require('lspkind').init({
     -- enables text annotations

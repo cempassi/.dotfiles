@@ -2,13 +2,6 @@ local true_zen = require("true-zen")
 
 true_zen.setup({
 	ui = {
-		bottom = {
-			laststatus = 0,
-			ruler = false,
-			showmode = false,
-			showcmd = false,
-			cmdheight = 1,
-		},
 		top = {
 			showtabline = 0,
 		},
@@ -20,12 +13,12 @@ true_zen.setup({
 	},
 	modes = {
 		ataraxis = {
-			left_padding = 32,
-			right_padding = 32,
+			left_padding = 150,
+			right_padding = 100,
 			top_padding = 1,
 			bottom_padding = 1,
 			ideal_writing_area_width = {0},
-			auto_padding = true,
+			auto_padding = false,
 			keep_default_fold_fillchars = true,
 			custom_bg = {"none", ""},
 			bg_configuration = true,
@@ -63,8 +56,8 @@ true_zen.setup({
 		feline = false
 	},
 	misc = {
-		on_off_commands = false,
-		ui_elements_commands = false,
-		cursor_by_mode = false,
+		on_off_commands = true,
+		ui_elements_commands = true,
+		cursor_by_mode = true,
 	}
 })

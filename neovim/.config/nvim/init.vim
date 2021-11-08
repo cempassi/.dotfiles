@@ -52,7 +52,6 @@ set autowrite
 set autowriteall
 set guicursor=
 
-
 " Define base syntax
 filetype plugin indent on
 syntax on 
