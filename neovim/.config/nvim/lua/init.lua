@@ -8,7 +8,7 @@ require('modules.lsp')
 require('_neoscroll')
 require('_dap')
 require('_true_zen')
-require('_project')
+--require('_project')
 
 require('lspkind').init({
     -- enables text annotations
