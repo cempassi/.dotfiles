@@ -99,8 +99,8 @@ nnoremap <silent><leader>Q :qa!<cr>
 nnoremap <silent><leader>u <c-r>
 
 " Split window
-nnoremap <silent><leader>sv :vsplit<cr>
-nnoremap <silent><leader>sh :split<cr>
+nnoremap <silent><leader>\| :vsplit<cr>
+nnoremap <silent><leader>_ :split<cr>
 
 " Old cursor
 nnoremap <silent><leader>o <C-o>
