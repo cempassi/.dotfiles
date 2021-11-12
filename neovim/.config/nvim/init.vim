@@ -56,7 +56,7 @@ set guicursor=
 filetype plugin indent on
 syntax on 
 
-set guifont=Hasklig\ Light:h13
+set guifont=Hasklug\ Nerd\ Font\ Mono\,\ Light:h10:w0
 set termguicolors
 let g:monochrome_style="subtle"
 colorscheme monochrome
