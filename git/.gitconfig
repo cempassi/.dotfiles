@@ -3,7 +3,7 @@
 	email = cempassi@student.42.fr
 
 [core]
-	excludesfile = /Users/cempassi/.gitignore
+	excludesfile = ~/.dotfiles/git/.gitignore
 
 [pager]
     diff = delta
