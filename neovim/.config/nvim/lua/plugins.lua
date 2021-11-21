@@ -11,9 +11,9 @@ return require('packer').startup({function()
 
   -- Status bar
   use {
-  'nvim-lualine/lualine.nvim',
-  requires = {'kyazdani42/nvim-web-devicons', opt = true}
-}
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 
   -- Completion
   use {
@@ -35,6 +35,13 @@ return require('packer').startup({function()
   }
 
   use 'onsails/lspkind-nvim'
+
+  use {
+    'VonHeikemen/fine-cmdline.nvim',
+    requires = {
+      {'MunifTanjim/nui.nvim'}
+    }
+  }
 
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
@@ -90,15 +97,15 @@ return require('packer').startup({function()
   -- Theme
   use 'cempassi/monochrome.nvim'
   use {
-      "mcchrish/zenbones.nvim",
-      -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-      requires = "rktjmp/lush.nvim"
+    "mcchrish/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    requires = "rktjmp/lush.nvim"
     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
   }
 
   -- Zen mode
   use "Pocco81/TrueZen.nvim"
-  
+
   -- Syntax Higlighting
   use 'cespare/vim-toml'
 

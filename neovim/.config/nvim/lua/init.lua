@@ -8,6 +8,7 @@ require('modules.lsp')
 require('_neoscroll')
 require('_dap')
 require('_true_zen')
+require('_cmdline')
 --require('_project')
 
 require('lspkind').init({
