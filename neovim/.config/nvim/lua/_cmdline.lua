@@ -10,13 +10,14 @@ require('fine-cmdline').setup({
     enable_keymaps = true
   },
   popup = {
+    relative = "editor",
     position = {
       row = '50%',
       col = '50%',
     },
     size = {
       width = '50%',
-      height = 2
+      height = 1
     },
     border = {
       style = 'rounded',

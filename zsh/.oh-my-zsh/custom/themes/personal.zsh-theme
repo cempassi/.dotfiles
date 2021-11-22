@@ -9,11 +9,17 @@ function zle-keymap-select {
     zle reset-prompt
 }
 
+if [[ -z "$SSH_CLIENT" ]]; then
+        PROMPT_SSH=""
+else
+        PROMPT_SSH="%F{196}[$(hostname -s)]"
+fi
+
 zle -N zle-keymap-select
 
 PERSONAL_DATE="%F{222}%D %T%f"
 
-PROMPT='%F{$VIMODE}[%c] %f'
+PROMPT='$PROMPT_SSH%F{$VIMODE}[%c] %f'
 
 RPROMPT='$(git_prompt_status)%{$reset_color%} %F{167}$(git_prompt_info)%f [$PERSONAL_DATE]'
 
