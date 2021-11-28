@@ -23,7 +23,8 @@ return require('packer').startup({function()
       {'hrsh7th/cmp-buffer'},
       {'hrsh7th/cmp-path'},
       {'saadparwaiz1/cmp_luasnip'},
-      {'ray-x/cmp-treesitter'}
+      {'ray-x/cmp-treesitter'},
+      {'f3fora/cmp-spell'}
     }
   }
 
