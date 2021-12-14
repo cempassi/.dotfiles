@@ -11,7 +11,7 @@ let g:floaterm_opener = 'edit'
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 
-hi FloatermBorder guibg=clear guifg=white
+hi FloatermBorder guibg=clear 
 
 function s:open_in_normal_window() abort
   let f = findfile(expand('<cfile>'))
@@ -20,5 +20,3 @@ function s:open_in_normal_window() abort
     execute 'e ' . f
   endif
 endfunction
-
-nnoremap <silent><buffer> gf :call <SID>open_in_normal_window()<CR>
