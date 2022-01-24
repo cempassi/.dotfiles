@@ -58,8 +58,8 @@ syntax on
 
 set guifont=Hasklug\ Nerd\ Font\ Mono\,\ Light:h10:w0
 set termguicolors
-"let g:monochrome_style="subtle"
-colorscheme deep-sea
+let g:monochrome_style="subtle"
+colorscheme monochrome
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 

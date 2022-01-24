@@ -48,8 +48,8 @@ return require('packer').startup({function()
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Code Navigation
-  use 'ggandor/lightspeed.nvim'
-  use 'tpope/vim-repeat'
+  --use 'ggandor/lightspeed.nvim'
+  --use 'tpope/vim-repeat'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
