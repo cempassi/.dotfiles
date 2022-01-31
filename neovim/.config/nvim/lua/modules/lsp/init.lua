@@ -1,7 +1,3 @@
-vim.cmd[[packadd nvim-lspconfig]]
-vim.cmd[[packadd lspsaga.nvim]]
-
-local api = vim.api
 local lspconfig = require("lspconfig")
 local mappings = require("modules.lsp._mappings")
 local lspsaga = require 'lspsaga'

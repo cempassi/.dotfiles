@@ -6,6 +6,8 @@ alias lt="exa -T --icons "
 
 alias le="exa -lah --icons --ignore-glob='.git' "
 
+alias cd="z"
+
 alias status="git status"
 
 alias norme="clear && norminette"

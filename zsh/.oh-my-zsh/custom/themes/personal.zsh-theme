@@ -9,6 +9,12 @@ function zle-keymap-select {
     zle reset-prompt
 }
 
+if [[ -z "$SSH_CLIENT" ]]; then
+        PROMPT_SSH=""
+else
+        PROMPT_SSH="%F{196}[$(hostname -s)]"
+fi
+
 zle -N zle-keymap-select
 
 if [[ -z "$SSH_CLIENT" ]]; then

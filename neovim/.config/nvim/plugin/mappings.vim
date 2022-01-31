@@ -27,6 +27,11 @@ inoremap <left> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 
+nnoremap <right> <nop>
+nnoremap <left> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+
 " Normal mode
 
 "Invert colon and semicolon
@@ -94,8 +99,8 @@ nnoremap <silent><leader>Q :qa!<cr>
 nnoremap <silent><leader>u <c-r>
 
 " Split window
-nnoremap <silent><leader>sv :vsplit<cr>
-nnoremap <silent><leader>sh :split<cr>
+nnoremap <silent><leader>\| :vsplit<cr>
+nnoremap <silent><leader>_ :split<cr>
 
 " Old cursor
 nnoremap <silent><leader>o <C-o>
@@ -121,7 +126,6 @@ nmap <leader><PageUp> <cmd>FloatermNew --disposable git push<cr>
 nmap <leader><PageDown> <cmd>FloatermNew --disposable git pull<cr>
 nmap <leader>gl<leader> <cmd>FloatermNew --disposable git ls<cr>
 nmap <leader>gL<leader> <cmd>FloatermNew --disposable git log<cr>
-nmap <leader>gf :Git fetch<cr>
 nmap <leader>gr :GRename <cr>
 
 nmap <leader>B<leader> <cmd>Telescope git_branches<CR>
@@ -207,8 +211,7 @@ nnoremap <leader>[<leader> <cmd>Telescope quickfix<cr>
 nnoremap <leader>]<leader> <cmd>Telescope loclist<cr>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
-nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
-nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
+nnoremap <leader>e<leader> <cmd>Telescope diagnostics<CR>
 nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
 nnoremap <leader>r<leader> <cmd>Telescope registers<CR>
 nnoremap <leader>n<leader> <cmd>Telescope notify<CR>

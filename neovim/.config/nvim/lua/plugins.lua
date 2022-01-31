@@ -15,7 +15,6 @@ return require('packer').startup({function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
 
-
   -- Completion
   use {
     'hrsh7th/nvim-cmp',
@@ -24,7 +23,8 @@ return require('packer').startup({function()
       {'hrsh7th/cmp-buffer'},
       {'hrsh7th/cmp-path'},
       {'saadparwaiz1/cmp_luasnip'},
-      {'ray-x/cmp-treesitter'}
+      {'ray-x/cmp-treesitter'},
+      {'f3fora/cmp-spell'}
     }
   }
 
@@ -37,11 +37,19 @@ return require('packer').startup({function()
 
   use 'onsails/lspkind-nvim'
 
+  use {
+    'VonHeikemen/fine-cmdline.nvim',
+    requires = {
+      {'MunifTanjim/nui.nvim'}
+    }
+  }
+
   -- Treesitter
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Code Navigation
-  use 'ggandor/lightspeed.nvim'
+  --use 'ggandor/lightspeed.nvim'
+  --use 'tpope/vim-repeat'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -60,72 +68,78 @@ return require('packer').startup({function()
       {'nvim-lua/plenary.nvim'},
       {'nvim-lua/popup.nvim'}
     }
-    use 'nvim-telescope/telescope-github.nvim'
+  }
 
-    -- Debugger
-    use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-github.nvim'
 
-    -- File Navigation
-    use 'justinmk/vim-dirvish'
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
 
-    -- Git integration
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-git'
-    use 'airblade/vim-gitgutter'
-    use 'rhysd/git-messenger.vim'
+  -- File Navigation
+  use 'justinmk/vim-dirvish'
 
-    -- Floating terminal
-    use 'voldikss/vim-floaterm'
+  -- Git integration
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-git'
+  use 'airblade/vim-gitgutter'
+  use 'rhysd/git-messenger.vim'
 
-    -- Async tasks
-    use 'skywind3000/asynctasks.vim'
-    use 'skywind3000/asyncrun.vim'
+  -- Floating terminal
+  use 'voldikss/vim-floaterm'
 
-    -- Startup
-    use 'glepnir/dashboard-nvim'
-    use 'dstein64/vim-startuptime'
+  -- Async tasks
+  use 'skywind3000/asynctasks.vim'
+  use 'skywind3000/asyncrun.vim'
 
-    -- Syntax Higlighting
-    use 'cespare/vim-toml'
-    use 'rodjek/vim-puppet'
+  -- Startup
+  use 'glepnir/dashboard-nvim'
+  use 'dstein64/vim-startuptime'
 
-    -- Window scrolling
-    use 'karb94/neoscroll.nvim'
+  -- Theme
+  use 'cempassi/monochrome.nvim'
+  use {
+    "mcchrish/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    requires = "rktjmp/lush.nvim"
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+  }
 
-    -- Theme
-    use 'shaunsingh/nord.nvim'
-    use 'cempassi/monochrome.nvim'
+  -- Zen mode
+  use "Pocco81/TrueZen.nvim"
 
-    -- Zen mode
-    use "Pocco81/TrueZen.nvim"
+  -- Syntax Higlighting
+  use 'cespare/vim-toml'
 
+  -- Window scrolling
+  use 'karb94/neoscroll.nvim'
 
-    -- Rust
-    use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  -- Rust
+  use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
-    -- Misc
-    use 'simrat39/rust-tools.nvim'
-    use 'pbondoer/vim-42header'
-    use 'liuchengxu/vim-which-key'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'hashivim/vim-terraform'
-    use 'tjdevries/astronauta.nvim'
-    use 'rust-lang/rust.vim'
-    use 'editorconfig/editorconfig-vim'
+  -- Poject Management
+  use 'ahmedkhalf/project.nvim'
 
-    -- Lua development
-    --use 'bfredl/nvim-luadev'
-    use 'nvim-treesitter/playground'
-    --use {'glacambre/firenvim'}
+  -- Misc
+  use 'pbondoer/vim-42header'
+  use 'liuchengxu/vim-which-key'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'hashivim/vim-terraform'
+  use 'tjdevries/astronauta.nvim'
+  use 'editorconfig/editorconfig-vim'
 
-    --local development, only use at home
-    --use '~/Programming/nvim/nvim-dap'
-    --use '~/Programming/nvim/nvim-dap-virtual-text'
-    --use '~/Programming/nvim/plenary.nvim'
-    --use '~/Programming/nvim/telescope.nvim'
-    --use '~/Programming/nvim/telescope-packer.nvim'
-    --use '~/Programming/nvim/telescope-github.nvim'
-  end,
-  config = config
+  -- Lua development
+  --use 'bfredl/nvim-luadev'
+  use 'nvim-treesitter/playground'
+  --use {'glacambre/firenvim'}
+
+  --local development, only use at home
+  --use '~/Programming/nvim/nvim-dap'
+  --use '~/Programming/nvim/nvim-dap-virtual-text'
+  --use '~/Programming/nvim/plenary.nvim'
+  --use '~/Programming/nvim/telescope.nvim'
+  --use '~/Programming/nvim/telescope-packer.nvim'
+  --use '~/Programming/nvim/telescope-github.nvim'
+end,
+config = config
 })
