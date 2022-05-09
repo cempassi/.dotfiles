@@ -129,7 +129,14 @@ return require('packer').startup({function()
   use 'karb94/neoscroll.nvim'
 
   -- Rust
-  use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use {
+    'saecki/crates.nvim',
+    tag = 'v0.2.1',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup()
+    end,
+  }
 
   -- Poject Management
   use 'ahmedkhalf/project.nvim'
