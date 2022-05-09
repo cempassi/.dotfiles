@@ -55,7 +55,6 @@ return require('packer').startup({function()
   use 'neovim/nvim-lspconfig'
   use { 
     'tami5/lspsaga.nvim',
-    branch = 'nvim51'
   } 
 
   -- Notification
