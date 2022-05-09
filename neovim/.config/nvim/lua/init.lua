@@ -9,6 +9,7 @@ require('_neoscroll')
 require('_dap')
 require('_true_zen')
 require('_cmdline')
+require('_themer')
 --require('_project')
 
 require('lspkind').init({
