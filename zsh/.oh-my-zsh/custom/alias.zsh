@@ -6,7 +6,7 @@ alias le="exa -l --icons "
 
 alias lt="exa -T --icons "
 
-alias cd="z"
+#alias cd="z"
 
 alias status="git status"
 
