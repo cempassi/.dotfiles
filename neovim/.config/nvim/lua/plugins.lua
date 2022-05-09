@@ -75,7 +75,7 @@ return require('packer').startup({function()
   use 'mfussenegger/nvim-dap'
 
   -- File Navigation
-  use 'justinmk/vim-dirvish'
+  use "elihunter173/dirbuf.nvim"
 
   -- Git integration
   use 'tpope/vim-fugitive'
