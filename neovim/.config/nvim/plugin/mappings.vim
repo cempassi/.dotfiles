@@ -211,8 +211,8 @@ nnoremap <leader>[<leader> <cmd>Telescope quickfix<cr>
 nnoremap <leader>]<leader> <cmd>Telescope loclist<cr>
 nnoremap <leader>b<leader> <cmd>Telescope buffers<cr>
 nnoremap <leader>g<leader> <cmd>Telescope git_status<CR>
-nnoremap <leader>e<leader> <cmd>Telescope lsp_document_diagnostics<CR>
-nnoremap <leader>E<leader> <cmd>Telescope lsp_workspace_diagnostics<CR>
+nnoremap <leader>e<leader> <cmd>Telescope diagnostics bufnr=0<CR>
+nnoremap <leader>E<leader> <cmd>Telescope diagnostics<CR>
 nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
 nnoremap <leader>r<leader> <cmd>Telescope registers<CR>
 nnoremap <leader>n<leader> <cmd>Telescope notify<CR>
