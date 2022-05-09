@@ -48,14 +48,13 @@ return require('packer').startup({function()
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Code Navigation
-  --use 'ggandor/lightspeed.nvim'
-  --use 'tpope/vim-repeat'
+  use 'ggandor/leap.nvim'
+  use 'tpope/vim-repeat'
 
   -- LSP
   use 'neovim/nvim-lspconfig'
   use { 
     'tami5/lspsaga.nvim',
-    branch = 'nvim51'
   } 
 
   -- Notification
@@ -76,7 +75,7 @@ return require('packer').startup({function()
   use 'mfussenegger/nvim-dap'
 
   -- File Navigation
-  use 'justinmk/vim-dirvish'
+  use "elihunter173/dirbuf.nvim"
 
   -- Git integration
   use 'tpope/vim-fugitive'
@@ -104,6 +103,22 @@ return require('packer').startup({function()
     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
   }
 
+  use({
+    "themercorp/themer.lua",
+    config = function()
+      require("themer").setup({
+        colorscheme = "nord",
+        styles = {
+          ["function"] = { style = 'italic' },
+          functionbuiltin = { style = 'italic' },
+          variable = { style = 'italic' },
+          variableBuiltIn = { style = 'italic' },
+          parameter  = { style = 'italic' },
+        },
+      })
+    end
+  })
+
   -- Zen mode
   use "Pocco81/TrueZen.nvim"
 
@@ -114,7 +129,14 @@ return require('packer').startup({function()
   use 'karb94/neoscroll.nvim'
 
   -- Rust
-  use { 'Saecki/crates.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use {
+    'saecki/crates.nvim',
+    tag = 'v0.2.1',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup()
+    end,
+  }
 
   -- Poject Management
   use 'ahmedkhalf/project.nvim'
@@ -125,7 +147,6 @@ return require('packer').startup({function()
   use 'kyazdani42/nvim-web-devicons'
   use 'norcalli/nvim-colorizer.lua'
   use 'hashivim/vim-terraform'
-  use 'tjdevries/astronauta.nvim'
   use 'editorconfig/editorconfig-vim'
 
   -- Lua development

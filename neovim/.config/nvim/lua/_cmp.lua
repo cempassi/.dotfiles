@@ -1,5 +1,6 @@
 local luasnip = require("luasnip")
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 vim.o.completeopt = "menu,menuone,noselect"
 
@@ -15,6 +16,9 @@ cmp.setup({
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
+  },
+  window = {
+    documentation = cmp.config.window.bordered(),
   },
   mapping = {
     ["<Tab>"] = cmp.mapping(function(fallback)
@@ -49,11 +53,10 @@ cmp.setup({
       select = true,
     })
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
   formatting = {
-    format = require("lspkind").cmp_format({with_text = true, menu = ({
+    format = lspkind.cmp_format({
+      mode = 'symbol_text', 
+      menu = ({
       nvim_lsp = "[LSP]",
       treesitter = "[Treesitter]",
       luasnip = "[Snippet]",

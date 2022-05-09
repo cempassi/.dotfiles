@@ -1,6 +1,10 @@
 local lspconfig = require("lspconfig")
-local mappings = require("modules.lsp._mappings")
 local lspsaga = require 'lspsaga'
+local hover = require("lspsaga.hover")
+local codeaction = require("lspsaga.codeaction")
+local sig_help = require("lspsaga.signaturehelp")
+local rename = require("lspsaga.rename")
+local diagnostic = require("lspsaga.diagnostic")
 
 require("modules.lsp._diagnostic") -- diagnostic stuff
 
@@ -9,7 +13,23 @@ require"lspsaga".init_lsp_saga({
 }) -- initialise lspsaga UI
 
 local custom_on_attach = function(client, bufnr)
-  mappings.lsp_mappings()
+  --- In lsp attach function
+  vim.api.nvim_buf_set_keymap(0, "n", "<leader>cn", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "x", "<leader>cA", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<leader>ce", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "]e", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<leader>cr", "<cmd>Telescope lsp_references<cr>", {silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<Up>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",{silent = true, noremap = true})
+  vim.api.nvim_buf_set_keymap(0, "n", "<Down>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", {silent = true, noremap = true})
+  vim.keymap.set('i', '<leader>cs', sig_help.signature_help)
+  vim.keymap.set('n', '<leader>cf', vim.lsp.buf.formatting )
+  vim.keymap.set('n', '<leader>ci', require("lspsaga.provider").preview_definition)
+  vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition)
+  vim.keymap.set('n', '<leader>cf', vim.lsp.buf.formatting)
+  vim.keymap.set('n', '<leader>ce', diagnostic.show_line_diagnostics)
 
   if client.config.flags then
     client.config.flags.allow_incremental_sync = true
@@ -138,7 +158,7 @@ lspconfig.clangd.setup({
   on_init = custom_on_init,
   capabilities = capabilities,
   cmd = {
-    "/usr/bin/clangd",
+    "clangd",
     "--background-index",
     "--suggest-missing-includes",
     "--clang-tidy",

@@ -9,13 +9,15 @@ require('_neoscroll')
 require('_dap')
 require('_true_zen')
 require('_cmdline')
+require('_themer')
 --require('_project')
+require('leap').set_default_keymaps()
 
 require('lspkind').init({
     -- enables text annotations
     --
     -- default: true
-    with_text = true,
+    mode = "symbol_text",
 
     -- default symbol map
     -- can be either 'default' (requires nerd-fonts font) or

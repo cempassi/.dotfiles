@@ -1,0 +1,11 @@
+-- require("themer").setup({
+--   colorscheme = "onedark",
+--   enable_installer = true,
+--   styles = {
+--     ["function"] = { style = 'italic' },
+--     functionbuiltin = { style = 'italic' },
+--     variable = { style = 'italic' },
+--     variableBuiltIn = { style = 'italic' },
+--     parameter  = { style = 'italic' },
+--   },
+-- })
