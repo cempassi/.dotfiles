@@ -11,6 +11,7 @@ require('_true_zen')
 require('_cmdline')
 require('_themer')
 --require('_project')
+require('leap').set_default_keymaps()
 
 require('lspkind').init({
     -- enables text annotations

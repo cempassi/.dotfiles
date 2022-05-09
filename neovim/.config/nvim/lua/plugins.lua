@@ -48,7 +48,7 @@ return require('packer').startup({function()
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Code Navigation
-  use 'ggandor/lightspeed.nvim'
+  use 'ggandor/leap.nvim'
   use 'tpope/vim-repeat'
 
   -- LSP
@@ -147,7 +147,6 @@ return require('packer').startup({function()
   use 'kyazdani42/nvim-web-devicons'
   use 'norcalli/nvim-colorizer.lua'
   use 'hashivim/vim-terraform'
-  use 'tjdevries/astronauta.nvim'
   use 'editorconfig/editorconfig-vim'
 
   -- Lua development
