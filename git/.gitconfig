@@ -14,7 +14,7 @@
     show = delta
 
 [interactive]
-    diffFilter = delta --color-only --feature=interactive
+    diffFilter = delta --color-only --features interactive
 
 [delta]
     features = side-by-side line-numbers decorations
@@ -40,6 +40,7 @@
 [alias]
 
 	ls = log -n 20 --relative-date --graph --abbrev-commit --decorate
+	ll = log --relative-date --graph --abbrev-commit --decorate
     resolve = ! git diff --name-only | uniq | xargs nvim
     tree = log --all --graph --date=relative --pretty=format:'%C(auto,yellow)[%h][%ad]%C(auto,white) %s %C(auto, blue)%d %C(auto,red)[%an]' 
 
