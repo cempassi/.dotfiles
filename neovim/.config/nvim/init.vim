@@ -51,6 +51,7 @@ set autoread
 set autowrite
 set autowriteall
 set guicursor=
+set laststatus=3
 
 " Define base syntax
 filetype plugin indent on
