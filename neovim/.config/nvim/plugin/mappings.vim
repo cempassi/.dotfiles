@@ -1,14 +1,5 @@
 " -------------------------------------- Mappings ------------------------------
 
-" leader settings
-nnoremap <Space> <nop>
-
-" change escape to jk
-inoremap jk <esc>
-cnoremap jk <C-c>
-tnoremap jk <C-\><C-n>
-vnoremap jk <esc>
-
 "Close surrondings
 inoremap <> <><Left>
 inoremap (( ()<Left>
@@ -21,19 +12,6 @@ inoremap `` ``<Left>
 " Accents and special characters
 inoremap <silent>,. <C-k>
 
-" No arrow keys
-inoremap <right> <nop>
-inoremap <left> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-
-nnoremap <right> <nop>
-nnoremap <left> <nop>
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-
-" Normal mode
-
 "Invert colon and semicolon
 nnoremap ; :
 nnoremap , ;
@@ -43,18 +21,6 @@ nnoremap <Bslash> ,
 vnoremap ; :
 vnoremap , ;
 vnoremap <Bslash> ,
-
-" Buffer shortcuts
-nnoremap <silent><tab> :bn<cr>
-nnoremap <silent><S-tab> :bp<cr>
-nnoremap <silent><leader>bd :bp\|bdelete! #<cr>
-
-" Previous buffer
-nnoremap [p <C-^>
-
-" Quickfix list
-nnoremap [q :cprevious<cr>
-nnoremap ]q :cnext<cr>
 
 " Path
 nnoremap <silent><leader>fk <C-g>
@@ -86,9 +52,6 @@ noremap <silent> j gj
 noremap <silent> 0 g0
 noremap <silent> $ g$
 
-" Unmap Q
-noremap Q <nop>
-
 " save files and quit
 nnoremap <silent><leader>x :x<cr>
 nnoremap <silent><leader>X :xa<cr>
@@ -116,17 +79,6 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <silent><leader>nh :let @/ = ""<cr>
 
 " Git
-nmap <leader>ga :Git add %<cr>
-nmap <leader>g<Enter> :Git commit<cr>
-nmap <leader>G<Enter> :Git commit --all<cr>
-nmap <leader>g<BS> :Git commit --amend --no-edit<cr>
-nmap <leader>g<Del> :Git restore %<cr>
-nmap <leader><Home> :Gcd<cr>
-nmap <leader><PageUp> <cmd>FloatermNew --disposable git push<cr>
-nmap <leader><PageDown> <cmd>FloatermNew --disposable git pull<cr>
-nmap <leader>gl<leader> <cmd>FloatermNew --disposable git ls<cr>
-nmap <leader>gL<leader> <cmd>FloatermNew --disposable git log<cr>
-nmap <leader>gr :GRename <cr>
 
 nmap <leader>B<leader> <cmd>Telescope git_branches<CR>
 nmap <leader>c<leader> <cmd>Telescope git_commits<CR>
@@ -143,18 +95,15 @@ nmap <silent><leader>gk <Plug>(git-messenger)
 
 "Gitgutter
 nmap <leader>ge :GitGutterToggle<cr>
-nmap <leader>gh :GitGutterLineHighlightsToggle<cr>
 
 "Preview hunk
 nmap <leader>g? <Plug>(GitGutterPreviewHunk)
 
 "Stage or undo hunk
-nmap <leader>gs <Plug>(GitGutterStageHunk)
 nmap <leader>gu <Plug>(GitGutterUndoHunk)
 
 "Move between hunks
 nmap ]g <Plug>(GitGutterNextHunk)
-nmap [g <Plug>(GitGutterPrevHunk)
 
 "Hunk text object
 omap ih <Plug>(GitGutterTextObjectInnerPending)
@@ -164,12 +113,9 @@ xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " Floaterm 
 nnoremap   <silent>   <leader>tc        :FloatermNew<CR>
-tnoremap   <silent>   <leader>tc        <C-\><C-n>:FloatermNew<CR>
-tnoremap   <silent>   <leader>q         <C-\><C-n>:FloatermKill<CR>
- noremap   <silent>   <leader>tp        :FloatermPrev<CR>
-tnoremap   <silent>   <leader>tp        <C-\><C-n>:FloatermPrev<CR>
-nnoremap   <silent>   ]t       :FloatermNext<CR>
-tnoremap   <silent>   [t        <C-\><C-n>:FloatermNext<CR>
+"tnoremap   <silent>   <leader>tc        <C-\><C-n>:FloatermNew<CR>
+"tnoremap   <silent>   <leader>q         <C-\><C-n>:FloatermKill<CR>
+"tnoremap   <silent>   <leader>tp        <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <leader><leader>  :FloatermToggle<CR>
 tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
 
@@ -216,3 +162,5 @@ nnoremap <leader>E<leader> <cmd>Telescope diagnostics<CR>
 nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
 nnoremap <leader>r<leader> <cmd>Telescope registers<CR>
 nnoremap <leader>n<leader> <cmd>Telescope notify<CR>
+
+nnoremap <leader>I <cmd>TSHighlightCapturesUnderCursor<CR>

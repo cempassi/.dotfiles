@@ -53,7 +53,7 @@ for config_file ($ZSH_CUSTOM/*.zsh(N)) source $config_file
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 # Init zoxide
- #eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)"
 
 # Init pyenv
 eval "$(pyenv init -)"

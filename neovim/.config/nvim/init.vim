@@ -50,6 +50,7 @@ set autoread
 set autowrite
 set autowriteall
 set guicursor=
+set laststatus=3
 
 " Define base syntax
 filetype plugin indent on
@@ -213,6 +214,7 @@ let g:loaded_netrwPlugin = 1
 "nmap <leader>le <Plug>(Luadev-RunLine)
 let g:neovide_fullscreen=v:true
 highlight link TelescopeMatching Question
+
 
 nnoremap <silent> <F5> :lua require'dap'.continue()<CR>
 nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
