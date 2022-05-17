@@ -119,6 +119,9 @@ return require('packer').startup({function()
     end
   })
 
+  -- Key Mappings
+  use "folke/which-key.nvim"
+
   -- Zen mode
   use "Pocco81/TrueZen.nvim"
 
