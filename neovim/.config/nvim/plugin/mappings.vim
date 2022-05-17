@@ -216,3 +216,5 @@ nnoremap <leader>E<leader> <cmd>Telescope diagnostics<CR>
 nnoremap <leader>m<leader> <cmd>Telescope keymaps<CR>
 nnoremap <leader>r<leader> <cmd>Telescope registers<CR>
 nnoremap <leader>n<leader> <cmd>Telescope notify<CR>
+
+nnoremap <leader>I <cmd>TSHighlightCapturesUnderCursor<CR>
