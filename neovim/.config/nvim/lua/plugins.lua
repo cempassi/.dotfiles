@@ -138,6 +138,7 @@ return require('packer').startup({function()
     end,
   }
 
+  -- Rest api
   use {
     "NTBBloodbath/rest.nvim",
     requires = { "nvim-lua/plenary.nvim" },
