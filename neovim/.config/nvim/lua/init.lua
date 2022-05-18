@@ -13,6 +13,7 @@ require('_themer')
 --require('_project')
 require('leap').set_default_keymaps()
 require('_which-key')
+require('_auto_pairs')
 
 require('lspkind').init({
     -- enables text annotations

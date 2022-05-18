@@ -37,6 +37,9 @@ return require('packer').startup({function()
 
   use 'onsails/lspkind-nvim'
 
+  -- Auto Pairs
+  use 'windwp/nvim-autopairs'
+
   use {
     'VonHeikemen/fine-cmdline.nvim',
     requires = {
