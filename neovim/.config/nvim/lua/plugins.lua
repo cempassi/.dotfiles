@@ -9,6 +9,8 @@ local config = {
 return require('packer').startup({function()
   use {'wbthomason/packer.nvim', opt = true}
 
+  -- Increase startup time
+  use 'lewis6991/impatient.nvim'
   -- Status bar
   use {
     'nvim-lualine/lualine.nvim',

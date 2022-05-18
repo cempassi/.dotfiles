@@ -51,6 +51,7 @@ set autowrite
 set autowriteall
 set guicursor=
 set laststatus=3
+set updatetime=300
 
 " Define base syntax
 filetype plugin indent on
@@ -64,6 +65,7 @@ let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 "" Plugin Management
+lua require('impatient')
 lua require('init')
 lua require('plugins')
 lua require('after')
@@ -76,7 +78,6 @@ augroup save
 augroup END
 
 "python configuration
-let g:python_host_prog='/Users/cempassi/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog='/Users/cempassi/.pyenv/versions/neovim3/bin/python'
 
 " Turn bell off
@@ -147,7 +148,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set updatetime=300
 
 " Remove trailing whitespaces
 function! TrailingWhitespaces()
@@ -155,18 +155,6 @@ function! TrailingWhitespaces()
 endfunction
 
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
-
-let g:colorcoder_enable_filetypes=['c', 'cpp', 'python']
-
-" Get syntax group
-
-function! SynGroup()                                                            
-    let l:s = synID(line('.'), col('.'), 1)                                       
-    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
-endfun
-
-"mutt syntax
-autocmd BufNewFile,BufRead *.mutt set syntax=neomuttrc
 
 "This autocommand jumps to the last known position in a file
 "just after opening it, if the '" mark is set:
@@ -196,12 +184,6 @@ tnoremap   <silent>   <leader>q         <C-\><C-n>:FloatermKill<CR>
 tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
 
 " ------------------------------------- Testing -------------------------------
-
-" Unmap Gitmessenger
-let g:git_messenger_no_default_mappings = v:true
-
-" Omnisharp configuration
-let g:OmniSharp_server_stdio = 1
 
 "" Devicons
 let g:webdevicons_enable_startify = 1
