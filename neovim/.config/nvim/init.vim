@@ -166,8 +166,6 @@ function! SynGroup()
     echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfun
 
-nnoremap <leader><F10> :TSHighlightCapturesUnderCursor<cr>
-
 "mutt syntax
 autocmd BufNewFile,BufRead *.mutt set syntax=neomuttrc
 
