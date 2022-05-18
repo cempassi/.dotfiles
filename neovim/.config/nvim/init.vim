@@ -192,6 +192,12 @@ set formatoptions+=j    " Auto-remove comments if possible.
 set formatoptions-=2    " Useless option
 set nojoinspaces        " Useless option 2
 
+" Terminal mapping
+tnoremap   jk <C-\><C-n>
+tnoremap   <silent>   <leader>tc        <C-\><C-n>:FloatermNew<CR>
+tnoremap   <silent>   <leader>q         <C-\><C-n>:FloatermKill<CR>
+tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
+
 " ------------------------------------- Testing -------------------------------
 
 " Unmap Gitmessenger
@@ -216,13 +222,3 @@ let g:loaded_netrwPlugin = 1
 let g:neovide_fullscreen=v:true
 highlight link TelescopeMatching Question
 
-
-nnoremap <silent> <F5> :lua require'dap'.continue()<CR>
-nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
-nnoremap <silent> <F11> :lua require'dap'.step_into()<CR>
-nnoremap <silent> <F12> :lua require'dap'.step_out()<CR>
-nnoremap <silent> <leader>+ :lua require'dap'.toggle_breakpoint()<CR>
-nnoremap <silent> <leader>* :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
-nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
-nnoremap <silent> <leader>dl :lua require'dap'.repl.run_last()<CR>
