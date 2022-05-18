@@ -37,6 +37,9 @@ return require('packer').startup({function()
 
   use 'onsails/lspkind-nvim'
 
+  -- Auto Pairs
+  use 'windwp/nvim-autopairs'
+
   use {
     'VonHeikemen/fine-cmdline.nvim',
     requires = {
@@ -62,7 +65,7 @@ return require('packer').startup({function()
 
   -- Telescope
   use {
-    'nvim-lua/telescope.nvim',
+    'nvim-telescope/telescope.nvim',
     requires = {
       {'nvim-lua/plenary.nvim'},
       {'nvim-lua/popup.nvim'},
