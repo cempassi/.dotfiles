@@ -81,6 +81,7 @@ register({
     [">"] = {"<C-w>r", "Rotate right"},
     [">"] = {"<C-w>R", "Rotate left"},
     ["<BS>"] = {"<C-w><C-x>", "Swap windows"},
+    ["="] = {"<C-w>=", "Balance windows"},
     ["0"] = {"<C-w>o", "Focus on current window"},
     ["|"] = {":vsplit<cr>", "Split Verticaly"},
     ["_"] = {":split<cr>", "Split Horizontaly"},
@@ -198,7 +199,8 @@ register({
 register({
   g = {
     name = "Git",
-    A = {":Git add %<cr>", "Add File"},
+    a = {":Git add %<cr>", "Stage File"},
+    A = {":Git add --all<cr>", "Stage all files"},
     s = {"<Plug>(GitGutterStageHunk)", "Stage Hunk"},
     ["<Enter>"] = {":Git commit <cr>", "Create commit"},
     ["<BS>"] = {":Git commit --amend --no-edit<cr>", "Amend commit"},
