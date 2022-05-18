@@ -117,7 +117,7 @@ nnoremap   <silent>   <leader>tc        :FloatermNew<CR>
 "tnoremap   <silent>   <leader>q         <C-\><C-n>:FloatermKill<CR>
 "tnoremap   <silent>   <leader>tp        <C-\><C-n>:FloatermPrev<CR>
 nnoremap   <silent>   <leader><leader>  :FloatermToggle<CR>
-tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
+" tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
 
 " AsyncTask 
 nnoremap <silent><leader>mk :AsyncTask build<cr>
