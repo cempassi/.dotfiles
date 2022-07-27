@@ -5,7 +5,7 @@
 [core]
 	excludesFile = ~/.dotfiles/git/.gitignore
 	pager = delta
-	editor = nvim
+	editor = vim
 
 [pager]
     diff = delta

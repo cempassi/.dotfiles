@@ -20,7 +20,7 @@ alias evim="vim ~/.config/nvim/init.vim"
 
 alias uconf=~/.config/update_config.sh
 
-alias cat=bat
+alias cat=batcat
 
 alias dvim="nvim --cmd \"set rtp+=$PWD\""
 

@@ -14,6 +14,7 @@ require('_themer')
 require('leap').set_default_keymaps()
 require('_which-key')
 require('_auto_pairs')
+require('_dashboard')
 
 require('lspkind').init({
     -- enables text annotations
