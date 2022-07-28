@@ -67,3 +67,5 @@
 
 [push]
 	default = current
+[http]
+	sslCAInfo = /Users/cedric.mpassi/.git-certs/certs.pem
