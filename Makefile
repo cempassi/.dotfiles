@@ -11,6 +11,7 @@ APP += scripts
 APP += tmux
 APP += zsh
 APP += gh
+APP += home-manager
 
 install:
 	stow -Sv -t ~ $(APP)

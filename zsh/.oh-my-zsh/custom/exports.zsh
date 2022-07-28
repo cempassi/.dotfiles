@@ -1,4 +1,4 @@
-export USER=cempassi
+export USER=cedric.mpassi
 
 export MAIL=cempassi@student.42.fr 
 
