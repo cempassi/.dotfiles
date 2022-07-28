@@ -25,3 +25,5 @@ alias cat=batcat
 alias dvim="nvim --cmd \"set rtp+=$PWD\""
 
 alias space="dust ~"
+
+alias vim="nvim "
