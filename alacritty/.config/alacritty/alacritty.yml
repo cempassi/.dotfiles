@@ -26,7 +26,6 @@ colors:
      magenta: '#B48EAD'
      yellow:  '#EBCB8B'
      white:   '#ECEFF4'
-background_opacity: 1.0
 
 font:
   normal:
@@ -43,7 +42,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 10.0
+  size: 10.5
 
   offset:
     x: 1
@@ -53,6 +52,7 @@ font:
     y: 0
 
 window:
+  opacity: 1.0
   padding:
     x: 0
     y: 0
