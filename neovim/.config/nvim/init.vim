@@ -52,6 +52,7 @@ set autowriteall
 set guicursor=
 set laststatus=3
 set updatetime=300
+set laststatus=3
 
 " Define base syntax
 filetype plugin indent on
@@ -95,7 +96,7 @@ au FocusGained * :checktime
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
 	" define a path to store persistent_undo files.
-	let target_path = expand('~/.vim/undodir/')
+	let target_path = expand('~/.config/nvim/undodir')
 
 	" create the directory and any parent directories
 	" if the location does not exist.
@@ -199,5 +200,4 @@ let g:loaded_netrwPlugin = 1
 
 "nmap <leader>le <Plug>(Luadev-RunLine)
 let g:neovide_fullscreen=v:true
-highlight link TelescopeMatching Question
-
+highlight link TelescopeMatching Question 
