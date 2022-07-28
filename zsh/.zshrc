@@ -11,9 +11,10 @@ RUST_PATH=$HOME/.cargo/bin
 BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
 GIT_PATH=$HOME/usr/local/git/libexec/git-core
+NIX_PATH=/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin
 BASE_PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
 
-export PATH=$GIT_PATH:$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
+export PATH=$NIX_PATH:$GIT_PATH:$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
 
 ZSH_THEME=personal
 
@@ -44,6 +45,8 @@ for dump in ~/.zcompdump(N.mh+24); do
   compinit
 done
 compinit -C
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
