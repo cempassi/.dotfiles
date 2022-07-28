@@ -11,6 +11,7 @@ return require('packer').startup({function()
 
   -- Increase startup time
   use 'lewis6991/impatient.nvim'
+
   -- Status bar
   use {
     'nvim-lualine/lualine.nvim',
