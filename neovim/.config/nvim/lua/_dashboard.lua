@@ -1,4 +1,48 @@
 local db = require('dashboard')
+local home = os.getenv('HOME')
+
+db.custom_center = {
+      {
+        icon = '  ',
+        desc = 'Find word                                  ',
+        action = 'Telescope live_grep',
+        shortcut = '<SPACE>  /'
+      },
+      {
+        icon = '  ',
+        desc = 'Find dotfile                                ',
+        action = 'Telescope dotfiles path=' .. home ..'/.dotfiles',
+        shortcut = '<SPACE> .'
+      },
+      {
+        icon = '  ',
+        desc = 'Last session                             ',
+        shortcut = '<SPACE> s l',
+        action ='SessionLoad'
+      },
+      {
+        icon = '  ',
+        desc = 'Last opened files                   ',
+        action =  'Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git',
+        shortcut = '<SPACE> o <SPACE>'
+      },
+      {
+        icon = '  ',
+        desc = 'Find File                           ',
+        action = 'Telescope find_files find_command=rg,--hidden,--files',
+        shortcut = '<SPACE> f <SPACE>'
+      },
+    }
+
+db.custom_footer = {
+		"",
+		"",
+		"black magic: n.",
+		"",
+		"[common] A technique that works, though nobody really understands why.",
+		"",
+		"",
+}
 
 db.custom_header = {
 			"`-.`'.-'",
