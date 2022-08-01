@@ -82,3 +82,4 @@ require('telescope').load_extension('gh')
 require('telescope').load_extension('projects')
 require("telescope").load_extension("themes")
 require('telescope').load_extension('terraform_doc')
+require("telescope").load_extension("persisted") -- To load the telescope extension

@@ -38,6 +38,15 @@ return require('packer').startup({function()
     }
   }
 
+  -- Dashboard
+  use 'glepnir/dashboard-nvim'
+   
+  -- Lua
+  use 'olimorris/persisted.nvim'
+
+  -- Nix syntax
+  use 'LnL7/vim-nix'
+
   use 'onsails/lspkind-nvim'
 
   -- Auto Pairs
