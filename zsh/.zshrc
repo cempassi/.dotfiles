@@ -12,11 +12,12 @@ BREW_PATH=$HOME/.brew/bin
 LOCAL_PATH=$HOME/Applications/bin
 GIT_PATH=$HOME/usr/local/git/libexec/git-core
 NIX_PATH=/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin
+TF_PATH=$HOME/.tfenv/bin
 
 BASE_PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$(getconf PATH)
 
 export NIX_PATH=$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels${NIX_PATH:+:$NIX_PATH}
-export PATH=$NIX_PATH:$GIT_PATH:$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
+export PATH=$NIX_PATH:$TF_PATH:$GIT_PATH:$LUA_PATH:$RUST_PATH:$PYTHON_PATH:$BREW_PATH:$LOCAL_PATH:$BASE_PATH
 
 ZSH_THEME=personal
 
