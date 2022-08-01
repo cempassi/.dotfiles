@@ -18,9 +18,13 @@ alias ezsh="vim ~/.zshrc"
 
 alias evim="vim ~/.config/nvim/init.vim"
 
+alias enix="vim ~/.config/nixpkgs/home.nix"
+
 alias uconf=~/.config/update_config.sh
 
 alias cat=bat
+
+alias switch="home-manager switch"
 
 alias dvim="nvim --cmd \"set rtp+=$PWD\""
 
