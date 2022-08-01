@@ -1,5 +1,5 @@
 local lspconfig = require("lspconfig")
-local lspsaga = require 'lspsaga'
+local lspsaga = require("lspsaga")
 local hover = require("lspsaga.hover")
 local codeaction = require("lspsaga.codeaction")
 local sig_help = require("lspsaga.signaturehelp")
@@ -9,165 +9,209 @@ local api = vim.api
 
 require("modules.lsp._diagnostic") -- diagnostic stuff
 
-require"lspsaga".init_lsp_saga({
-  border_style = "single",
+require("lspsaga").init_lsp_saga({
+	border_style = "single",
 }) -- initialise lspsaga UI
 
 local custom_on_attach = function(client, bufnr)
-  --- In lsp attach function
-  vim.api.nvim_buf_set_keymap(0, "n", "<leader>cn", "<cmd>Lspsaga rename<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "x", "<leader>cA", ":<c-u>Lspsaga range_code_action<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "<leader>ce", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "]e", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "<leader>cr", "<cmd>Telescope lsp_references<cr>", {silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "<Up>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",{silent = true, noremap = true})
-  vim.api.nvim_buf_set_keymap(0, "n", "<Down>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", {silent = true, noremap = true})
-  vim.keymap.set('n', '<leader>cs', sig_help.signature_help)
-  vim.keymap.set('n', '<leader>cf', vim.lsp.buf.formatting )
-  vim.keymap.set('n', '<leader>ci', require("lspsaga.provider").preview_definition)
-  vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition)
-  vim.keymap.set('n', '<leader>cf', vim.lsp.buf.formatting)
-  vim.keymap.set('n', '<leader>ce', diagnostic.show_line_diagnostics)
+	--- In lsp attach function
+	vim.api.nvim_buf_set_keymap(0, "n", "<leader>cn", "<cmd>Lspsaga rename<cr>", { silent = true, noremap = true })
+	vim.api.nvim_buf_set_keymap(0, "n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", { silent = true, noremap = true })
+	vim.api.nvim_buf_set_keymap(
+		0,
+		"x",
+		"<leader>cA",
+		":<c-u>Lspsaga range_code_action<cr>",
+		{ silent = true, noremap = true }
+	)
+	vim.api.nvim_buf_set_keymap(0, "n", "K", "<cmd>Lspsaga hover_doc<cr>", { silent = true, noremap = true })
+	vim.api.nvim_buf_set_keymap(
+		0,
+		"n",
+		"<leader>ce",
+		"<cmd>Lspsaga show_line_diagnostics<cr>",
+		{ silent = true, noremap = true }
+	)
+	vim.api.nvim_buf_set_keymap(
+		0,
+		"n",
+		"]e",
+		"<cmd>Lspsaga diagnostic_jump_next<cr>",
+		{ silent = true, noremap = true }
+	)
+	vim.api.nvim_buf_set_keymap(
+		0,
+		"n",
+		"[e",
+		"<cmd>Lspsaga diagnostic_jump_prev<cr>",
+		{ silent = true, noremap = true }
+	)
+	vim.api.nvim_buf_set_keymap(
+		0,
+		"n",
+		"<leader>cr",
+		"<cmd>Telescope lsp_references<cr>",
+		{ silent = true, noremap = true }
+	)
+	vim.api.nvim_buf_set_keymap(
+		0,
+		"n",
+		"<Up>",
+		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
+		{ silent = true, noremap = true }
+	)
+	vim.api.nvim_buf_set_keymap(
+		0,
+		"n",
+		"<Down>",
+		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
+		{ silent = true, noremap = true }
+	)
+	vim.keymap.set("n", "<leader>cs", sig_help.signature_help)
+	vim.keymap.set("n", "<leader>ci", require("lspsaga.provider").preview_definition)
+	vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition)
+	vim.keymap.set("n", "<leader>ce", diagnostic.show_line_diagnostics)
 
-  if client.config.flags then
-    client.config.flags.allow_incremental_sync = true
-  end
+	if client.config.flags then
+		client.config.flags.allow_incremental_sync = true
+	end
 
-  api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 end
 
 local custom_on_init = function()
-  print("Language Server Protocol started!")
+	print("Language Server Protocol started!")
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 --capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 -- lspconfig.bashls.setup{
 --   on_attach = custom_on_attach
 -- }
 
-lspconfig.yamlls.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilites,
-  root_dir = vim.loop.cwd,
-  settings = {
-    yaml = {
-      schemaStore = {
-        enable = true
-      }
-    }
-  }
-}
+lspconfig.yamlls.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilites,
+	root_dir = vim.loop.cwd,
+	settings = {
+		yaml = {
+			schemaStore = {
+				enable = true,
+			},
+		},
+	},
+})
 
-lspconfig.vimls.setup{
-  on_attach = custom_on_attach
-}
+lspconfig.vimls.setup({
+	on_attach = custom_on_attach,
+})
 
-lspconfig.tsserver.setup{
-  filetypes = { "javascript", "typescript", "typescriptreact" },
-  on_attach = function(client)
-    mappings.lsp_mappings()
-    if client.config.flags then
-      client.config.flags.allow_incremental_sync = true
-    end
-  end,
-  on_init = custom_on_init,
-  root_dir = vim.loop.cwd,
-}
+lspconfig.tsserver.setup({
+	filetypes = { "javascript", "typescript", "typescriptreact" },
+	on_attach = function(client)
+		mappings.lsp_mappings()
+		if client.config.flags then
+			client.config.flags.allow_incremental_sync = true
+		end
+	end,
+	on_init = custom_on_init,
+	root_dir = vim.loop.cwd,
+})
 
-lspconfig.jdtls.setup{
-  cmd = {"jdtls"},
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  settings = {
-    java = {
-      errors = {
-        incompleteClasspath = {
-          severity = "ignore"
-        }
-      }
-    }
-  }
-}
+lspconfig.jdtls.setup({
+	cmd = { "jdtls" },
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	settings = {
+		java = {
+			errors = {
+				incompleteClasspath = {
+					severity = "ignore",
+				},
+			},
+		},
+	},
+})
 
-lspconfig.html.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities
-}
+lspconfig.html.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
+})
 
-lspconfig.cssls.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities
-}
+lspconfig.cssls.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
+})
 
-lspconfig.rust_analyzer.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities,
+lspconfig.rust_analyzer.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
 
-  settings = {
-    ["rust-analyzer"] = {
-      assist = {
-        importMergeBehaviour = "full",
-      },
+	settings = {
+		["rust-analyzer"] = {
+			assist = {
+				importMergeBehaviour = "full",
+			},
 
-      callInfo = {
-        full = true,
-      };
+			callInfo = {
+				full = true,
+			},
 
-      cargo = {
-        loadOutDirsFromCheck = true
-      },
+			cargo = {
+				loadOutDirsFromCheck = true,
+			},
 
-      checkOnSave = {
-        allFeatures = true,
-        overrideCommand = {
-          'cargo', 'clippy', '--workspace', '--message-format=json',
-          '--all-targets', '--all-features'
-        }
-      },
+			checkOnSave = {
+				allFeatures = true,
+				overrideCommand = {
+					"cargo",
+					"clippy",
+					"--workspace",
+					"--message-format=json",
+					"--all-targets",
+					"--all-features",
+				},
+			},
 
-      procMacro = {
-        enable = true,
-      },
-    },
-  },
-}
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
+})
 
-lspconfig.terraformls.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities
-}
+lspconfig.terraformls.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
+})
 
-lspconfig.vuels.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities
-}
+lspconfig.vuels.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
+})
 
 lspconfig.clangd.setup({
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities,
-  cmd = {
-    "clangd",
-    "--background-index",
-    "--suggest-missing-includes",
-    "--clang-tidy",
-    --"--header-insertion=iwyu",
-  },
-  init_options = {
-    clangdFileStatus = true
-  },
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
+	cmd = {
+		"clangd",
+		"--background-index",
+		"--suggest-missing-includes",
+		"--clang-tidy",
+		--"--header-insertion=iwyu",
+	},
+	init_options = {
+		clangdFileStatus = true,
+	},
 })
 
 -- local sumneko_root = os.getenv("HOME") .. "/Applications/lua-language-server"
@@ -200,14 +244,14 @@ lspconfig.clangd.setup({
 --   }
 -- }
 
-require'lspconfig'.pyright.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities
-}
+require("lspconfig").pyright.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
+})
 
-require'lspconfig'.rnix.setup{
-  on_attach = custom_on_attach,
-  on_init = custom_on_init,
-  capabilities = capabilities
-}
+require("lspconfig").rnix.setup({
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	capabilities = capabilities,
+})
