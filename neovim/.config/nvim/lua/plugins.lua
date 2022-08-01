@@ -68,9 +68,8 @@ return require('packer').startup({function()
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use { 
-    'tami5/lspsaga.nvim',
-  } 
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use { 'tami5/lspsaga.nvim' } 
 
   -- Notification
   use 'rcarriga/nvim-notify'
@@ -107,7 +106,6 @@ return require('packer').startup({function()
   use 'skywind3000/asyncrun.vim'
 
   -- Startup
-  use 'glepnir/dashboard-nvim'
   use 'dstein64/vim-startuptime'
 
   -- Theme

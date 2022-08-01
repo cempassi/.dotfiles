@@ -1,20 +1,23 @@
+-- Lsp Configuration
+require('modules.lsp')
+
+-- Plugin Config Loading
 require('_telescope')
 require('_lualine')
 require('_treesitter')
 require('_neuron')
 require('_cmp')
---require('_rust_tools')
-require('modules.lsp')
 require('_neoscroll')
 require('_dap')
 require('_true_zen')
 require('_cmdline')
 require('_themer')
---require('_project')
 require('leap').set_default_keymaps()
 require('_which-key')
 require('_auto_pairs')
 require('_dashboard')
+require('_persisted')
+require('_null-ls')
 
 require('lspkind').init({
     -- enables text annotations
