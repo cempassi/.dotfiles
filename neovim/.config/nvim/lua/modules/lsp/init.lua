@@ -21,7 +21,7 @@ local custom_on_attach = function(client, bufnr)
 		0,
 		"x",
 		"<leader>cA",
-		":<c-u>Lspsaga range_code_action<cr>",
+		"",
 		{ silent = true, noremap = true }
 	)
 	vim.api.nvim_buf_set_keymap(0, "n", "K", "<cmd>Lspsaga hover_doc<cr>", { silent = true, noremap = true })
