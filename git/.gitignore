@@ -39,6 +39,7 @@ yarn-error.log*
 *.sw?
 .clang-format
 compile_commands.json
+pyrightconfig.json
 
 # Packages #
 ############

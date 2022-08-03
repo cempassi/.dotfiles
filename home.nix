@@ -102,6 +102,7 @@
     pkgs.selene
     pkgs.shfmt
     pkgs.nodePackages.yaml-language-server
+    pkgs.nodePackages.pyright
 
     # Rust Cli tools
     pkgs.ripgrep
