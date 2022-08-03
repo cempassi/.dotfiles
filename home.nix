@@ -68,12 +68,9 @@
       le = "exa -lah --icons --ignore-glob='.git' ";
       cd = "z";
       status = "git status";
-      norme = "clear && norminette";
       szsh = "source ~/.zshrc";
-      ezsh = "vim ~/.zshrc";
       evim = "vim ~/.config/nvim/init.vim";
       enix = "vim ~/.config/nixpkgs/home.nix";
-      uconf = "~/.config/update_config.sh";
       cat = "bat";
       switch = "home-manager switch";
       dvim = "nvim --cmd \"set rtp+=$PWD\"";
@@ -86,12 +83,6 @@
     };
 
     initExtra = ''
-      # Load base config
-      #. $HOME/.dotfiles/zsh/.zshrc
-
-      # Init zoxide
-      eval "$(zoxide init zsh)"
-
       # Init pyenv
       eval "$(pyenv init -)"
       eval "$(pyenv virtualenv-init -)"
