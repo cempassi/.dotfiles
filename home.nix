@@ -93,6 +93,11 @@
     '';
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   home.packages = [
     # Text Editor
     pkgs.neovim
