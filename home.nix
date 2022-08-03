@@ -17,6 +17,7 @@
       KEYTIMEOUT = 1;
       PAGER = "bat --paging=auto --plain";
       MAIL = "cempassi@student.42.fr";
+      NODE_EXTRA_CA_CERTS="${config.home.homeDirectory}/.local/certs/ca-bundle.crt";
     };
 
     # This value determines the Home Manager release that your
@@ -28,6 +29,10 @@
     # the Home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "22.05";
+  };
+
+  programs.zsh = {
+    enable = true;
   };
 
   home.packages = [
@@ -59,6 +64,7 @@
     pkgs.docker
 
     # Utils
+    pkgs.bash
     pkgs.stow
     pkgs.bitwarden-cli
     pkgs.tmux
