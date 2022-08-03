@@ -8,6 +8,15 @@
     username = "cempassi";
     homeDirectory = "/Users/cedric.mpassi";
 
+    sessionPath = [
+      "$HOME/.luarocks/bin" # Lua
+      "$PYENV_ROOT/bin" #Pyenv
+      "$HOME/.cargo/bin" # Rust
+      "/nix/var/nix/profiles/default/bin" # Nix Default
+      "$HOME/.nix-profile/bin" #Nix profile
+      "$HOME/.tfenv/bin" # Terraform
+    ];
+
     sessionVariables = {
       EDITOR = "nvim";
       PYENV_ROOT = "${config.home.homeDirectory}/.pyenv";
@@ -18,6 +27,7 @@
       PAGER = "bat --paging=auto --plain";
       MAIL = "cempassi@student.42.fr";
       NODE_EXTRA_CA_CERTS = "${config.home.homeDirectory}/.local/certs/ca-bundle.crt";
+      NIX_PATH = "$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin";
     };
 
     # This value determines the Home Manager release that your
@@ -33,6 +43,23 @@
 
   programs.zsh = {
     enable = true;
+
+    defaultKeymap = "viins";
+    enableSyntaxHighlighting = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+
+    oh-my-zsh = {
+      enable = true;
+      custom = "$HOME/.dotfiles/zsh";
+      plugins = [
+        "vi-mode"
+        "rust"
+        "docker"
+        "git"
+      ];
+      theme = "personal";
+    };
 
     shellAliases = {
       ls = "exa --icons ";
@@ -54,9 +81,24 @@
       vim = "nvim ";
     };
 
+    localVariables = {
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=230";
+    };
+
     initExtra = ''
-      . $HOME/.dotfiles/zsh/.zshrc
-      . "$HOME/.cargo/env"
+      # Load base config
+      #. $HOME/.dotfiles/zsh/.zshrc
+
+      # Init zoxide
+      eval "$(zoxide init zsh)"
+
+      # Init pyenv
+      eval "$(pyenv init -)"
+      eval "$(pyenv virtualenv-init -)"
+
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     '';
   };
 
@@ -70,7 +112,7 @@
     pkgs.shfmt
     pkgs.nodePackages.yaml-language-server
 
-    # Rust Alternatives
+    # Rust Cli tools
     pkgs.ripgrep
     pkgs.tokei
     pkgs.delta
