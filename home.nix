@@ -17,7 +17,7 @@
       KEYTIMEOUT = 1;
       PAGER = "bat --paging=auto --plain";
       MAIL = "cempassi@student.42.fr";
-      NODE_EXTRA_CA_CERTS="${config.home.homeDirectory}/.local/certs/ca-bundle.crt";
+      NODE_EXTRA_CA_CERTS = "${config.home.homeDirectory}/.local/certs/ca-bundle.crt";
     };
 
     # This value determines the Home Manager release that your
@@ -34,8 +34,28 @@
   programs.zsh = {
     enable = true;
 
-    initExtra =''
-      . ./zsh/.zshrc
+    shellAliases = {
+      ls = "exa --icons ";
+      ll = "exa -1 --icons ";
+      lt = "exa -T --icons ";
+      le = "exa -lah --icons --ignore-glob='.git' ";
+      cd = "z";
+      status = "git status";
+      norme = "clear && norminette";
+      szsh = "source ~/.zshrc";
+      ezsh = "vim ~/.zshrc";
+      evim = "vim ~/.config/nvim/init.vim";
+      enix = "vim ~/.config/nixpkgs/home.nix";
+      uconf = "~/.config/update_config.sh";
+      cat = "bat";
+      switch = "home-manager switch";
+      dvim = "nvim --cmd \"set rtp+=$PWD\"";
+      space = "dust ~";
+      vim = "nvim ";
+    };
+
+    initExtra = ''
+      . $HOME/.dotfiles/zsh/.zshrc
       . "$HOME/.cargo/env"
     '';
   };
@@ -48,6 +68,7 @@
     pkgs.black
     pkgs.selene
     pkgs.shfmt
+    pkgs.nodePackages.yaml-language-server
 
     # Rust Alternatives
     pkgs.ripgrep
