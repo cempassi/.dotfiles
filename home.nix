@@ -33,6 +33,11 @@
 
   programs.zsh = {
     enable = true;
+
+    initExtra =''
+      . ./zsh/.zshrc
+      . "$HOME/.cargo/env"
+    '';
   };
 
   home.packages = [
