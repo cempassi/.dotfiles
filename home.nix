@@ -126,6 +126,7 @@
     pkgs.bottom
     pkgs.diskonaut
     pkgs.du-dust
+    pkgs.rust-analyzer
 
     # Code managers
     pkgs.gh
