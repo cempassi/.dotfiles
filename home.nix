@@ -141,5 +141,6 @@
     pkgs.tmux
     pkgs.jq
     pkgs.fzf
+    pkgs.glow
   ];
 }
