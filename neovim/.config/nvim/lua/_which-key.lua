@@ -193,6 +193,12 @@ register({
 	E = { ":AsyncTask -E<cr>", "Edit global tasks" },
 }, { prefix = "<leader>m" })
 
+-- Glow
+register({
+  ["<leader>a"] = { ":Glow<CR>", "Preview Markdown"},
+  ["<bs>"] = { ":edit #<cr>", "Previous Markdown Link"}
+})
+
 -- Floaterm
 register({
 	["tc"] = { ":FloatermNew<CR>", "Create new Terminal" },
