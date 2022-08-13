@@ -98,9 +98,15 @@
     enableZshIntegration = true;
   };
 
+   nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
   home.packages = [
     # Text Editor
-    pkgs.neovim
+    pkgs.neovim-nightly
     pkgs.terraform-ls
     pkgs.stylua
     pkgs.black
