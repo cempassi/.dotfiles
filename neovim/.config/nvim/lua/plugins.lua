@@ -135,7 +135,7 @@ return require("packer").startup({
 		use("folke/which-key.nvim")
 
 		-- Zen mode
-		use("Pocco81/TrueZen.nvim")
+		use("Pocco81/true-zen.nvim")
 
 		-- Syntax Higlighting
 		use("cespare/vim-toml")
