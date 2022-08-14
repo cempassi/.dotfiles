@@ -120,7 +120,7 @@ register({
 
 -- LSP
 register({
-	["cf"] = { ":lua vim.lsp.buf.formatting_sync(nil, 10000)<cr>", "Format Code" },
+	["cf"] = { ":lua vim.lsp.buf.format()<cr>", "Format Code" },
 }, { prefix = "<leader>" })
 
 -- Go to Previous
