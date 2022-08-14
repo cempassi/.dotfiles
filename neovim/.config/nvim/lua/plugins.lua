@@ -45,6 +45,9 @@ return require("packer").startup({
 		-- Lua
 		use("olimorris/persisted.nvim")
 
+		-- Comment
+		use("terrortylor/nvim-comment")
+
 		-- Nix syntax
 		use("LnL7/vim-nix")
 
