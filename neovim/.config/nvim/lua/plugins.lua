@@ -12,6 +12,7 @@ return require("packer").startup({
 
 		-- Increase startup time
 		use("lewis6991/impatient.nvim")
+		use("nathom/filetype.nvim")
 
 		-- Status bar
 		use({
@@ -200,13 +201,11 @@ return require("packer").startup({
 		use("liuchengxu/vim-which-key")
 		use("kyazdani42/nvim-web-devicons")
 		use("norcalli/nvim-colorizer.lua")
-		use("hashivim/vim-terraform")
 		use("editorconfig/editorconfig-vim")
 
 		-- Lua development
 		--use 'bfredl/nvim-luadev'
 		use("nvim-treesitter/playground")
-		--use {'glacambre/firenvim'}
 
 		--local development, only use at home
 		--use '~/Programming/nvim/nvim-dap'
