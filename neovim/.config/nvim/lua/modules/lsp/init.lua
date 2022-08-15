@@ -1,76 +1,13 @@
 local lspconfig = require("lspconfig")
-local lspsaga = require("lspsaga")
-local hover = require("lspsaga.hover")
-local codeaction = require("lspsaga.codeaction")
-local sig_help = require("lspsaga.signaturehelp")
-local rename = require("lspsaga.rename")
-local diagnostic = require("lspsaga.diagnostic")
 local api = vim.api
-
-require("modules.lsp._diagnostic") -- diagnostic stuff
 
 require("lspsaga").init_lsp_saga({
 	border_style = "single",
 }) -- initialise lspsaga UI
 
 local custom_on_attach = function(client, bufnr)
-	--- In lsp attach function
-	vim.api.nvim_buf_set_keymap(0, "n", "<leader>cn", "<cmd>Lspsaga rename<cr>", { silent = true, noremap = true })
-	vim.api.nvim_buf_set_keymap(0, "n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", { silent = true, noremap = true })
-	vim.api.nvim_buf_set_keymap(
-		0,
-		"x",
-		"<leader>cA",
-		"",
-		{ silent = true, noremap = true }
-	)
-	vim.api.nvim_buf_set_keymap(0, "n", "K", "<cmd>Lspsaga hover_doc<cr>", { silent = true, noremap = true })
-	vim.api.nvim_buf_set_keymap(
-		0,
-		"n",
-		"<leader>ce",
-		"<cmd>Lspsaga show_line_diagnostics<cr>",
-		{ silent = true, noremap = true }
-	)
-	vim.api.nvim_buf_set_keymap(
-		0,
-		"n",
-		"]e",
-		"<cmd>Lspsaga diagnostic_jump_next<cr>",
-		{ silent = true, noremap = true }
-	)
-	vim.api.nvim_buf_set_keymap(
-		0,
-		"n",
-		"[e",
-		"<cmd>Lspsaga diagnostic_jump_prev<cr>",
-		{ silent = true, noremap = true }
-	)
-	vim.api.nvim_buf_set_keymap(
-		0,
-		"n",
-		"<leader>cr",
-		"<cmd>Telescope lsp_references<cr>",
-		{ silent = true, noremap = true }
-	)
-	vim.api.nvim_buf_set_keymap(
-		0,
-		"n",
-		"<Up>",
-		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
-		{ silent = true, noremap = true }
-	)
-	vim.api.nvim_buf_set_keymap(
-		0,
-		"n",
-		"<Down>",
-		"<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
-		{ silent = true, noremap = true }
-	)
-	vim.keymap.set("n", "<leader>cs", sig_help.signature_help)
-	vim.keymap.set("n", "<leader>ci", require("lspsaga.provider").preview_definition)
-	vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition)
-	vim.keymap.set("n", "<leader>ce", diagnostic.show_line_diagnostics)
+	--- Load mappings defined by which-key per buffer
+  require("_which-key").lsp()
 
 	if client.config.flags then
 		client.config.flags.allow_incremental_sync = true
@@ -84,17 +21,12 @@ local custom_on_init = function()
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
---capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-
--- lspconfig.bashls.setup{
---   on_attach = custom_on_attach
--- }
 
 lspconfig.yamlls.setup({
 	on_attach = custom_on_attach,
 	on_init = custom_on_init,
-	capabilities = capabilites,
+	capabilities = capabilities,
 	root_dir = vim.loop.cwd,
 	settings = {
 		yaml = {
@@ -111,12 +43,7 @@ lspconfig.vimls.setup({
 
 lspconfig.tsserver.setup({
 	filetypes = { "javascript", "typescript", "typescriptreact" },
-	on_attach = function(client)
-		mappings.lsp_mappings()
-		if client.config.flags then
-			client.config.flags.allow_incremental_sync = true
-		end
-	end,
+	on_attach = custom_on_attach,
 	on_init = custom_on_init,
 	root_dir = vim.loop.cwd,
 })
@@ -214,43 +141,50 @@ lspconfig.clangd.setup({
 	},
 })
 
--- local sumneko_root = os.getenv("HOME") .. "/Applications/lua-language-server"
--- lspconfig.sumneko_lua.setup{
---   cmd = {
---     sumneko_root
---     .. "/bin/macOS/lua-language-server", "-E",
---     sumneko_root .. "/main.lua"
---   },
---   on_attach = custom_on_attach,
---   on_init = custom_on_init,
---   settings = {
---     Lua = {
---       runtime = { version = "LuaJIT", path = vim.split(package.path, ";"), },
---       diagnostics = {
---         enable = true,
---         globals = {
---           "vim", "describe", "it", "before_each", "after_each",
---           "awesome", "theme", "client", "P", "use"
---         },
---         workspace = {
---         -- Make the server aware of Neovim runtime files
---         library = {
---           [vim.fn.expand('$VIMRUNTIME/lua')] = true,
---           [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
---         },
---       },
---     }
---   }
---   }
--- }
+lspconfig.sumneko_lua.setup({
+	cmd = { "lua-language-server" },
+	on_attach = custom_on_attach,
+	on_init = custom_on_init,
+	prefix = lua,
+	settings = {
+		Lua = {
+			runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
+			diagnostics = {
+				enable = true,
+				globals = {
+					"vim",
+					"describe",
+					"it",
+					"before_each",
+					"after_each",
+					"awesome",
+					"theme",
+					"client",
+					"P",
+          "use"
+				},
+				telemetry = {
+					enable = false,
+				},
+				workspace = {
+					-- Make the server aware of Neovim runtime files
+					library = {
+						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+					},
+				},
+			},
+		},
+	},
+})
 
-require("lspconfig").pyright.setup({
+lspconfig.pyright.setup({
 	on_attach = custom_on_attach,
 	on_init = custom_on_init,
 	capabilities = capabilities,
 })
 
-require("lspconfig").rnix.setup({
+lspconfig.rnix.setup({
 	on_attach = custom_on_attach,
 	on_init = custom_on_init,
 	capabilities = capabilities,
