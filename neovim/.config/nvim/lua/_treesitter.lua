@@ -17,3 +17,5 @@ require("nvim-treesitter.configs").setup({
 		persist_queries = false, -- Whether the query persists across vim sessions
 	},
 })
+local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
+ft_to_parser.telekasten = "markdown"

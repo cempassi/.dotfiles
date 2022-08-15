@@ -44,6 +44,10 @@ return require("packer").startup({
 
 		-- Lua
 		use("olimorris/persisted.nvim")
+		use({ "rafcamlet/nvim-luapad", requires = "antoinemadec/FixCursorHold.nvim"})
+
+		-- Notes
+		use("cempassi/telekasten.nvim")
 
 		-- Comment
 		use("terrortylor/nvim-comment")
