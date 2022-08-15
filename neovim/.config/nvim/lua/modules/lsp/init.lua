@@ -1,13 +1,15 @@
 local lspconfig = require("lspconfig")
 local api = vim.api
 
+require("modules.lsp._diagnostic") -- diagnostic stuff
+
 require("lspsaga").init_lsp_saga({
 	border_style = "single",
 }) -- initialise lspsaga UI
 
 local custom_on_attach = function(client, bufnr)
 	--- Load mappings defined by which-key per buffer
-  require("_which-key").lsp()
+	require("_which-key").lsp()
 
 	if client.config.flags then
 		client.config.flags.allow_incremental_sync = true
@@ -22,6 +24,8 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
+-- Servers Configuration --
 
 lspconfig.yamlls.setup({
 	on_attach = custom_on_attach,
@@ -161,7 +165,7 @@ lspconfig.sumneko_lua.setup({
 					"theme",
 					"client",
 					"P",
-          "use"
+					"use",
 				},
 				telemetry = {
 					enable = false,
