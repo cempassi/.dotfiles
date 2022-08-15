@@ -16,7 +16,7 @@ require("which-key").setup({
 	},
 })
 
--- -- -- -- -- Mappings -- -- -- -- --
+-- -- -- -- -- Global Mappings -- -- -- -- --
 
 local register = require("which-key").register
 
@@ -195,8 +195,8 @@ register({
 
 -- Glow
 register({
-  ["<leader>a"] = { ":Glow<CR>", "Preview Markdown"},
-  ["<bs>"] = { ":edit #<cr>", "Previous Markdown Link"}
+	["<leader>a"] = { ":Glow<CR>", "Preview Markdown" },
+	["<bs>"] = { ":edit #<cr>", "Previous Markdown Link" },
 })
 
 -- Floaterm
@@ -257,3 +257,62 @@ register({
 		["<leader>"] = { "<cmd>Telescope git_commits<CR>", "List buffer commits (version)" },
 	},
 }, { prefix = "<leader>" })
+
+-- LuaSnip
+register({
+	["<c-]>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Next Snippet Comp" },
+	["<c-[]>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Prev Snippet Comp" },
+}, { mode = "i" })
+
+register({
+	["<c-]>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Next Snippet Comp" },
+	["<c-[]>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Prev Snippet Comp" },
+}, { mode = "s" })
+
+-- -- -- -- -- Filetype Mappings -- -- -- -- --
+-- Telekasten
+local function attach_telekasten()
+	register({
+		n = {
+			name = "Telekasten",
+			n = { ":lua require('telekasten').follow_link()<CR>", "Follow link" },
+			["<leader>"] = { ":lua require('telekasten').find_notes()<CR>", "Find note" },
+			["<enter>"] = { ":lua require('telekasten').new_note()<CR>", "Create new note" },
+		},
+	}, { prefix = "<leader>", buffer = 0 })
+end
+
+-- LSP
+local function attach_normal_leader_lsp()
+	register({
+		c = {
+			name = "Lsp",
+			n = { "<cmd>Lspsaga rename<cr>", "Rename Reference" },
+			a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+			e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
+			r = { "<cmd>Telescope lsp_references<cr>", "Lsp References" },
+      s = {"<cmd>Lspsaga signature_help", "Signature Help"},
+      i = {"<cmd>Lspsaga preview_definition", "Preview definition"},
+      d = {":lua vim.lsp.buf.definition()", "Go to Definition"}
+
+		},
+	}, { prefix = "<leader>", buffer = 0 })
+end
+
+local function attach_normal_key_lsp()
+	register({
+		K = { "<cmd>Lspsaga hover_doc<cr>", "Hover LSP" },
+		["<Up>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", "Scroll Lsp" },
+		["<Down>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", "Scroll Lsp" },
+	}, { buffer = 0 })
+end
+
+local function attach_lsp()
+	attach_normal_key_lsp()
+	attach_normal_leader_lsp()
+end
+
+return {
+	telekasten = attach_telekasten,
+	lsp = attach_lsp,
+}
