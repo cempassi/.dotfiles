@@ -134,6 +134,7 @@ return require("packer").startup({
 		})
 
 		use("themercorp/themer.lua")
+		use("b0o/incline.nvim")
 
 		-- Markdown
 		use("ellisonleao/glow.nvim")

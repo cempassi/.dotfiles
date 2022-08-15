@@ -23,5 +23,6 @@ require("_themer")
 require("_treesitter")
 require("_true_zen")
 require("_which-key")
+require("_incline")
 
 require("leap").set_default_keymaps()
