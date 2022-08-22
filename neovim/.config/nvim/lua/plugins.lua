@@ -27,6 +27,7 @@ return require("packer").startup({
 				{ "hrsh7th/cmp-nvim-lsp" },
 				{ "hrsh7th/cmp-buffer" },
 				{ "hrsh7th/cmp-path" },
+				{ "hrsh7th/cmp-cmdline" },
 				{ "saadparwaiz1/cmp_luasnip" },
 				{ "ray-x/cmp-treesitter" },
 				{ "f3fora/cmp-spell" },
@@ -61,6 +62,9 @@ return require("packer").startup({
 		-- Auto Pairs
 		use("windwp/nvim-autopairs")
 
+		use("kylechui/nvim-surround")
+
+		-- Floating commandline
 		use({
 			"VonHeikemen/fine-cmdline.nvim",
 			requires = {
