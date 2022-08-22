@@ -109,10 +109,7 @@ return require("packer").startup({
 		use("tpope/vim-git")
 		--use("airblade/vim-gitgutter")
 		use("rhysd/git-messenger.vim")
-		use({
-			"lewis6991/gitsigns.nvim",
-			tag = "release", -- To use the latest release
-		})
+		use("lewis6991/gitsigns.nvim")
 
 		-- Floating terminal
 		use("voldikss/vim-floaterm")

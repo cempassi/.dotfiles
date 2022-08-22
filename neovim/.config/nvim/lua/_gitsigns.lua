@@ -4,7 +4,7 @@ require('gitsigns').setup {
     change       = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
     delete       = {hl = 'GitSignsDelete', text = '-', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
     topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-    changedelete = {hl = 'GitSignsChange', text = 'x', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    changedelete = {hl = 'GitSignsChangeDelete', text = 'x', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },
   signcolumn = false,  -- Toggle with `:Gitsigns toggle_signs`
   numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
