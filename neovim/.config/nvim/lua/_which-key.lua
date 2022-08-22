@@ -34,7 +34,7 @@ register({ [","] = { ";", "Next find or til'" } }, { mode = "v" })
 register({
 	[","] = {
 		name = "Special characters (Digraph)",
-		["."] = { "<C-g>", "Enter Digraph" },
+		["."] = { "<C-K>", "Enter Digraph" },
 		["?"] = { "<esc>:digraph<cr>", "List Digraphs" },
 	},
 }, { mode = "i" })
@@ -79,7 +79,7 @@ register({
 	H = { "<C-w>K", "Shift to Horizontal" },
 	V = { "<C-w>H", "Shift to Vertical" },
 	[">"] = { "<C-w>r", "Rotate right" },
-	[">"] = { "<C-w>R", "Rotate left" },
+	["<"] = { "<C-w>R", "Rotate left" },
 	["<BS>"] = { "<C-w><C-x>", "Swap windows" },
 	["="] = { "<C-w>=", "Balance windows" },
 	["0"] = { "<C-w>o", "Focus on current window" },
@@ -128,6 +128,8 @@ register({
 	["["] = {
 		name = "Previous",
 		p = { "<C-^>", "Buffer" },
+    j = { "<c-o>", "Jumplist"},
+    c = { "g;", "Change list"},
 		q = { ":cprevious<cr>", "Quickfix list" },
 		g = { ":Gitsigns prev_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermPrev<CR>", "Terminal" },
@@ -140,6 +142,8 @@ register({
 	["]"] = {
 		name = "Next",
 		q = { ":cnext<cr>", "Quickfix list" },
+    j = { "<c-i>", "Jump list"},
+    c = { "g,", "Change list"},
 		g = { ":Gitsigns next_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermNext<CR>", "Terminal" },
 		e = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Lsp Error" },
@@ -150,7 +154,7 @@ register({
 register({
 	name = "Telescope",
 	["f<leader>"] = { "<cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git<CR>", "List Files" },
-	["o<leader>"] = { "<cmd>Telescope oldfiles<CR>", "List Old files" },
+	["F<leader>"] = { "<cmd>Telescope oldfiles<CR>", "List Old files" },
 	["."] = {
 		"<cmd>Telescope find_files find_command=rg,-i,--hidden,--files,-g,!.git cwd=~/.dotfiles<CR>",
 		"List Dotfiles",
@@ -261,12 +265,12 @@ register({
 -- LuaSnip
 register({
 	["<c-]>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Next Snippet Comp" },
-	["<c-[]>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Prev Snippet Comp" },
+	["<c-[>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Prev Snippet Comp" },
 }, { mode = "i" })
 
 register({
 	["<c-]>"] = { "<cmd>lua require'luasnip'.jump(1)<CR>", "Next Snippet Comp" },
-	["<c-[]>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Prev Snippet Comp" },
+	["<c-[>"] = { "<cmd>lua require'luasnip'.jump(-1)<CR>", "Prev Snippet Comp" },
 }, { mode = "s" })
 
 -- -- -- -- -- Filetype Mappings -- -- -- -- --
@@ -291,9 +295,9 @@ local function attach_normal_leader_lsp()
 			a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
 			e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
 			r = { "<cmd>Telescope lsp_references<cr>", "Lsp References" },
-      s = {"<cmd>Lspsaga signature_help", "Signature Help"},
-      i = {"<cmd>Lspsaga preview_definition", "Preview definition"},
-      d = {":lua vim.lsp.buf.definition()", "Go to Definition"}
+      s = {"<cmd>Lspsaga signature_help<cr>", "Signature Help"},
+      i = {"<cmd>Lspsaga preview_definition<cr>", "Preview definition"},
+      d = {":lua vim.lsp.buf.definition()<cr>", "Go to Definition"}
 
 		},
 	}, { prefix = "<leader>", buffer = 0 })
