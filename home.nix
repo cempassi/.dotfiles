@@ -112,10 +112,12 @@
     pkgs.black
     pkgs.selene
     pkgs.shfmt
+    pkgs.alejandra
+    pkgs.sumneko-lua-language-server
     pkgs.nodePackages.yaml-language-server
     pkgs.nodePackages.typescript-language-server
     pkgs.nodePackages.pyright
-    pkgs.sumneko-lua-language-server
+    pkgs.nodePackages.eslint_d
 
     # Rust Cli tools
     pkgs.ripgrep
