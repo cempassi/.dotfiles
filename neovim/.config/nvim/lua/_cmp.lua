@@ -14,11 +14,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			local luasnip = prequire("luasnip")
-			if not luasnip then
-				return
-			end
-			luasnip.lsp_expand(args.body) -- For `luasnip` users.
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	window = {
