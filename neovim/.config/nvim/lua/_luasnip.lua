@@ -64,6 +64,7 @@ luasnip.add_snippets(nil, {
 			text({ "", "author: cempassi"}),
       text({"", "created: "}),
       func(date, {}),
+			text({ "", "cssclass: clean-embeds"}),
 			text({ "", "aliases: [" }),
 			insert(2, ""),
 			text({ "]", "tags: [" }),
