@@ -117,7 +117,7 @@
     pkgs.nodePackages.yaml-language-server
     pkgs.nodePackages.typescript-language-server
     pkgs.nodePackages.pyright
-    pkgs.nodePackages.eslint_d
+    pkgs.nodePackages.prettier
 
     # Rust Cli tools
     pkgs.ripgrep
