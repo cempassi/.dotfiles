@@ -120,7 +120,7 @@ require('telekasten').setup({
     --     - same_as_current: put all new notes in the dir of the current note if
     --                        present or else in home
     --                        except for notes/with/subdirs/in/title.
-    new_note_location = "smart",
+    new_note_location = "same_as_current",
 
     -- should all links be updated when a file is renamed
     rename_update_links = true,
