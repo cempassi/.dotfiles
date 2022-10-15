@@ -12,7 +12,6 @@ return require("packer").startup({
 
 		-- Increase startup time
 		use("lewis6991/impatient.nvim")
-		use("nathom/filetype.nvim")
 
 		-- Status bar
 		use({
@@ -31,6 +30,7 @@ return require("packer").startup({
 				{ "saadparwaiz1/cmp_luasnip" },
 				{ "ray-x/cmp-treesitter" },
 				{ "f3fora/cmp-spell" },
+				{ "onsails/lspkind-nvim" },
 			},
 		})
 
@@ -44,8 +44,10 @@ return require("packer").startup({
 		-- Dashboard
 		use("glepnir/dashboard-nvim")
 
-		-- Lua
+		-- Session Management
 		use("olimorris/persisted.nvim")
+
+		-- Lua
 		use({ "rafcamlet/nvim-luapad", requires = "antoinemadec/FixCursorHold.nvim" })
 
 		-- Notes
@@ -57,11 +59,10 @@ return require("packer").startup({
 		-- Nix syntax
 		use("LnL7/vim-nix")
 
-		use("onsails/lspkind-nvim")
-
 		-- Auto Pairs
 		use("windwp/nvim-autopairs")
 
+		-- Surround
 		use("kylechui/nvim-surround")
 
 		-- Floating commandline
@@ -82,7 +83,33 @@ return require("packer").startup({
 		-- LSP
 		use("neovim/nvim-lspconfig")
 		use("jose-elias-alvarez/null-ls.nvim")
-		use("tami5/lspsaga.nvim")
+		use({
+			"lewis6991/hover.nvim",
+			config = function()
+				require("hover").setup({
+					init = function()
+						-- Require providers
+						require("hover.providers.lsp")
+						-- require('hover.providers.gh')
+						-- require('hover.providers.jira')
+						-- require('hover.providers.man')
+						-- require('hover.providers.dictionary')
+					end,
+					preview_opts = {
+						border = 'single',
+					},
+					-- Whether the contents of a currently open hover window should be moved
+					-- to a :h preview-window when pressing the hover keymap.
+					preview_window = false,
+					title = true,
+				})
+
+				-- Setup keymaps
+				vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+				vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+			end,
+		})
+    use("j-hui/fidget.nvim")
 
 		-- Notification
 		use("rcarriga/nvim-notify")
@@ -111,7 +138,6 @@ return require("packer").startup({
 		-- Git integration
 		use("tpope/vim-fugitive")
 		use("tpope/vim-git")
-		--use("airblade/vim-gitgutter")
 		use("rhysd/git-messenger.vim")
 		use("lewis6991/gitsigns.nvim")
 

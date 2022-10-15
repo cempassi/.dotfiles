@@ -28,3 +28,4 @@ require("_true_zen")
 require("_which-key")
 
 require("leap").set_default_keymaps()
+require("fidget").setup({})

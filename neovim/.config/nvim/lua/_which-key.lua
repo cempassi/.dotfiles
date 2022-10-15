@@ -296,7 +296,7 @@ local function attach_normal_leader_lsp()
 			e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
 			r = { "<cmd>Telescope lsp_references<cr>", "Lsp References" },
       s = {"<cmd>Lspsaga signature_help<cr>", "Signature Help"},
-      i = {"<cmd>Lspsaga preview_definition<cr>", "Preview definition"},
+      i = {"<cmd>Lspsaga preview_definition", "Preview definition"},
       d = {":lua vim.lsp.buf.definition()<cr>", "Go to Definition"}
 
 		},
@@ -305,9 +305,6 @@ end
 
 local function attach_normal_key_lsp()
 	register({
-		K = { "<cmd>Lspsaga hover_doc<cr>", "Hover LSP" },
-		["<Up>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", "Scroll Lsp" },
-		["<Down>"] = { "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", "Scroll Lsp" },
 	}, { buffer = 0 })
 end
 

@@ -1,11 +1,9 @@
 local lspconfig = require("lspconfig")
 local api = vim.api
 
-require("modules.lsp._diagnostic") -- diagnostic stuff
-
-require("lspsaga").init_lsp_saga({
-	border_style = "single",
-}) -- initialise lspsaga UI
+-- Load submodule
+require("modules.lsp._diagnostic")
+require('lspconfig.ui.windows').default_options.border = 'single'
 
 local custom_on_attach = function(client, bufnr)
 	--- Load mappings defined by which-key per buffer
@@ -18,25 +16,29 @@ local custom_on_attach = function(client, bufnr)
 	api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 end
 
-local custom_on_init = function()
-	print("Language Server Protocol started!")
-end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
 
 -- Servers Configuration --
-
 lspconfig.yamlls.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 	root_dir = vim.loop.cwd,
+
 	settings = {
 		yaml = {
+      hover = true,
+      completion = true,
+      validate = true,
 			schemaStore = {
 				enable = true,
 			},
+      schemas = {
+        'https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json: "*.gitlab-ci.yml"'
+      },
+      customTags = { "!reference", "!Ref" },
 		},
 	},
 })
@@ -48,14 +50,12 @@ lspconfig.vimls.setup({
 lspconfig.tsserver.setup({
 	filetypes = { "javascript", "typescript", "typescriptreact" },
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	root_dir = vim.loop.cwd,
 })
 
 lspconfig.jdtls.setup({
 	cmd = { "jdtls" },
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	settings = {
 		java = {
 			errors = {
@@ -69,19 +69,16 @@ lspconfig.jdtls.setup({
 
 lspconfig.html.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 })
 
 lspconfig.cssls.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 })
 
 lspconfig.rust_analyzer.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 
 	settings = {
@@ -119,19 +116,16 @@ lspconfig.rust_analyzer.setup({
 
 lspconfig.terraformls.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 })
 
 lspconfig.vuels.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 })
 
 lspconfig.clangd.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 	cmd = {
 		"clangd",
@@ -148,7 +142,6 @@ lspconfig.clangd.setup({
 lspconfig.sumneko_lua.setup({
 	cmd = { "lua-language-server" },
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	prefix = lua,
 	settings = {
 		Lua = {
@@ -184,12 +177,10 @@ lspconfig.sumneko_lua.setup({
 
 lspconfig.pyright.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 })
 
 lspconfig.rnix.setup({
 	on_attach = custom_on_attach,
-	on_init = custom_on_init,
 	capabilities = capabilities,
 })
