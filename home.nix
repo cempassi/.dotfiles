@@ -41,6 +41,7 @@
     stateVersion = "22.05";
   };
 
+
   programs.zsh = {
     enable = true;
 
@@ -90,6 +91,7 @@
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+      export TERMINFO_DIRS=$HOME/.local/share/terminfo
     '';
   };
 
@@ -98,15 +100,9 @@
     enableZshIntegration = true;
   };
 
-   nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
   home.packages = [
     # Text Editor
-    pkgs.neovim-nightly
+    pkgs.neovim
     pkgs.terraform-ls
     pkgs.stylua
     pkgs.black
@@ -136,9 +132,6 @@
     pkgs.gh
     pkgs.glab
 
-    # Container
-    pkgs.docker
-
     # Utils
     pkgs.bash
     pkgs.stow
@@ -147,5 +140,7 @@
     pkgs.jq
     pkgs.fzf
     pkgs.glow
+    pkgs.ncurses6
+    pkgs.kube3d
   ];
 }
