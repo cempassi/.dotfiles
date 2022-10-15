@@ -1,4 +1,9 @@
-require('nvim-autopairs').setup{}
+local ok, autopairs = pcall(require, "nvim-autopairs")
+if not ok then
+    return
+end
+
+autopairs.setup{}
 
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
