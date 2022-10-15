@@ -7,7 +7,10 @@ require("null-ls").setup({
       filetypes = {"html", "json", "yaml", "markdown", "telekasten", "js", "ts"}
     }), --  JS/TS, JSON,
 		builtins.formatting.shfmt, --shell
-		builtins.formatting.terraform_fmt, --terraform
+		builtins.formatting.terraform_fmt.with({
+      filetypes = {"terraform", "terraform-vars" }
+
+    }), --terraform
 		builtins.formatting.black.with({ extra_args = { "--fast" } }), --python
 		builtins.formatting.isort, --python
 	},
