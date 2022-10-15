@@ -1,6 +1,8 @@
 [user]
 	name = Cedric M'Passi
-	email = cedric.mpassi@pmu.fr
+	email = cempassi@student.42.fr
+[includeIf "gitdir:~/Programming/work/"]
+  path = ~/.gitconfig-work
 
 [core]
 	excludesFile = ~/.dotfiles/git/.gitignore
