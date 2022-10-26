@@ -236,7 +236,7 @@ return require("packer").startup({
 		use("nvim-treesitter/playground")
 
 		--local development, only use at home
-		use("~/Programming/perso/setzer.nvim")
+		use("~/Programming/perso/austere.nvim")
 		--use '~/Programming/nvim/nvim-dap-virtual-text'
 		--use '~/Programming/nvim/plenary.nvim'
 		--use '~/Programming/nvim/telescope.nvim'
