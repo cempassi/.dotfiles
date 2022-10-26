@@ -81,7 +81,7 @@ au FocusGained * :checktime
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
 	" define a path to store persistent_undo files.
-	let target_path = expand('~/.config/nvim/undodir')
+	let target_path = expand('~/.local/share/nvim/undodir')
 
 	" create the directory and any parent directories
 	" if the location does not exist.
