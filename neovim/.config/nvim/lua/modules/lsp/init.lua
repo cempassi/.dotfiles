@@ -3,7 +3,7 @@ local api = vim.api
 
 -- Load submodule
 require("modules.lsp._diagnostic")
-require('lspconfig.ui.windows').default_options.border = 'single'
+require("lspconfig.ui.windows").default_options.border = "single"
 
 local custom_on_attach = function(client, bufnr)
 	--- Load mappings defined by which-key per buffer
@@ -16,10 +16,8 @@ local custom_on_attach = function(client, bufnr)
 	api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 end
 
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
 
 -- Servers Configuration --
 lspconfig.yamlls.setup({
@@ -29,16 +27,16 @@ lspconfig.yamlls.setup({
 
 	settings = {
 		yaml = {
-      hover = true,
-      completion = true,
-      validate = true,
+			hover = true,
+			completion = true,
+			validate = true,
 			schemaStore = {
 				enable = true,
 			},
-      schemas = {
-        'https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json: "*.gitlab-ci.yml"'
-      },
-      customTags = { "!reference", "!Ref" },
+			schemas = {
+				'https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json: "*.gitlab-ci.yml"',
+			},
+			customTags = { "!reference", "!Ref" },
 		},
 	},
 })
@@ -48,9 +46,11 @@ lspconfig.vimls.setup({
 })
 
 lspconfig.tsserver.setup({
+	capabilities = capabilities,
 	filetypes = { "javascript", "typescript", "typescriptreact" },
 	on_attach = custom_on_attach,
-	root_dir = vim.loop.cwd,
+	cmd = { "typescript-language-server", "--stdio" },
+	autostart = true,
 })
 
 lspconfig.jdtls.setup({
