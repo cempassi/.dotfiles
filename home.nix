@@ -112,8 +112,10 @@
     pkgs.sumneko-lua-language-server
     pkgs.nodePackages.yaml-language-server
     pkgs.nodePackages.typescript-language-server
+    pkgs.nodePackages.typescript
     pkgs.nodePackages.pyright
     pkgs.nodePackages.prettier
+    pkgs.rnix-lsp
 
     # Rust Cli tools
     pkgs.ripgrep
