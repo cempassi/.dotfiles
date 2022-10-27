@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -41,6 +43,133 @@
     stateVersion = "22.05";
   };
 
+  home.file.".config/git/work".source = ./git/.gitconfig-work;
+
+  programs.git = {
+    enable = true;
+    userName = "Cedric M'Passi";
+    userEmail = "cempassi@student.42.fr";
+
+    includes = [
+      {
+        path = "~/.config/git/work";
+        condition = "gitdir:~/Programming/work/";
+      }
+    ];
+
+    ignores = [
+      "*.o"
+      "*.so"
+      "*.out"
+      "*.pyc"
+      "*.a"
+      "*.swp"
+      "*.swo"
+      "*.swn"
+      ".tags"
+      ".tasks"
+      ".env.local"
+      ".env.*.local"
+      "npm-debug.log*"
+      "yarn-debug.log*"
+      "yarn-error.log*"
+      ".idea"
+      ".vscode"
+      "*.suo"
+      "*.ntvs*"
+      "*.njsproj"
+      "*.sln"
+      "*.sw?"
+      ".clang-format"
+      "compile_commands.json"
+      "pyrightconfig.json"
+      "*.7z"
+      "*.dmg"
+      "*.gz"
+      "*.iso"
+      "*.jar"
+      "*.rar"
+      "*.tar"
+      "*.zip"
+      "*.clangd"
+      "Cargo.lock"
+      "node_modules"
+      ".DS_Store"
+      ".DS_Store?"
+      "*.dSYM"
+      "._*"
+      ".Spotlight-V100"
+      ".Trashes"
+      "ehthumbs.db"
+      "Thumbs.db"
+      ".python-version"
+      "secrets.zsh"
+      "*.gpg"
+      "neovim/.config/nvim/plugin/packer_compiled.lua"
+      "plugin/packer_compiled.lua"
+    ];
+
+    extraConfig = {
+      pull.rebase = false;
+      push.default = "current";
+      format.pretty = "format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)[%aN]%C(auto)%d %Creset%s";
+      core = {
+        editor = "nvim";
+      };
+      diff.tool = "nvimdiff";
+      difftool = {
+        prompt = true;
+        nvimdiff = {
+          cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
+        };
+      };
+      color = {
+        branch = {
+          current = "yellow reverse";
+          local = "yellow";
+          remote = "green";
+        };
+
+        diff = {
+          meta = "yellow bold";
+          frag = "magenta bold";
+          old = "red";
+          new = "green";
+        };
+
+        status = {
+          added = "green";
+          changed = "blue";
+          untracked = "red";
+        };
+      };
+    };
+
+    aliases = {
+      ls = "log -n 20 --relative-date --graph --abbrev-commit --decorate";
+      ll = "log --relative-date --graph --abbrev-commit --decorate";
+      resolve = "! git diff --name-only | uniq | xargs nvim";
+      tree = "log --all --graph --date=relative --pretty=format:'%C(auto,yellow)[%h][%ad]%C(auto,white) %s %C(auto, blue)%d %C(auto,red)[%an]'";
+    };
+
+    delta = {
+      enable = true;
+      options = {
+        features = "side-by-side line-numbers decorations";
+        whitespace-error-style = "22 reverse";
+        decorations = {
+          commit-decoration-style = "bold yellow box ul";
+          file-style = "bold yellow ul";
+          file-decoration-style = " none ";
+        };
+      };
+    };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -63,10 +192,10 @@
     };
 
     shellAliases = {
-      ls = "exa --icons ";
-      ll = "exa -1 --icons ";
-      lt = "exa -T --icons ";
-      le = "exa -lah --icons --ignore-glob='.git' ";
+      ls = "exa - -icons ";
+      ll = "exa - 1 - -icons ";
+      lt = "exa - T - -icons ";
+      le = "exa - lah - -icons - -ignore-glob='.git' ";
       cd = "z";
       status = "git status";
       szsh = "source ~/.zshrc";
@@ -93,11 +222,6 @@
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
       export TERMINFO_DIRS=$HOME/.local/share/terminfo
     '';
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   home.packages = [
