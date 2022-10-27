@@ -58,6 +58,7 @@
     ];
 
     ignores = [
+      ".admin"
       "*.o"
       "*.so"
       "*.out"
