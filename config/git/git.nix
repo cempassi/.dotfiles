@@ -19,8 +19,9 @@
     userEmail = "cempassi@student.42.fr";
 
     extraConfig = {
-      pull.rebase = false;
+      pull.rebase = true;
       push.default = "current";
+      branch.autoSetupMerge = "always";
       format.pretty = "format:%C(yellow)[%h] %Cblue%>(2)[%ad] %Cgreen%<(7)[%an]%C(auto)%d %s'";
       core.editor = "nvim";
       diff.tool = "nvimdiff";
