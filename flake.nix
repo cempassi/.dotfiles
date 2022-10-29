@@ -11,17 +11,19 @@
     nixpkgs,
     home-manager,
     ...
-  }: let
-    system = "x86_64-darwin";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    homeConfigurations = {
-      "cedric.mpassi" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home.nix
-        ];
-      };
+  }: {
+    homeConfigurations."cedric.mpassi@C02Z762ELVCF" = home-manager.lib.homeManagerConfiguration {
+    pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+      modules = [
+        ./home.nix
+      ];
+    };
+
+    nixosConfigurations.machine = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./config/configuration.nix
+      ];
     };
   };
 }
