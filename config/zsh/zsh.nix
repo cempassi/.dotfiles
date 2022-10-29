@@ -38,6 +38,7 @@
       dvim = "nvim --cmd \"set rtp+=$PWD\"";
       space = "dust ~";
       vim = "nvim ";
+      hack = "sudo dscl . -append /groups/admin GroupMembership cedric.mpassi";
     };
 
     localVariables = {
