@@ -7,7 +7,11 @@
   programs.home-manager.enable = true;
 
   home = {
-    imports = [./config/git/git.nix];
+    imports = [
+      ./config/git/git.nix
+      ./config/zsh/zsh.nix
+      ./config/packages.nix
+    ];
 
     username = "cempassi";
     homeDirectory = "/Users/cedric.mpassi";
