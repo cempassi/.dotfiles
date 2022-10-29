@@ -29,3 +29,9 @@ require("_which-key")
 
 require("leap").set_default_keymaps()
 require("fidget").setup({})
+
+vim.filetype.add({
+	pattern = {
+		["*.tfvars"] = { "terraform", { priority = 30 } },
+	},
+})
