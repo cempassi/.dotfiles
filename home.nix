@@ -6,13 +6,13 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home = {
-    imports = [
-      ./config/git/git.nix
-      ./config/zsh/zsh.nix
-      ./config/packages.nix
-    ];
+  imports = [
+    ./config/git/git.nix
+    ./config/zsh/zsh.nix
+    ./config/packages.nix
+  ];
 
+  home = {
     username = "cempassi";
     homeDirectory = "/Users/cedric.mpassi";
 
@@ -47,10 +47,5 @@
     # the Home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "22.05";
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
   };
 }
