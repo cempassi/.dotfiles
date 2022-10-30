@@ -3,6 +3,9 @@
   pkgs,
   ...
 }: {
+
+  home.file.".oh-my-zsh/custom/themes/personal.zsh-theme".source = ./personal.zsh-theme ;
+
   programs.zsh = {
     enable = true;
 
@@ -13,7 +16,7 @@
 
     oh-my-zsh = {
       enable = true;
-      custom = "$HOME/.dotfiles/zsh";
+      custom = "$HOME/.oh-my-zsh/custom";
       plugins = [
         "vi-mode"
         "rust"
