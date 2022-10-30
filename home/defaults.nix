@@ -7,6 +7,7 @@
     ./git/git.nix
     ./lldb/lldb.nix
     ./neovim/neovim.nix
+    ./tmux/tmux.nix
     ./zsh/zsh.nix
   ];
 
@@ -62,7 +63,6 @@
       # Utils
       pkgs.bash
       pkgs.bitwarden-cli
-      pkgs.tmux
       pkgs.jq
       pkgs.fzf
       pkgs.ncurses6
