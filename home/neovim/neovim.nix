@@ -46,29 +46,24 @@ in
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      ## Custom Installed ##
 
-      # Theme
-      austere-nvim
-
-      # Directory Navigation
-      dirbuf-nvim
-
-      # Status-line
-      incline-nvim
-
-      #persisted-nvim
-      #telekasten-nvim
-      #fine-cmdline-nvim
-      #hover-nvim
-      #telescope-terraform-doc-nvim
-      #themer-lua
-      #glow-nvim
-      #follow-md-links-nvim
-      #vim-42header
+      # Start
       impatient-nvim
-      lualine-nvim
-      nvim-web-devicons
+      dashboard-nvim
+      vim-startuptime
+
+      # Telescope
+      telescope-github-nvim
+      telescope-nvim
+      #telescope-terraform-doc-nvim # Custom
+
+      # LSP
+      nvim-lspconfig
+      null-ls-nvim
+      fidget-nvim
+      #hover-nvim # Custom
+
+      # Completion
       nvim-cmp
       cmp-nvim-lsp
       cmp-buffer
@@ -78,50 +73,85 @@ in
       cmp-treesitter
       cmp-spell
       lspkind-nvim
-      luasnip
       friendly-snippets
-      dashboard-nvim
-      nvim-luapad
-      FixCursorHold-nvim
-      nvim-comment
-      vim-nix
-      nvim-autopairs
-      nvim-surround
-      nui-nvim
-      nvim-treesitter
+      luasnip
+
+      # File Navigation
+      dirbuf-nvim # Custom
       leap-nvim
-      vim-repeat
-      nvim-lspconfig
-      null-ls-nvim
-      fidget-nvim
-      nvim-notify
-      telescope-nvim
-      plenary-nvim
-      popup-nvim
-      telescope-github-nvim
-      nvim-dap
+      neoscroll-nvim
+
+      # Session
+      #persisted-nvim #Custom
+
+      # Notes
+      #telekasten-nvim # Custom
+
+      # Git
       vim-fugitive
       vim-git
       git-messenger-vim
       gitsigns-nvim
+
+
+      # Floating cmdline
+      #fine-cmdline-nvim
+
+      # REST Api calls
+      rest-nvim
+
+      # Theme
+      austere-nvim # Custom
+
+      # Edition
+      nvim-comment
+      nvim-autopairs
+      nvim-surround
+      vim-repeat
+
+      # Treesitter
+      nvim-treesitter
+      playground
+
+      # Statusline
+      lualine-nvim
+      incline-nvim # Custom
+
+      # Terminal
       vim-floaterm
+
+      # Tasks
       asynctasks-vim
       asyncrun-vim
-      vim-startuptime
-      lush-nvim
-      which-key-nvim
-      true-zen-nvim
-      vim-toml
-      neoscroll-nvim
-      crates-nvim
-      plenary-nvim
-      rest-nvim
-      project-nvim
+
+      # Mappings
       vim-which-key
+
+      # Debugger Adapter Protocol
+      nvim-dap
+
+      # Lua 
+      nvim-luapad
+
+      # Rust
+      crates-nvim
+
+      # Markdown
+      # glow-nvim # Custom
+      # follow-md-links-nvim # Custom
+
+      # Language Syntax
+      vim-nix
+      vim-toml
+
+      # Utils
+      plenary-nvim
       nvim-web-devicons
+      nvim-notify
+      popup-nvim
       nvim-colorizer-lua
-      editorconfig-vim
-      playground
+      #vim-42header # Custom
+
     ];
   };
 
