@@ -35,9 +35,7 @@
       status = "git status";
       szsh = "source ~/.zshrc";
       evim = "vim ~/.config/nvim/init.vim";
-      enix = "vim ~/.config/nixpkgs/home.nix";
       cat = "bat";
-      switch = "home-manager switch";
       dvim = "nvim --cmd \"set rtp+=$PWD\"";
       space = "dust ~";
       vim = "nvim ";
@@ -49,10 +47,6 @@
     };
 
     initExtra = ''
-      # Init pyenv
-      eval "$(pyenv init -)"
-      eval "$(pyenv virtualenv-init -)"
-
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -1,12 +1,8 @@
 {
   config,
   pkgs,
-  homeDirectory,
   ...
 }: {
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   imports = [
     ./alacritty/alacritty.nix
     ./git/git.nix
@@ -16,9 +12,6 @@
   ];
 
   home = {
-    username = "cempassi";
-    homeDirectory = homeDirectory;
-
     sessionPath = [
       "$HOME/.luarocks/bin" # Lua
       "$PYENV_ROOT/bin" #Pyenv
