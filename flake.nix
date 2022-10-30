@@ -16,6 +16,9 @@
   }: {
     homeConfigurations."cedric.mpassi@C02Z762ELVCF" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+      extraSpecialArgs = {
+        homeDirectory = "/Users/cedric.mpassi";
+      };
       modules = [
         ./home/home.nix
         ({pkgs, ...}: {
@@ -28,6 +31,20 @@
       system = "x86_64-linux";
       modules = [
         ./system/configuration.nix
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.cempassi = import ./home/home.nix;
+          home-manager.extraSpecialArgs = {
+            homeDirectory = "/home/cempassi";
+          };
+        }
+
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [rust-overlay.overlays.default];
+        })
       ];
     };
   };

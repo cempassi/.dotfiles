@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  homeDirectory,
   ...
 }: {
   # Let Home Manager install and manage itself.
@@ -16,7 +17,7 @@
 
   home = {
     username = "cempassi";
-    homeDirectory = "/Users/cedric.mpassi";
+    homeDirectory = homeDirectory;
 
     sessionPath = [
       "$HOME/.luarocks/bin" # Lua
