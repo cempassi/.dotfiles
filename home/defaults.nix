@@ -25,8 +25,6 @@
 
     sessionPath = [
       "$HOME/.luarocks/bin" # Lua
-      "$PYENV_ROOT/bin" #Pyenv
-      "$HOME/.cargo/bin" # Rust
       "/nix/var/nix/profiles/default/bin" # Nix Default
       "$HOME/.nix-profile/bin" #Nix profile
       "$HOME/.tfenv/bin" # Terraform
