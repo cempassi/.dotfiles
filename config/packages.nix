@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: {
+  fonts.fontconfig.enable = true;
+
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
@@ -52,5 +54,8 @@
     pkgs.glow
     pkgs.ncurses6
     pkgs.kube3d
+
+    # font
+    (pkgs.nerdfonts.override {fonts = ["Hasklig"];})
   ];
 }

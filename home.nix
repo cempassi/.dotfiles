@@ -7,6 +7,7 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./config/alacritty/alacritty.nix
     ./config/git/git.nix
     ./config/zsh/zsh.nix
     ./config/packages.nix
