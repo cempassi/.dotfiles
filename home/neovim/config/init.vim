@@ -53,7 +53,6 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 "" Plugin Management
 lua require('impatient')
 lua require('init')
-lua require('plugins')
 lua require('after')
 lua require'colorizer'.setup()
 

@@ -1,3 +1,8 @@
+local ok, telekasten = pcall(require, "telekasten")
+if not ok then
+    return
+end
+
 local home = vim.fn.expand("~/Vault")
 
 require('telekasten').setup({

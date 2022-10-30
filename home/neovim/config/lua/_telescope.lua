@@ -4,7 +4,7 @@ if not ok then
 end
 
 -- Telescope settings
-local actions = telescope.actions
+local actions = require('telescope.actions')
 
 telescope.setup {
   pickers = {
@@ -83,8 +83,8 @@ telescope.setup {
   }
 }
 
-telescope.load_extension('gh')
-telescope.load_extension('projects')
-telescope.load_extension("themes")
-telescope.load_extension('terraform_doc')
-telescope.load_extension("persisted") -- To load the telescope extension
+--telescope.load_extension('gh')
+--telescope.load_extension('projects')
+--telescope.load_extension("themes")
+--telescope.load_extension('terraform_doc')
+--telescope.load_extension("persisted") -- To load the telescope extension

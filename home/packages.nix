@@ -12,7 +12,6 @@
 
   home.packages = [
     # Text Editor
-    pkgs.neovim
     pkgs.terraform-ls
     pkgs.stylua
     pkgs.black
