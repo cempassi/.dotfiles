@@ -7,11 +7,11 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./config/alacritty/alacritty.nix
-    ./config/git/git.nix
-    ./config/lldb/lldb.nix
-    ./config/zsh/zsh.nix
-    ./config/packages.nix
+    ./alacritty/alacritty.nix
+    ./git/git.nix
+    ./lldb/lldb.nix
+    ./zsh/zsh.nix
+    ./packages.nix
   ];
 
   home = {
