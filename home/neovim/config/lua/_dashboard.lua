@@ -5,6 +5,8 @@ end
 
 local home = os.getenv("HOME")
 
+vim.api.nvim_set_hl(0, "DashboardHeader", {fg="#FADF7F"})
+
 db.custom_center = {
 	{
 		icon = "  ",
