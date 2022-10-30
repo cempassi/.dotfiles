@@ -40,6 +40,9 @@
     pkgs.du-dust
     pkgs.rust-analyzer
 
+    # Rust dev setup
+    pkgs.rust-bin.stable.latest.default
+
     # Code managers
     pkgs.gh
     pkgs.glab
