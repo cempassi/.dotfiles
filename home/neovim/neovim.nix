@@ -1,8 +1,9 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{ config
+, pkgs
+, ...
+}:
+
+let
   austere-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
     pname = "austere-nvim";
     version = "18a350626bbc59af0a195e1ec5d39d5bac44f945";
@@ -35,7 +36,9 @@
       sha256 = "oXmZK4cVyuSqmDUwJK0v7YL2g3Kr7zbMgk178D+zzys=";
     };
   };
-in {
+
+in
+{
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -43,6 +46,7 @@ in {
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
+
       # Start
       impatient-nvim
       dashboard-nvim
@@ -89,6 +93,7 @@ in {
       git-messenger-vim
       gitsigns-nvim
 
+
       # Floating cmdline
       #fine-cmdline-nvim
 
@@ -120,12 +125,12 @@ in {
       asyncrun-vim
 
       # Mappings
-      vim-which-key
+      which-key-nvim
 
       # Debugger Adapter Protocol
       nvim-dap
 
-      # Lua
+      # Lua 
       nvim-luapad
 
       # Rust
@@ -149,22 +154,21 @@ in {
     ];
 
     extraPackages = with pkgs; [
-      pkgs.terraform-ls
-      pkgs.stylua
-      pkgs.black
-      pkgs.selene
-      pkgs.shfmt
-      pkgs.alejandra
-      pkgs.glow
-      pkgs.rust-analyzer
-      pkgs.sumneko-lua-language-server
-      pkgs.nodePackages.yaml-language-server
-      pkgs.nodePackages.typescript-language-server
-      pkgs.nodePackages.typescript
-      pkgs.nodePackages.pyright
-      pkgs.nodePackages.prettier
-      pkgs.rnix-lsp
-    ];
+       pkgs.terraform-ls
+       pkgs.stylua
+       pkgs.black
+       pkgs.selene
+       pkgs.shfmt
+       pkgs.alejandra
+       pkgs.glow
+       pkgs.sumneko-lua-language-server
+       pkgs.nodePackages.yaml-language-server
+       pkgs.nodePackages.typescript-language-server
+       pkgs.nodePackages.typescript
+       pkgs.nodePackages.pyright
+       pkgs.nodePackages.prettier
+       pkgs.rnix-lsp
+     ];
   };
 
   xdg.configFile.nvim = {
