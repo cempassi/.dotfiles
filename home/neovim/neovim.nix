@@ -156,6 +156,7 @@ in {
       pkgs.shfmt
       pkgs.alejandra
       pkgs.glow
+      pkgs.rust-analyzer
       pkgs.sumneko-lua-language-server
       pkgs.nodePackages.yaml-language-server
       pkgs.nodePackages.typescript-language-server

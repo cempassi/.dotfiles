@@ -8,7 +8,6 @@
     ./lldb/lldb.nix
     ./neovim/neovim.nix
     ./zsh/zsh.nix
-    ./packages.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -34,16 +33,12 @@
     ];
 
     sessionVariables = {
-      EDITOR = "nvim";
-      PYENV_ROOT = "${config.home.homeDirectory}/.pyenv";
       LSCOLORS = "exfxcxdxbxegedabagacad";
       SSH_KEY_PATH = "~/.ssh/rsa_id";
       BAT_THEME = "Nord";
       KEYTIMEOUT = 1;
       PAGER = "bat --paging=auto --plain";
       MAIL = "cempassi@student.42.fr";
-      NODE_EXTRA_CA_CERTS = "${config.home.homeDirectory}/.local/certs/ca-bundle.crt";
-      NIX_PATH = "$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin";
     };
 
     packages = [
@@ -58,7 +53,6 @@
       pkgs.bottom
       pkgs.diskonaut
       pkgs.du-dust
-      pkgs.rust-analyzer
 
       # Rust dev setup
       pkgs.rust-bin.stable.latest.default
