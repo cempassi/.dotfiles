@@ -1,6 +1,11 @@
+local ok, key = pcall(require, "which-key")
+if not ok then
+    return
+end
+
 -- -- -- -- -- Settings -- -- -- -- --
 
-require("which-key").setup({
+key.setup({
 	window = {
 		border = "double", -- none, single, double, shadow
 		position = "bottom", -- bottom, top
@@ -18,7 +23,7 @@ require("which-key").setup({
 
 -- -- -- -- -- Global Mappings -- -- -- -- --
 
-local register = require("which-key").register
+local register = key.register
 
 -- Change escape to jk in all modes
 register({ j = { name = "Escape", k = { "<esc>", "Insert" } } }, { mode = "i" })

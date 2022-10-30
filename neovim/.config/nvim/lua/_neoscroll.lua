@@ -1,4 +1,9 @@
-require('neoscroll').setup({
+local ok, neoscroll = pcall(require, "neoscroll")
+if not ok then
+	return
+end
+
+neoscroll.setup({
     hide_cursor = false,          -- Hide cursor while scrolling
     stop_eof = true,             -- Stop at <EOF> when scrolling downwards
     use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope

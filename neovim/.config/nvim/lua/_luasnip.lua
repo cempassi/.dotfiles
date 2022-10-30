@@ -1,11 +1,14 @@
-local luasnip = require("luasnip")
+local ok, luasnip = pcall(require, "luasnip")
+if not ok then
+	return
+end
+
 local snip = luasnip.snippet
 local text = luasnip.text_node
 local insert = luasnip.insert_node
 local func = luasnip.function_node
 
 luasnip.filetype_extend("telekasten", { "markdown" })
-
 
 luasnip.config.set_config({
 	history = true,
@@ -19,7 +22,7 @@ luasnip.config.set_config({
 
 -- Date Helper function
 local date = function()
-    return { os.date "%Y-%m-%d" }
+	return { os.date("%Y-%m-%d") }
 end
 
 luasnip.add_snippets(nil, {
@@ -61,10 +64,10 @@ luasnip.add_snippets(nil, {
 		}, {
 			text({ "---", "title: " }),
 			insert(1, "note_title"),
-			text({ "", "author: cempassi"}),
-      text({"", "created: "}),
-      func(date, {}),
-			text({ "", "cssclass: clean-embeds"}),
+			text({ "", "author: cempassi" }),
+			text({ "", "created: " }),
+			func(date, {}),
+			text({ "", "cssclass: clean-embeds" }),
 			text({ "", "aliases: [" }),
 			insert(2, ""),
 			text({ "]", "tags: [" }),
@@ -74,4 +77,3 @@ luasnip.add_snippets(nil, {
 		}),
 	},
 })
-

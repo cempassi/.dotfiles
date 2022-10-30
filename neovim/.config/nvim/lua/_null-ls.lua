@@ -1,5 +1,10 @@
-local builtins = require("null-ls").builtins
-require("null-ls").setup({
+local ok, null = pcall(require, "null-ls")
+if not ok then
+	return
+end
+
+local builtins = null.builtins
+null.setup({
 	sources = {
 		builtins.formatting.stylua, -- lua
 		builtins.formatting.alejandra, -- Nix

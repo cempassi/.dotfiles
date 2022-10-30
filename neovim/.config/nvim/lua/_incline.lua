@@ -1,4 +1,9 @@
-require('incline').setup {
+local ok, incline = pcall(require, "incline")
+if not ok then
+    return
+end
+
+incline.setup {
   debounce_threshold = {
     falling = 50,
     rising = 10

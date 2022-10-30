@@ -1,7 +1,12 @@
--- Telescope settings
-local actions = require('telescope.actions')
+local ok, telescope = pcall(require, "telescope")
+if not ok then
+    return
+end
 
-require('telescope').setup {
+-- Telescope settings
+local actions = telescope.actions
+
+telescope.setup {
   pickers = {
     buffers = {
       show_all_buffers = true,
@@ -78,8 +83,8 @@ require('telescope').setup {
   }
 }
 
-require('telescope').load_extension('gh')
-require('telescope').load_extension('projects')
-require("telescope").load_extension("themes")
-require('telescope').load_extension('terraform_doc')
-require("telescope").load_extension("persisted") -- To load the telescope extension
+telescope.load_extension('gh')
+telescope.load_extension('projects')
+telescope.load_extension("themes")
+telescope.load_extension('terraform_doc')
+telescope.load_extension("persisted") -- To load the telescope extension

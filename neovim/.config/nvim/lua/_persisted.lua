@@ -1,4 +1,10 @@
-require("persisted").setup({
+local ok, persisted = pcall(require, "persisted")
+if not ok then
+	return
+end
+
+
+persisted.setup({
   save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
   command = "VimLeavePre", -- the autocommand for which the session is saved
   use_git_branch = false, -- create session files based on the branch of the git enabled repository

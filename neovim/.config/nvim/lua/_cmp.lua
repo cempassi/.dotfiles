@@ -1,6 +1,17 @@
-local luasnip = require("luasnip")
-local cmp = require("cmp")
-local lspkind = require("lspkind")
+local ok, cmp = pcall(require, "cmp")
+if not ok then
+    return
+end
+
+local ok, luasnip = pcall(require, "luasnip")
+if not ok then
+    return
+end
+
+local ok, lspkind = pcall(require, "lspkind")
+if not ok then
+    return
+end
 
 vim.o.completeopt = "menu,menuone,noselect"
 

@@ -1,8 +1,13 @@
+local ok, dap = pcall(require, "dap")
+if not ok then
+    return
+end
+
+--
 -- In a file lua/my_debug.lua
 --
 local M = {}
 local last_gdb_config
-local dap = require 'dap'
 
 dap.adapters.c = {
       type = 'executable',

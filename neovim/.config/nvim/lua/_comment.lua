@@ -1,4 +1,10 @@
-require("nvim_comment").setup({
+
+local ok, comment = pcall(require, "nvim_comment")
+if not ok then
+    return
+end
+
+comment.setup({
 	-- Linters prefer comment and line to have a space in between markers
 	marker_padding = true,
 	-- should comment out empty or whitespace only lines

@@ -1,3 +1,8 @@
+local ok, cmdline = pcall(require, "fine-cmdline")
+if not ok then
+    return
+end
+
 vim.api.nvim_set_keymap(
   'n',
   '<leader>;',
@@ -5,7 +10,7 @@ vim.api.nvim_set_keymap(
   {noremap = true}
 )
 
-require('fine-cmdline').setup({
+cmdline.setup({
   cmdline = {
     enable_keymaps = true
   },
