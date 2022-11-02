@@ -29,6 +29,7 @@
       "/nix/var/nix/profiles/default/bin" # Nix Default
       "$HOME/.nix-profile/bin" #Nix profile
       "$HOME/.tfenv/bin" # Terraform
+      "$HOME/.rd/bin" # Rancher Desktop
     ];
 
     sessionVariables = {
@@ -52,6 +53,7 @@
       pkgs.bottom
       pkgs.diskonaut
       pkgs.du-dust
+      pkgs.rage
 
       # Rust dev setup
       pkgs.rust-bin.stable.latest.default
