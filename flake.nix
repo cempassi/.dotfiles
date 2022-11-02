@@ -3,15 +3,23 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {
+  outputs = inputs @ {
+    self,
     nixpkgs,
     home-manager,
     rust-overlay,
+    agenix,
     ...
   }: {
     homeConfigurations."cedric.mpassi@C02Z762ELVCF" = home-manager.lib.homeManagerConfiguration {
@@ -28,6 +36,7 @@
       system = "x86_64-linux";
       modules = [
         ./system/configuration.nix
+        agenix.nixosModule
 
         home-manager.nixosModules.home-manager
         {
@@ -41,5 +50,9 @@
         })
       ];
     };
+
+    macos = self.homeConfigurations."cedric.mpassi@C02Z762ELVCF".activationPackage;
+    defaultPackage.x86_64-darwin = self.macos;
+    defaultPackage.x86_64-linux = self.nixosConfigurations.nixos;
   };
 }

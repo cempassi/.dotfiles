@@ -26,10 +26,10 @@
 
     sessionPath = [
       "$HOME/.luarocks/bin" # Lua
-      "/nix/var/nix/profiles/default/bin" # Nix Default
-      "$HOME/.nix-profile/bin" #Nix profile
       "$HOME/.tfenv/bin" # Terraform
       "$HOME/.rd/bin" # Rancher Desktop
+      "$HOME/.nix-profile/bin" #Nix profile
+      "/nix/var/nix/profiles/default/bin" # Nix Default
     ];
 
     sessionVariables = {
