@@ -15,17 +15,17 @@ else
         PROMPT_SSH="%F{196}[$(hostname -s)]"
 fi
 
-zle -N zle-keymap-select
-
-if [[ -z "$SSH_CLIENT" ]]; then
-        PROMPT_SSH=""
+if [[ -z "$IN_NIX_SHELL" ]]; then
+    PROMPT_NIX_SHELL=""
 else
-        PROMPT_SSH="%F{196}[$(hostname -s)]"
+    PROMPT_NIX_SHELL="%F{222}[${IN_NIX_SHELL}]"
 fi
+
+zle -N zle-keymap-select
 
 PERSONAL_DATE="%F{222}%D %T%f"
 
-PROMPT='$PROMPT_SSH%F{$VIMODE}[%c] %f'
+PROMPT='${PROMPT_SSH}${PROMPT_NIX_SHELL}%F{$VIMODE}[%c] %f'
 
 RPROMPT='$(git_prompt_status)%{$reset_color%} %F{167}$(git_prompt_info)%f [$PERSONAL_DATE]'
 
