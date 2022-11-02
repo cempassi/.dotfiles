@@ -37,6 +37,17 @@ let
     };
   };
 
+  hover-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "hover-nvim";
+    version = "53599d0d985be6e46510011ba8f7738fa3bb3bce";
+    src = pkgs.fetchFromGitHub {
+      owner = "lewis6991";
+      repo = "hover.nvim";
+      rev = version;
+      sha256 = "3L7H/TH2HugOP3KmXeZmTI9FEvIL0KWiY3UbQWNlJMM=";
+    };
+  };
+
 in
 {
   programs.neovim = {
@@ -61,7 +72,7 @@ in
       nvim-lspconfig
       null-ls-nvim
       fidget-nvim
-      #hover-nvim # Custom
+      hover-nvim # Custom
 
       # Completion
       nvim-cmp
