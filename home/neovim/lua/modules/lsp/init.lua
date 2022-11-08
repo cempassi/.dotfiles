@@ -51,6 +51,11 @@ lspconfig.tsserver.setup({
 	on_attach = custom_on_attach,
 	cmd = { "typescript-language-server", "--stdio" },
 	autostart = true,
+  init_options = {
+    tsserver = {
+      path = "/nix/store/8hid4cip9df81gwkwxxk6xd1lzppz47b-typescript-4.8.4/lib/node_modules/typescript/lib/tsserver.js"
+    }
+  }
 })
 
 lspconfig.jdtls.setup({

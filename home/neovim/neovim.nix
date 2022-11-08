@@ -179,6 +179,7 @@ in
        pkgs.nodePackages.pyright
        pkgs.nodePackages.prettier
        pkgs.nodePackages.vim-language-server
+       pkgs.nodePackages.typescript
        pkgs.rnix-lsp
      ];
   };
