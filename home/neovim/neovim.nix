@@ -71,7 +71,14 @@ in
       #telescope-terraform-doc-nvim # Custom
 
       # LSP
-      nvim-lspconfig
+      {
+        plugin = nvim-lspconfig;
+        config = ''
+          lua << EOF
+          tsserver_path = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib/tsserver.js"
+          EOF
+        '';
+      }
       null-ls-nvim
       fidget-nvim
       hover-nvim # Custom

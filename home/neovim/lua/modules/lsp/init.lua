@@ -53,7 +53,7 @@ lspconfig.tsserver.setup({
 	autostart = true,
   init_options = {
     tsserver = {
-      path = "/nix/store/8hid4cip9df81gwkwxxk6xd1lzppz47b-typescript-4.8.4/lib/node_modules/typescript/lib/tsserver.js"
+      path = tsserver_path 
     }
   }
 })
@@ -163,7 +163,7 @@ lspconfig.sumneko_lua.setup({
 					"theme",
 					"client",
 					"P",
-					"use",
+          "tsserver_path"
 				},
 				telemetry = {
 					enable = false,
