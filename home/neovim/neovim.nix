@@ -56,7 +56,9 @@ in
     vimAlias = true;
     vimdiffAlias = true;
 
-    plugins = with pkgs.vimPlugins; [
+    extraConfig = ''
+      source ~/.config/nvim/_init.vim
+    '';
 
       # Start
       impatient-nvim
