@@ -54,6 +54,7 @@
       pkgs.diskonaut
       pkgs.du-dust
       pkgs.rage
+      pkgs.onefetch
 
       # Rust dev setup
       pkgs.rust-bin.stable.latest.default
