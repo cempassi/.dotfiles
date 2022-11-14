@@ -55,6 +55,7 @@
       pkgs.du-dust
       pkgs.rage
       pkgs.onefetch
+      pkgs.bandwhich
 
       # Rust dev setup
       pkgs.rust-bin.stable.latest.default
