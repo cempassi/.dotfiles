@@ -60,6 +60,7 @@
       btree = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s'";
       tree = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always";
       graph = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always --simplify-by-decoration";
+      info = "! onefetch";
     };
 
     delta = {
@@ -68,9 +69,7 @@
         features = "side-by-side line-numbers decorations";
         whitespace-error-style = "22 reverse";
         decorations = {
-          commit-decoration-style = "bold yellow box ul";
-          file-style = "bold yellow ul";
-          file-decoration-style = " none ";
+          syntax-theme = "base16";
         };
       };
     };
