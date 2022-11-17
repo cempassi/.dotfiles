@@ -61,6 +61,8 @@
       tree = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always";
       graph = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always --simplify-by-decoration";
       info = "! onefetch";
+      stale = "! git branch -r --merged master | grep -v master | sed 's|origin/||' ";
+      cleanup = "! git branch -r --merged master | grep -v master | sed 's|origin/||' | xargs -n 1 git push --delete origin";
     };
 
     delta = {
