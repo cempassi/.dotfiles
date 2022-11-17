@@ -68,6 +68,8 @@ in {
       telescope-nvim
       #telescope-terraform-doc-nvim # Custom
 
+      # Packer
+      #packer-nvim
       # LSP
       {
         plugin = nvim-lspconfig;
