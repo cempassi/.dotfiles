@@ -56,6 +56,8 @@
       pkgs.rage
       pkgs.onefetch
       pkgs.bandwhich
+      pkgs.ffmpeg-normalize
+      pkgs.rsync
 
       # Rust dev setup
       pkgs.rust-bin.stable.latest.default
