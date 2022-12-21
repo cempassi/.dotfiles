@@ -21,6 +21,7 @@
     extraConfig = {
       pull.rebase = true;
       push.default = "current";
+      pull.default = "current";
       format.pretty = "format:%C(yellow)[%h] %Cblue%>(2)[%ad] %Cgreen%<(7)[%an]%C(auto)%d %s";
       core.editor = "nvim";
       diff.tool = "nvimdiff";
