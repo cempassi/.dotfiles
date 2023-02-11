@@ -73,6 +73,7 @@
       pkgs.fzf
       pkgs.ncurses6
       pkgs.kube3d
+      pkgs.awscli2
 
       # font
       (pkgs.nerdfonts.override { fonts = [ "Hasklig" ]; })
