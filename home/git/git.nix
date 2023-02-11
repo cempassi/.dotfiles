@@ -3,8 +3,6 @@
   pkgs,
   ...
 }: {
-  home.file.".config/git/work".source = ./gitconfig-work;
-
   programs.git = {
     enable = true;
 

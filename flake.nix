@@ -8,6 +8,8 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
+    homeage.url = "github:jordanisaacs/homeage";
+    homeage.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
@@ -16,11 +18,29 @@
     home-manager,
     rust-overlay,
     agenix,
+    homeage,
     ...
   }: {
     homeConfigurations."cedric.mpassi@C02Z762ELVCF" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-darwin;
       modules = [
+        homeage.homeManagerModules.homeage
+        {
+          homeage = {
+            # Absolute path to identity (created not through home-manager)
+            identityPaths = ["~/.ssh/id_ed25519"];
+
+            # "activation" if system doesn't support systemd
+            installationType = "activation";
+
+            file."gitconfig-work" = {
+              # Path to encrypted file tracked by the git repository
+              source = ./.secrets/gitconfig-work.age;
+              # Path expected by git config: (./home/git/git.nix:12)
+              path = "/Users/cedric.mpassi/.config/git/work";
+            };
+          };
+        }
         ./home/macos.nix
         ({pkgs, ...}: {
           nixpkgs.overlays = [rust-overlay.overlays.default];
