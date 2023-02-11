@@ -11,6 +11,9 @@
     ./zsh/zsh.nix
   ];
 
+  # Let Home Manager install and manage itself
+  programs.home-manager.enable = true;
+
   fonts.fontconfig.enable = true;
 
   home = {

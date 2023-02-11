@@ -7,11 +7,7 @@
     ./defaults.nix
   ];
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   home = {
-
     username = "cedric.mpassi";
     homeDirectory = "/Users/cedric.mpassi";
 
