@@ -43,18 +43,19 @@ set laststatus=3
 filetype plugin indent on
 syntax on 
 
-set guifont=Hasklug\ NF\ Mono\,\ Light:h10:w0
-set termguicolors
-let g:monochrome_style="subtle"
-colorscheme austere
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 "" Plugin Management
 lua require('impatient')
 lua require('init')
 lua require('after')
 lua require'colorizer'.setup()
+
+set guifont=Hasklug\ NF\ Mono\,\ Light:h10:w0
+set termguicolors
+let g:monochrome_style="subtle"
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+colorscheme austere
 
 "Save all the files, all the times
 augroup save
