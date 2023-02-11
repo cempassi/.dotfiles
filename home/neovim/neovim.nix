@@ -14,6 +14,17 @@
     };
   };
 
+  nordic-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+    pname = "nordic-nvim";
+    version = "d3c34078cd8501da4c8eefbf45cb379eb4530136";
+    src = pkgs.fetchFromGitHub {
+      owner = "AlexvZyl";
+      repo = "nordic.nvim";
+      rev = version;
+      sha256 = "V83moFhNF/qiJtiokUe7MgisFj6NUNVOSRTjlvZeYl8=";
+    };
+  };
+
   dirbuf-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
     pname = "dirbuf-nvim";
     version = "ac7ad3c8e61630d15af1f6266441984f54f54fd2";
@@ -120,6 +131,7 @@ in {
       rest-nvim
 
       # Theme
+      nordic-nvim # Custom
       austere-nvim # Custom
 
       # Edition
