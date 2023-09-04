@@ -144,7 +144,7 @@ lspconfig.clangd.setup({
   },
 })
 
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   cmd = { "lua-language-server" },
   on_attach = custom_on_attach,
   prefix = lua,

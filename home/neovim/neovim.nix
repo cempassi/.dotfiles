@@ -192,7 +192,6 @@ in {
       shfmt
       alejandra
       glow
-      sumneko-lua-language-server
       nodePackages.yaml-language-server
       nodePackages.typescript-language-server
       nodePackages.typescript
