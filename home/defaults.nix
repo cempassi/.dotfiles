@@ -78,6 +78,10 @@
       pkgs.kube3d
       pkgs.awscli2
 
+      # JS
+      pkgs.yarn
+      pkgs.nodePackages.rimraf
+
       # font
       (pkgs.nerdfonts.override { fonts = [ "Hasklig" ]; })
     ];
