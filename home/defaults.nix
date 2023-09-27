@@ -50,7 +50,7 @@
       pkgs.tokei
       pkgs.delta
       pkgs.bat
-      pkgs.exa
+      pkgs.eza
       pkgs.zoxide
       pkgs.fd
       pkgs.bottom
