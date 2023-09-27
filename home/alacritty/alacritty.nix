@@ -81,6 +81,9 @@
       };
 
       live_config_reload = true;
+      env = {
+        TERM = "xterm-256color";
+      };
 
       use_thin_strokes = "true";
       key_bindings = [

@@ -52,10 +52,13 @@ lua require'colorizer'.setup()
 
 set guifont=Hasklug\ NF\ Mono\,\ Light:h10:w0
 set termguicolors
-let g:monochrome_style="subtle"
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme austere
+"let g:monochrome_style="subtle"
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+colorscheme nordic
 
 "Save all the files, all the times
 augroup save
