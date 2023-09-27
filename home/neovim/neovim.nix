@@ -156,6 +156,9 @@ in {
       # Rust
       crates-nvim
 
+      #Java
+      nvim-jdtls
+
       # Markdown
       # glow-nvim # Custom
       # follow-md-links-nvim # Custom
@@ -184,6 +187,7 @@ in {
       glow
       tree-sitter
       lua-language-server
+      jdt-language-server
       nodePackages.yaml-language-server
       nodePackages.typescript-language-server
       nodePackages.typescript
