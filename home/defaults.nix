@@ -63,7 +63,9 @@
       
 
       # Rust dev setup
-      pkgs.rust-bin.stable.latest.default
+      (pkgs.rust-bin.stable.latest.default.override {
+         extensions = [ "rust-analyzer" ];
+      })
 
       # Code managers
       pkgs.gh
