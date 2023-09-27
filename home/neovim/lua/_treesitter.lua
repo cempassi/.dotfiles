@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
     "javascript",
     "typescript",
     "bash",
+    "lua",
     "git_rebase",
     "markdown",
     "toml",
