@@ -32,10 +32,23 @@ require("_which-key")
 
 require("leap").set_default_keymaps()
 require("fidget").setup({})
-require("nordic").load()
+require("nordic").colorscheme()
+require('crates').setup()
 
 vim.filetype.add({
 	pattern = {
 		["*.tfvars"] = { "terraform", { priority = 30 } },
 	},
+})
+
+local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
+
+autocmd('BufEnter', {
+  pattern = '*.tfvars',
+  command = 'set filetype=terraform '
+})
+
+autocmd('BufNewFile', {
+  pattern = '*.tfvars',
+  command = 'set filetype=terraform '
 })

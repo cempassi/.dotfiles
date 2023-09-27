@@ -59,11 +59,9 @@
       pkgs.rage
       pkgs.onefetch
       pkgs.bandwhich
-      pkgs.ffmpeg-normalize
       pkgs.rsync
       
 
-      pkgs.lua-language-server
       # Rust dev setup
       pkgs.rust-bin.stable.latest.default
 

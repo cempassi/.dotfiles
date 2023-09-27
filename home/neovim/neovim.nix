@@ -179,8 +179,11 @@ in {
       black
       selene
       shfmt
+      isort
       alejandra
       glow
+      tree-sitter
+      lua-language-server
       nodePackages.yaml-language-server
       nodePackages.typescript-language-server
       nodePackages.typescript

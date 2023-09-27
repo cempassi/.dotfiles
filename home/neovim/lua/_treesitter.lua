@@ -2,17 +2,15 @@
 --
 local parser_install_dir = vim.fn.stdpath("cache") .. "/treesitters"
 vim.fn.mkdir(parser_install_dir, "p")
-vim.opt.runtimepath:append(parser_install_dir)
+vim.opt.runtimepath:prepend(parser_install_dir)
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
-    "c",
 		"rust",
     "python",
 		"hcl",
     "javascript",
     "typescript",
-    "lua",
     "bash",
     "git_rebase",
     "markdown",
@@ -27,7 +25,6 @@ require("nvim-treesitter.configs").setup({
     "css",
     "yaml",
     "vue",
-    "vim",
 	}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	parser_install_dir = parser_install_dir,
 	highlight = {
@@ -45,6 +42,3 @@ require("nvim-treesitter.configs").setup({
 		persist_queries = false, -- Whether the query persists across vim sessions
 	},
 })
-
-local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
-ft_to_parser.telekasten = "markdown"

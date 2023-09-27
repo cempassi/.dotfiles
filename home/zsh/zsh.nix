@@ -10,7 +10,7 @@
     enable = true;
 
     defaultKeymap = "viins";
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
 
