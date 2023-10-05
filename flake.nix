@@ -3,6 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
@@ -15,6 +18,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    darwin,
     home-manager,
     rust-overlay,
     agenix,
@@ -48,27 +52,41 @@
       ];
     };
 
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+    darwinConfigurations.Balamb = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
       modules = [
-        ./system/configuration.nix
-        agenix.nixosModule
-
-        home-manager.nixosModules.home-manager
+        ./system/darwin.nix
+        home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.cempassi = import ./home/nixos.nix;
+          home-manager.users.cempassi = import ./home/macos.nix;
         }
-
         ({pkgs, ...}: {
           nixpkgs.overlays = [rust-overlay.overlays.default];
         })
       ];
     };
 
-    macos = self.homeConfigurations."cedric.mpassi@C02Z762ELVCF".activationPackage;
-    defaultPackage.x86_64-darwin = self.macos;
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./system/nixos.nix
+        agenix.nixosModule
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.cempassi = import ./home/nixos.nix;
+        }
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [rust-overlay.overlays.default];
+        })
+      ];
+    };
+    macosX86 = self.homeConfigurations."cedric.mpassi@C02Z762ELVCF".activationPackage;
+    defaultPackage.x86_64-darwin = self.macosX86;
+    defaultPackage.aarch64-darwin = self.darwinConfigurations.Balamb.system;
     defaultPackage.x86_64-linux = self.nixosConfigurations.nixos;
   };
 }
