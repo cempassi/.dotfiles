@@ -138,7 +138,7 @@ register({
 		q = { ":cprevious<cr>", "Quickfix list" },
 		g = { ":Gitsigns prev_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermPrev<CR>", "Terminal" },
-		e = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Lsp Error" },
+		e = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
 	},
 })
 
@@ -151,7 +151,7 @@ register({
     c = { "g,", "Change list"},
 		g = { ":Gitsigns next_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermNext<CR>", "Terminal" },
-		e = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Lsp Error" },
+		e = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Next Diagnostic" },
 	},
 })
 
@@ -170,12 +170,15 @@ register({
 	["]<leader>"] = { "<cmd>Telescope loclist<cr>", "Show Loclist" },
 	["b<leader>"] = { "<cmd>Telescope buffers<cr>", "Show Loclist" },
 	["g<leader>"] = { "<cmd>Telescope git_status<CR>", "Git Status" },
-	["e<leader>"] = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Buffer Diagnostics" },
 	["E<leader>"] = { "<cmd>Telescope diagnostics<CR>", "All Diagnostics" },
 	["n<leader>"] = { " <cmd>Telescope notify<CR>", "List notifications" },
 	["s<leader>"] = { "<cmd>Telescope persisted<CR>", "List Sessions" },
 }, { prefix = "<leader>" })
 
+-- Diagnostics 
+register({
+	["<leader>"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open Diagnostic float" },
+}, {prefix = "<leader>e" })
 -- Debugger
 register({
 	name = "Debugger",
