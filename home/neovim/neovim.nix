@@ -101,9 +101,6 @@ in {
       leap-nvim
       neoscroll-nvim
 
-      # Session
-      #persisted-nvim #Custom
-
       # Notes
       #telekasten-nvim # Custom
 
