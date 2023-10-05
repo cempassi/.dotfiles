@@ -6,32 +6,9 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      colors.primary = {
-        background = "#0C0C0C";
-        foreground = "#F1F5F9";
-      };
-
-      colors.normal = {
-        black = "#3B4252";
-        blue = "#81A1C1";
-        green = "#A3BE8C";
-        cyan = "#88C0D0";
-        red = "#BF616A";
-        magenta = "#B48EAD";
-        yellow = "#EBCB8B";
-        white = "#E5E9F0";
-      };
-
-      colors.bright = {
-        black = "#4C566A";
-        blue = "#81A1C1";
-        green = "#A3BE8C";
-        cyan = "#8FBCBB";
-        red = "#BF616A";
-        magenta = "#B48EAD";
-        yellow = "#EBCB8B";
-        white = "#ECEFF4";
-      };
+      import = [
+        pkgs.alacritty-theme.nord
+      ];
 
       font = {
         normal = {
