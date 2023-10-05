@@ -9,11 +9,17 @@
       pkgs.coreutils
       pkgs.rust-bin.stable.latest.default
     ];
-    pathsToLink = ["/Applications"];
+    pathsToLink = [
+      "/Applications"
+      "/Users/cempassi/Applications"
+    ];
   };
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+  # backwards compat; don't change
+  system.stateVersion = 4;
+
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
   fonts.fontDir.enable = true; # DANGER
@@ -24,6 +30,5 @@
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 1;
   };
-  # backwards compat; don't change
-  system.stateVersion = 4;
+  security.pam.enableSudoTouchIdAuth = true;
 }
