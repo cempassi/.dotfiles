@@ -43,6 +43,7 @@ set laststatus=3
 filetype plugin indent on
 syntax on 
 
+colorscheme nordic
 
 "" Plugin Management
 lua require('impatient')
@@ -58,7 +59,6 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-colorscheme nordic
 
 "Save all the files, all the times
 augroup save
@@ -136,7 +136,6 @@ set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 
 " Remove trailing whitespaces
 function! TrailingWhitespaces()

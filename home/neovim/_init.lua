@@ -34,6 +34,7 @@ end
 -- Startup (and bootstapping)
 --
 -- Bootstrap Packer if not installed already
+-- 
 do
 	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 	if fn.isdirectory(install_path) == 0 then
