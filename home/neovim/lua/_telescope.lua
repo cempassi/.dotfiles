@@ -11,7 +11,6 @@ telescope.setup {
     buffers = {
       show_all_buffers = true,
       sort_lastused = true,
-      layout_strategy = center,
       previewer = false,
       initial_mode = "insert",
       layout_config = {
