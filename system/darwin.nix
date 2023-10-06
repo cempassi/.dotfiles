@@ -1,22 +1,36 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  mkSudoPamReattachAuthScript = reattachPath: let
+    file = "/etc/pam.d/sudo";
+    option = "pam-reattach";
+    sed = "${pkgs.gnused}/bin/sed";
+  in ''
+        # Enable sudo Touch ID authentication, if not already enabled
+        if ! grep 'pam_reattach.so' ${file} > /dev/null; then
+          ${sed} -i '2i\
+    auth       optional     ${reattachPath}/lib/pam/pam_reattach.so # nix-darwin: ${option}
+          ' ${file}
+        fi
+  '';
+in {
   # here go the darwin preferences and config items
   programs.zsh.enable = true;
   users.users.cempassi.home = "/Users/cempassi";
   environment = {
     shells = with pkgs; [bash zsh];
     loginShell = pkgs.zsh;
-    systemPackages = [
-      pkgs.coreutils
-      pkgs.rust-bin.stable.latest.default
+    systemPackages = with pkgs; [
+      coreutils
+      pam-reattach
+      rust-bin.stable.latest.default
     ];
     pathsToLink = [
       "/Applications"
-      "/Users/cempassi/Applications"
     ];
   };
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
+
   # backwards compat; don't change
   system.stateVersion = 4;
 
@@ -31,4 +45,9 @@
     NSGlobalDomain.KeyRepeat = 1;
   };
   security.pam.enableSudoTouchIdAuth = true;
+  system.activationScripts.pam.text = ''
+    # PAM settings
+    echo >&2 "setting up pam-reattach..."
+    ${mkSudoPamReattachAuthScript pkgs.pam-reattach}
+  '';
 }
