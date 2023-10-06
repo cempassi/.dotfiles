@@ -59,7 +59,6 @@ in {
 
     plugins = with pkgs.vimPlugins; [
       # Start
-      impatient-nvim
       dashboard-nvim
       vim-startuptime
 

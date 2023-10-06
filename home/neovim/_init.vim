@@ -46,7 +46,6 @@ syntax on
 colorscheme nordic
 
 "" Plugin Management
-lua require('impatient')
 lua require('init')
 lua require('after')
 lua require'colorizer'.setup()
