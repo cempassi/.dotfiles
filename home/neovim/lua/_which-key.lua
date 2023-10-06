@@ -1,6 +1,6 @@
 local ok, key = pcall(require, "which-key")
 if not ok then
-    return
+	return
 end
 
 -- -- -- -- -- Settings -- -- -- -- --
@@ -125,7 +125,7 @@ register({
 
 -- LSP
 register({
-	["cf"] = { ":lua vim.lsp.buf.format()<cr>", "Format Code" },
+	["cf"] = { vim.lsp.buf.format, "Format Code" },
 }, { prefix = "<leader>" })
 
 -- Go to Previous
@@ -133,8 +133,8 @@ register({
 	["["] = {
 		name = "Previous",
 		p = { "<C-^>", "Buffer" },
-    j = { "<c-o>", "Jumplist"},
-    c = { "g;", "Change list"},
+		j = { "<c-o>", "Jumplist" },
+		c = { "g;", "Change list" },
 		q = { ":cprevious<cr>", "Quickfix list" },
 		g = { ":Gitsigns prev_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermPrev<CR>", "Terminal" },
@@ -147,8 +147,8 @@ register({
 	["]"] = {
 		name = "Next",
 		q = { ":cnext<cr>", "Quickfix list" },
-    j = { "<c-i>", "Jump list"},
-    c = { "g,", "Change list"},
+		j = { "<c-i>", "Jump list" },
+		c = { "g,", "Change list" },
 		g = { ":Gitsigns next_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermNext<CR>", "Terminal" },
 		e = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Next Diagnostic" },
@@ -170,25 +170,22 @@ register({
 	["]<leader>"] = { "<cmd>Telescope loclist<cr>", "Show Loclist" },
 	["b<leader>"] = { "<cmd>Telescope buffers<cr>", "Show Loclist" },
 	["g<leader>"] = { "<cmd>Telescope git_status<CR>", "Git Status" },
+	["e<leader>"] = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Buffer Diagnostics" },
 	["E<leader>"] = { "<cmd>Telescope diagnostics<CR>", "All Diagnostics" },
 	["n<leader>"] = { " <cmd>Telescope notify<CR>", "List notifications" },
 	["s<leader>"] = { "<cmd>Telescope persisted<CR>", "List Sessions" },
 }, { prefix = "<leader>" })
 
--- Diagnostics 
-register({
-	["<leader>"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open Diagnostic float" },
-}, {prefix = "<leader>e" })
 -- Debugger
 register({
 	name = "Debugger",
-	s = { "<Cmd>lua require'dap'.step_over()<CR>", "Step Over" },
-	i = { "<Cmd>lua require'dap'.step_into()<CR>", "Step Into" },
-	o = { "<Cmd>lua require'dap'.step_out()<CR>", "Step Out" },
-	c = { "<Cmd>lua require'dap'.continue()<CR>", "Continue" },
-	b = { "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toogle Breakpoint" },
-	l = { "<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", "Set Log point" },
-	r = { "<Cmd>lua require'dap'.repl.open()<CR>", "Open repl" },
+	s = { require'dap'.step_over, "Step Over" },
+	i = { require'dap'.step_into, "Step Into" },
+	o = { require'dap'.step_out, "Step Out" },
+	c = { require'dap'.continue, "Continue" },
+	b = { require'dap'.toggle_breakpoint, "Toogle Breakpoint" },
+	l = { require'dap'.set_breakpoint, "Set Log point" },
+	r = { require'dap'.repl.open, "Open repl" },
 }, { prefix = "<leader>d" })
 
 -- Tasks
@@ -299,21 +296,20 @@ local function attach_normal_leader_lsp()
 	register({
 		c = {
 			name = "Lsp",
-			n = { "<cmd>Lspsaga rename<cr>", "Rename Reference" },
+			n = { vim.lsp.buf.rename, "Rename Reference" },
 			a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
-			e = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
+			e = { vim.diagnostics.open_float, "Line Diagnostic" },
 			r = { "<cmd>Telescope lsp_references<cr>", "Lsp References" },
-      s = {"<cmd>Lspsaga signature_help<cr>", "Signature Help"},
-      i = {"<cmd>Lspsaga preview_definition", "Preview definition"},
-      d = {":lua vim.lsp.buf.definition()<cr>", "Go to Definition"}
-
+			s = { vim.lsp.buf.signature_help, "Signature Help" },
+			i = { vim.lsp.buf.type_definition, "Preview definition" },
+			d = { vim.lsp.buf.definition, "Go to Definition" },
+			D = { vim.lsp.buf.declaration, "Go to Declaration" },
 		},
 	}, { prefix = "<leader>", buffer = 0 })
 end
 
 local function attach_normal_key_lsp()
-	register({
-	}, { buffer = 0 })
+	register({}, { buffer = 0 })
 end
 
 local function attach_lsp()
