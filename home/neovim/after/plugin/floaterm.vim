@@ -11,6 +11,8 @@ let g:floaterm_opener = 'split'
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 
+hi! link FloatermBorder TelescopeBorder
+
 function s:open_in_normal_window() abort
   let f = findfile(expand('<cfile>'))
   if !empty(f) && has_key(nvim_win_get_config(win_getid()), 'anchor')
