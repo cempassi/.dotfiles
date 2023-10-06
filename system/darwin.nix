@@ -30,6 +30,12 @@ in {
       "/Applications"
     ];
   };
+
+  nix.settings.trusted-users = [
+    "root"
+    "cempassi"
+    "@admin"
+  ];
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
