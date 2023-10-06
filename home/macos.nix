@@ -16,6 +16,5 @@
 
   programs.zsh.shellAliases = {
     enix = "vim ~/.dotfiles/home/macos.nix";
-    switch = "home-manager switch";
   };
 }

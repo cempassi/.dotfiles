@@ -18,6 +18,9 @@ in {
   environment = {
     shells = with pkgs; [bash zsh];
     loginShell = pkgs.zsh;
+    shellAliases = {
+      switch = "darwin-rebuild switch --flake ~/.dotfiles";
+    };
     systemPackages = with pkgs; [
       coreutils
       pam-reattach
