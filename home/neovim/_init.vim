@@ -30,7 +30,7 @@ set switchbuf="useopen,usetab,uselast"
 set timeoutlen=500 
 set relativenumber numberwidth=3
 set number
-set shortmess=atAOI
+set shortmess=aAOIF
 set autoread
 set autowrite
 set autowriteall
@@ -57,8 +57,6 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-
-hi! link NormalFloat Normal
 
 "Save all the files, all the times
 augroup save
