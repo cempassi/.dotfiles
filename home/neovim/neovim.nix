@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  austere-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+  austere-nvim = pkgs.vimUtils.buildVimPlugin rec {
     pname = "austere-nvim";
     version = "18a350626bbc59af0a195e1ec5d39d5bac44f945";
     src = pkgs.fetchFromGitHub {
@@ -14,18 +14,7 @@
     };
   };
 
-  dirbuf-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
-    pname = "dirbuf-nvim";
-    version = "ac7ad3c8e61630d15af1f6266441984f54f54fd2";
-    src = pkgs.fetchFromGitHub {
-      owner = "elihunter173";
-      repo = "dirbuf.nvim";
-      rev = version;
-      sha256 = "35pNyVO0Yx+g5nvcFOmi2npb9Bnv83mkOtQJ2eKbSyc=";
-    };
-  };
-
-  incline-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
+  incline-nvim = pkgs.vimUtils.buildVimPlugin rec {
     pname = "incline-nvim";
     version = "44d4e6f4dcf2f98cf7b62a14e3c10749fc5c6e35";
     src = pkgs.fetchFromGitHub {
@@ -36,16 +25,6 @@
     };
   };
 
-  hover-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix rec {
-    pname = "hover-nvim";
-    version = "53599d0d985be6e46510011ba8f7738fa3bb3bce";
-    src = pkgs.fetchFromGitHub {
-      owner = "lewis6991";
-      repo = "hover.nvim";
-      rev = version;
-      sha256 = "3L7H/TH2HugOP3KmXeZmTI9FEvIL0KWiY3UbQWNlJMM=";
-    };
-  };
 in {
   programs.neovim = {
     enable = true;
@@ -71,8 +50,6 @@ in {
       telescope-nvim
       #telescope-terraform-doc-nvim # Custom
 
-      # Packer
-      #packer-nvim
       # LSP
       {
         plugin = nvim-lspconfig;
@@ -85,7 +62,7 @@ in {
       lspsaga-nvim
       null-ls-nvim
       fidget-nvim
-      hover-nvim # Custom
+      hover-nvim 
 
       # Completion
       nvim-cmp
@@ -101,21 +78,16 @@ in {
       luasnip
 
       # File Navigation
-      dirbuf-nvim # Custom
+      dirbuf-nvim 
       leap-nvim
       neoscroll-nvim
 
-      # Notes
-      #telekasten-nvim # Custom
 
       # Git
       vim-fugitive
       vim-git
       git-messenger-vim
       gitsigns-nvim
-
-      # Floating cmdline
-      #fine-cmdline-nvim
 
       # REST Api calls
       rest-nvim
@@ -175,7 +147,6 @@ in {
       popup-nvim
       nvim-colorizer-lua
       specs-nvim
-      #vim-42header # Custom
     ];
 
     extraPackages = with pkgs; [
