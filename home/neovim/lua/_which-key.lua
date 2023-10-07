@@ -169,6 +169,7 @@ register({
 	["E<leader>"] = { "<cmd>Telescope diagnostics<CR>", "All Diagnostics" },
 	["n<leader>"] = { " <cmd>Telescope notify<CR>", "List notifications" },
 	["s<leader>"] = { "<cmd>Telescope persisted<CR>", "List Sessions" },
+	["h<leader>"] = { "<cmd>Telescope highlights<CR>", "List Sessions" },
 }, { prefix = "<leader>" })
 
 -- Debugger
