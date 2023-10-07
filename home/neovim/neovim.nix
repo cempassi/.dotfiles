@@ -62,6 +62,10 @@ in {
       dashboard-nvim
       vim-startuptime
 
+      # UI
+      nui-nvim
+      noice-nvim
+
       # Telescope
       telescope-github-nvim
       telescope-nvim
