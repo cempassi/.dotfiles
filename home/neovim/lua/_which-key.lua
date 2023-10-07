@@ -257,10 +257,10 @@ register({
 		name = "Git",
 		["<leader>"] = { "<cmd>Telescope git_branches<CR>", "List branches" },
 	},
-	c = {
-		name = "Git",
-		["<leader>"] = { "<cmd>Telescope git_commits<CR>", "List commits" },
-	},
+	--c = {
+	--	name = "Git",
+	--	["<leader>"] = { "<cmd>Telescope git_commits<CR>", "List commits" },
+	--},
 	v = {
 		name = "Git",
 		["<leader>"] = { "<cmd>Telescope git_commits<CR>", "List buffer commits (version)" },
