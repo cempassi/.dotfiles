@@ -97,8 +97,7 @@
         })
       ];
     };
-    macosX86 = self.homeConfigurations."cedric.mpassi@C02Z762ELVCF".activationPackage;
-    defaultPackage.x86_64-darwin = self.macosX86;
+    defaultPackage.x86_64-darwin = self.homeConfigurations."cedric.mpassi@C02Z762ELVCF".activationPackage;
     defaultPackage.aarch64-darwin = self.darwinConfigurations.Balamb.system;
     defaultPackage.x86_64-linux = self.nixosConfigurations.nixos;
   };
