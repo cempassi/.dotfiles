@@ -14,7 +14,6 @@ let mapleader=" "
 scriptencoding UTF-8
 set encoding=UTF-8
 let &packpath = &runtimepath
-set lazyredraw
 set clipboard+=unnamedplus
 set showcmd
 set hlsearch
