@@ -59,6 +59,8 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
 endif
 
 
+hi! link NormalFloat Normal
+
 "Save all the files, all the times
 augroup save
   au!
