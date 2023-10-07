@@ -182,4 +182,8 @@ let g:loaded_netrwPlugin = 1
 
 "nmap <leader>le <Plug>(Luadev-RunLine)
 let g:neovide_fullscreen=v:true
-highlight link TelescopeMatching Question 
+
+highlight! link TelescopeMatching Question 
+highlight! link WarningMsg TSWarning
+highlight! link vimWarn TSWarning
+highlight! link NormalFloat TelescopeBorder
