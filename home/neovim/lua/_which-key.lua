@@ -123,11 +123,6 @@ register({
 	["sl"] = { ":<cmd>SessionLoad<CR>", "Load session" },
 }, { prefix = "<leader>" })
 
--- LSP
-register({
-	["cf"] = { vim.lsp.buf.format, "Format Code" },
-}, { prefix = "<leader>" })
-
 -- Go to Previous
 register({
 	["["] = {
@@ -315,10 +310,6 @@ local function attach_normal_leader_lsp()
 			D = { vim.lsp.buf.declaration, "Go to Declaration" },
 		},
 	}, { prefix = "<leader>", buffer = 0 })
-end
-
-local function attach_normal_key_lsp()
-	register({}, { buffer = 0 })
 end
 
 local function attach_lsp()
