@@ -42,6 +42,9 @@ lspconfig.yamlls.setup({
 })
 
 lspconfig.vimls.setup({
+})
+
+lspconfig.taplo.setup({
   on_attach = custom_on_attach,
 })
 

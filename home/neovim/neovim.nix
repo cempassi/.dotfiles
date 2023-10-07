@@ -185,6 +185,7 @@ in {
       tree-sitter
       lua-language-server
       jdt-language-server
+      taplo
       nodePackages.yaml-language-server
       nodePackages.typescript-language-server
       nodePackages.typescript
