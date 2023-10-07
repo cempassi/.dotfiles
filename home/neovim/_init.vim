@@ -48,7 +48,6 @@ colorscheme nordic
 "" Plugin Management
 lua require('init')
 lua require('after')
-lua require'colorizer'.setup()
 
 set guifont=Hasklug\ NF\ Mono\,\ Light:h10:w0
 set termguicolors
