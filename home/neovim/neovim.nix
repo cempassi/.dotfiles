@@ -170,6 +170,7 @@ in {
       nvim-notify
       popup-nvim
       nvim-colorizer-lua
+      specs-nvim
       #vim-42header # Custom
     ];
 
