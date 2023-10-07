@@ -322,7 +322,6 @@ local function attach_normal_key_lsp()
 end
 
 local function attach_lsp()
-	attach_normal_key_lsp()
 	attach_normal_leader_lsp()
 end
 
