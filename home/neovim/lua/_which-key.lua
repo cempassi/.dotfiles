@@ -179,13 +179,13 @@ register({
 -- Debugger
 register({
 	name = "Debugger",
-	s = { require'dap'.step_over, "Step Over" },
-	i = { require'dap'.step_into, "Step Into" },
-	o = { require'dap'.step_out, "Step Out" },
-	c = { require'dap'.continue, "Continue" },
-	b = { require'dap'.toggle_breakpoint, "Toogle Breakpoint" },
-	l = { require'dap'.set_breakpoint, "Set Log point" },
-	r = { require'dap'.repl.open, "Open repl" },
+	s = { require("dap").step_over, "Step Over" },
+	i = { require("dap").step_into, "Step Into" },
+	o = { require("dap").step_out, "Step Out" },
+	c = { require("dap").continue, "Continue" },
+	b = { require("dap").toggle_breakpoint, "Toogle Breakpoint" },
+	l = { require("dap").set_breakpoint, "Set Log point" },
+	r = { require("dap").repl.open, "Open repl" },
 }, { prefix = "<leader>d" })
 
 -- Tasks
