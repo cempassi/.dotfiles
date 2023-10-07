@@ -3,4 +3,11 @@ if not ok then
     return
 end
 
-lspsaga.setup({})
+lspsaga.setup({
+diagnostic = {
+    show_code_action = false,
+  };
+ symbol_in_winbar = {
+    enable = false,
+  },
+})
