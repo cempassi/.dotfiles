@@ -28,10 +28,11 @@ require("_themer")
 require("_treesitter")
 require("_true_zen")
 require("_which-key")
-require("leap").set_default_keymaps()
+require("_leap")
 require("fidget").setup({})
 require("nordic").colorscheme()
 require("crates").setup()
+
 
 vim.filetype.add({
   pattern = {
