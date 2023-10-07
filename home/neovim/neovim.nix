@@ -78,6 +78,7 @@ in {
           EOF
         '';
       }
+      lspsaga-nvim
       null-ls-nvim
       fidget-nvim
       hover-nvim # Custom

@@ -291,6 +291,14 @@ local function attach_telekasten()
 	}, { prefix = "<leader>", buffer = 0 })
 end
 
+-- Diagnostic
+register({
+	c = { "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostic" },
+	l = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
+	b = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "Buffer Diagnostic" },
+	w = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Workspace Diagnostic" },
+}, { prefix = "<leader>e" })
+
 -- LSP
 local function attach_normal_leader_lsp()
 	register({
@@ -298,7 +306,8 @@ local function attach_normal_leader_lsp()
 			name = "Lsp",
 			n = { vim.lsp.buf.rename, "Rename Reference" },
 			a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
-			e = { vim.diagnostics.open_float, "Line Diagnostic" },
+      v = { "<cmd>Lspsaga peek_definition<cr>", "Peek definition" },
+			f = { vim.lsp.buf.format, "Format Code" },
 			r = { "<cmd>Telescope lsp_references<cr>", "Lsp References" },
 			s = { vim.lsp.buf.signature_help, "Signature Help" },
 			i = { vim.lsp.buf.type_definition, "Preview definition" },
