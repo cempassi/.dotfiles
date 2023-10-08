@@ -3,8 +3,7 @@
   pkgs,
   ...
 }: {
-
-  home.file.".oh-my-zsh/custom/themes/personal.zsh-theme".source = ./personal.zsh-theme ;
+  home.file.".oh-my-zsh/custom/themes/personal.zsh-theme".source = ./personal.zsh-theme;
 
   programs.zsh = {
     enable = true;
@@ -21,8 +20,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "chisui";
           repo = "zsh-nix-shell";
-          rev = "v0.5.0";
-          sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+          rev = "v0.7.0";
+          sha256 = "149zh2rm59blr2q458a5irkfh82y3dwdich60s9670kl3cl5h2m1";
         };
       }
     ];
