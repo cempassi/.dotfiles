@@ -37,6 +37,7 @@ set guicursor=
 set laststatus=3
 set updatetime=300
 set laststatus=3
+set cursorline
 
 " Define base syntax
 filetype plugin indent on
