@@ -144,7 +144,14 @@ in {
       crates-nvim
 
       #Java
-      nvim-jdtls
+      {
+        plugin =nvim-jdtls ;
+        config = ''
+          lua << EOF
+          jdtls_path = "${pkgs.jdt-language-server}"
+          EOF
+        '';
+      }
 
       # Markdown
       # glow-nvim # Custom

@@ -41,8 +41,7 @@ lspconfig.yamlls.setup({
   },
 })
 
-lspconfig.vimls.setup({
-})
+lspconfig.vimls.setup({})
 
 lspconfig.taplo.setup({
   on_attach = custom_on_attach,
@@ -61,8 +60,16 @@ lspconfig.tsserver.setup({
   },
 })
 
+local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+
 lspconfig.jdtls.setup({
-  cmd = { "jdtls" },
+  cmd = {
+    "jdt-language-server",
+    "-configuration",
+    jdtls_path .. "/share/config",
+    "-data",
+    vim.fn.expand("~/.cache/jdtls-workspace/") .. workspace_dir,
+  },
   on_attach = custom_on_attach,
   settings = {
     java = {
@@ -167,6 +174,7 @@ lspconfig.lua_ls.setup({
           "client",
           "P",
           "tsserver_path",
+          "jdtls_path",
         },
         telemetry = {
           enable = false,
