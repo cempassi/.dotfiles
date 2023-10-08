@@ -64,8 +64,11 @@
 
       # Rust dev setup
       (pkgs.rust-bin.stable.latest.default.override {
+         targets = [ "x86_64-apple-darwin" ];
+         targetExtensions = [ "rust-docs" ];
          extensions = [ "rust-analyzer" ];
       })
+
 
       # Code managers
       pkgs.gh
