@@ -14,20 +14,8 @@
 --                          @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 --                                 @@@@@@@@@@@@@@@@%
 
-local cmd = vim.cmd
-local fn = vim.fn
-
 _G.load_config = function()
 	require("config.options")
-
-	--require("mange.theme").setup()
-	--require("mange.mappings").setup()
-
-	--require("mange.cursorline").setup()
-	--require("mange.yank_highlight").setup()
-	--require("mange.vimdiff").setup()
-
-	--require("mange.autocommands")
 end
 
 load_config()
