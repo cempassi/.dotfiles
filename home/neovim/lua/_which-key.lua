@@ -119,8 +119,8 @@ register({
 
 -- Persisted (Session manager)
 register({
-	["ss"] = { ":<cmd>SessionStart<CR>", "Save session" },
-	["sl"] = { ":<cmd>SessionLoad<CR>", "Load session" },
+	["ss"] = { "<cmd>PossessionSave<cr>", "Save session" },
+	["sl"] = { "<cmd>PossessionLoad<cr>", "Load session" },
 }, { prefix = "<leader>" })
 
 -- Go to Previous
@@ -168,7 +168,7 @@ register({
 	["e<leader>"] = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Buffer Diagnostics" },
 	["E<leader>"] = { "<cmd>Telescope diagnostics<CR>", "All Diagnostics" },
 	["n<leader>"] = { " <cmd>Telescope notify<CR>", "List notifications" },
-	["s<leader>"] = { "<cmd>Telescope persisted<CR>", "List Sessions" },
+	["s<leader>"] = { "<cmd>Telescope possession list<CR>", "List Sessions" },
 	["h<leader>"] = { "<cmd>Telescope highlights<CR>", "List Sessions" },
 }, { prefix = "<leader>" })
 

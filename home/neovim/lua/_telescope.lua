@@ -86,4 +86,4 @@ telescope.setup {
 --telescope.load_extension('projects')
 --telescope.load_extension("themes")
 --telescope.load_extension('terraform_doc')
---telescope.load_extension("persisted") -- To load the telescope extension
+require('telescope').load_extension('possession')

@@ -25,6 +25,17 @@
     };
   };
 
+  possession-nvim = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "possession-nvim";
+    version = "bc229593043097641c867322c7b9fe44b29e463a";
+    src = pkgs.fetchFromGitHub {
+      owner = "jedrzejboczar";
+      repo = "possession.nvim";
+      rev = version;
+      sha256 = "6Lztxmy6ykfXhUQ8XLeWpZXh4QVdQ8LbtN6h7Z0v3b8=";
+    };
+  };
+
 in {
   programs.neovim = {
     enable = true;
@@ -49,6 +60,9 @@ in {
       telescope-github-nvim
       telescope-nvim
       #telescope-terraform-doc-nvim # Custom
+
+      #Session
+      possession-nvim
 
       # LSP
       {

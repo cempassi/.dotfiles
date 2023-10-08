@@ -2,6 +2,9 @@ local ok, lualine = pcall(require, "lualine")
 if not ok then
 	return
 end
+local function session_name()
+    return require('possession.session').session_name or ''
+end
 
 lualine.setup({
 	options = {
@@ -14,7 +17,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff", { "diagnostics", sources = { "nvim_diagnostic" } },  {
+		lualine_b = { session_name, "branch", "diff", { "diagnostics", sources = { "nvim_diagnostic" } },  {
         require("noice").api.statusline.mode.get,
         cond = require("noice").api.statusline.mode.has,
         color = { fg = "#ff9e64" },
