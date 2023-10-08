@@ -29,7 +29,7 @@ set switchbuf="useopen,usetab,uselast"
 set timeoutlen=500 
 set relativenumber numberwidth=3
 set number
-set shortmess=aAOIF
+set shortmess=atAOIF
 set autoread
 set autowrite
 set autowriteall
