@@ -153,6 +153,7 @@ lspconfig.lua_ls.setup({
 					"P",
 					"tsserver_path",
 					"jdtls_path",
+          "lua"
 				},
 				telemetry = {
 					enable = false,
