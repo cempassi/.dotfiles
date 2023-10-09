@@ -68,6 +68,8 @@
       })
 
       pkgs.jdk17
+      pkgs.maven
+      pkgs.gradle
 
 
       # Code managers
