@@ -32,6 +32,14 @@
     homeConfigurations."cedric.mpassi@C02Z762ELVCF" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-darwin;
       modules = [
+        ({
+          config,
+          pkgs,
+          ...
+        }: {
+          home.username = "cedric.mpassi";
+          home.homeDirectory = "/Users/cedric.mpassi";
+        })
         homeage.homeManagerModules.homeage
         {
           homeage = {
