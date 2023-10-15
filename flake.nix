@@ -40,23 +40,23 @@
           home.username = "cedric.mpassi";
           home.homeDirectory = "/Users/cedric.mpassi";
         })
-        homeage.homeManagerModules.homeage
-        {
-          homeage = {
-            # Absolute path to identity (created not through home-manager)
-            identityPaths = ["~/.ssh/id_ed25519"];
+        #homeage.homeManagerModules.homeage
+        #{
+        #  homeage = {
+        #    # Absolute path to identity (created not through home-manager)
+        #    identityPaths = ["~/.ssh/id_ed25519"];
 
-            # "activation" if system doesn't support systemd
-            installationType = "activation";
+        #    # "activation" if system doesn't support systemd
+        #    installationType = "activation";
 
-            file."gitconfig-work" = {
-              # Path to encrypted file tracked by the git repository
-              source = ./.secrets/gitconfig-work.age;
-              # Path expected by git config: (./home/git/git.nix:12)
-              path = "/Users/cedric.mpassi/.config/git/work";
-            };
-          };
-        }
+        #    file."gitconfig-work" = {
+        #      # Path to encrypted file tracked by the git repository
+        #      source = ./.secrets/gitconfig-work.age;
+        #      # Path expected by git config: (./home/git/git.nix:12)
+        #      path = "/Users/cedric.mpassi/.config/git/work";
+        #    };
+        #  };
+        #}
         ./home/macos.nix
         ({pkgs, ...}: {
           nixpkgs.overlays = [
