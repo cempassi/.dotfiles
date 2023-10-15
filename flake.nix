@@ -9,7 +9,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
+    alacritty-theme.url = "github:cempassi/alacritty-theme.nix";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
     agenix.url = "github:ryantm/agenix";
