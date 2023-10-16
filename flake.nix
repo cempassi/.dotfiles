@@ -32,14 +32,6 @@
     homeConfigurations."cedric.mpassi@C02Z762ELVCF" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-darwin;
       modules = [
-        ({
-          config,
-          pkgs,
-          ...
-        }: {
-          home.username = "cedric.mpassi";
-          home.homeDirectory = "/Users/cedric.mpassi";
-        })
         #homeage.homeManagerModules.homeage
         #{
         #  homeage = {
@@ -57,7 +49,7 @@
         #    };
         #  };
         #}
-        ./home/macos.nix
+        ./home/work.nix
         ({pkgs, ...}: {
           nixpkgs.overlays = [
             rust-overlay.overlays.default
@@ -75,7 +67,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.cempassi = import ./home/macos.nix;
+          home-manager.users.cempassi = import ./home/balamb.nix;
         }
         ({pkgs, ...}: {
           nixpkgs.overlays = [
