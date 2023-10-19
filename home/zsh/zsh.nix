@@ -51,7 +51,6 @@
       dvim = "nvim --cmd \"set rtp+=$PWD\"";
       space = "dust ~";
       vim = "nvim ";
-      hack = "sudo dscl . -append /groups/admin GroupMembership cedric.mpassi";
     };
 
     localVariables = {
@@ -63,6 +62,7 @@
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
       export TERMINFO_DIRS=$HOME/.local/share/terminfo
+      export PATH=$NIX_PATH:$PATH
       zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
     '';
   };
