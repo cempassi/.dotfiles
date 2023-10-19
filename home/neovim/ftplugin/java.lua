@@ -27,6 +27,21 @@ local config = {
           severity = "ignore",
         },
       },
+      completion = {
+        favoriteStaticMembers = {
+          "fr.pmu.*",
+          "org.junit.jupiter.api.Assertions.*",
+          "java.util.Objects.requireNonNull",
+          "java.util.Objects.requireNonNullElse",
+        },
+        filteredTypes = {
+          "com.sun.*",
+          "io.micrometer.shaded.*",
+          "java.awt.*",
+          "jdk.*",
+          "sun.*",
+        },
+      },
     },
   },
 
@@ -50,26 +65,18 @@ local config = {
     "-javaagent:" .. lombok_path .. "/share/java/lombok.jar",
 
     -- 💀
-    "-jar",
-    vim.fn.glob(jdtls_path .. "/share/java/plugins/" .. "org.eclipse.equinox.launcher_*.jar"),
-    --
+    "-jar", vim.fn.glob(jdtls_path .. "/share/java/plugins/" .. "org.eclipse.equinox.launcher_*.jar"),
+
     "--add-modules=ALL-SYSTEM",
-    "--add-opens",
-    "java.base/java.util=ALL-UNNAMED",
-    "--add-opens",
-    "java.base/java.lang=ALL-UNNAMED",
+    "--add-opens", "java.base/java.util=ALL-UNNAMED",
+    "--add-opens", "java.base/java.lang=ALL-UNNAMED",
 
     -- 💀
-    "-configuration",
-    vim.fn.expand("~/.cache/jdtls-config/"),
-    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
-    -- Must point to the                      Change to one of `linux`, `win` or `mac`
-    -- eclipse.jdt.ls installation            Depending on your system.
+    "-configuration", vim.fn.expand("~/.cache/jdtls-config/"),
 
     -- 💀
     -- See `data directory configuration` section in the README
-    "-data",
-    vim.fn.expand("~/.cache/jdtls-workspace/") .. workspace_dir,
+    "-data", vim.fn.expand("~/.cache/jdtls-workspace/") .. workspace_dir,
   },
   root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw", "pom.xml" }, { upward = true })[1]),
   capabilities = capabilities,
