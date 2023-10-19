@@ -75,6 +75,7 @@
       pkgs.fzf
       pkgs.ncurses6
       pkgs.kube3d
+      pkgs.podman
 
       # JS
       pkgs.yarn
