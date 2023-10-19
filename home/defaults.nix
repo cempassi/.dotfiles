@@ -62,19 +62,11 @@
       pkgs.rsync
       
 
-      # Rust dev setup
-      (pkgs.rust-bin.stable.latest.default.override {
-         extensions = [ "rust-analyzer" "rust-src" ];
-      })
-
-      pkgs.jdk17
+      # Java
+      pkgs.jdk19_headless
       pkgs.maven
       pkgs.gradle
-
-
-      # Code managers
-      pkgs.gh
-      pkgs.glab
+      pkgs.lombok
 
       # Utils
       pkgs.bash

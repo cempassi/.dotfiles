@@ -149,6 +149,7 @@ in {
         config = ''
           lua << EOF
           jdtls_path = "${pkgs.jdt-language-server}"
+          lombok_path = "${pkgs.lombok}"
           EOF
         '';
       }

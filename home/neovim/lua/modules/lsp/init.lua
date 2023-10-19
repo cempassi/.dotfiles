@@ -153,7 +153,8 @@ lspconfig.lua_ls.setup({
 					"P",
 					"tsserver_path",
 					"jdtls_path",
-          "lua"
+          "lua",
+          "lombok_path"
 				},
 				telemetry = {
 					enable = false,
