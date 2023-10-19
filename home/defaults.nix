@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     ./alacritty/alacritty.nix
@@ -60,7 +61,6 @@
       pkgs.onefetch
       pkgs.bandwhich
       pkgs.rsync
-      
 
       # Java
       pkgs.jdk19_headless
@@ -75,14 +75,13 @@
       pkgs.fzf
       pkgs.ncurses6
       pkgs.kube3d
-      pkgs.awscli2
 
       # JS
       pkgs.yarn
       pkgs.nodePackages.rimraf
 
       # font
-      (pkgs.nerdfonts.override { fonts = [ "Hasklig" ]; })
+      (pkgs.nerdfonts.override {fonts = ["Hasklig"];})
     ];
   };
 
