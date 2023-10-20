@@ -1,3 +1,5 @@
+-- Insert here dev plugins with vim.opt.runtimepath:prepend()
+
 -- Lsp Configuration
 require("modules.lsp")
 
