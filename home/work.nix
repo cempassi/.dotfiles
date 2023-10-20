@@ -21,6 +21,9 @@
       # Code manager
       pkgs.glab
 
+      # Jira
+      pkgs.jira-cli-go
+
       # Python
       (pkgs.python3.withPackages (ps:
         with ps; [
