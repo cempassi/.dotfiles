@@ -34,7 +34,7 @@
         ]))
 
       # Utils
-      pkgs.awscli2
+      #pkgs.awscli2
 
     ]
     ;
