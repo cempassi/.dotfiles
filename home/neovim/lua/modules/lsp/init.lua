@@ -180,3 +180,8 @@ lspconfig.rnix.setup({
 	on_attach = custom_on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.bashls.setup({
+	on_attach = custom_on_attach,
+	capabilities = capabilities,
+})

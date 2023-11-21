@@ -99,6 +99,7 @@ in {
 
       # Git
       vim-fugitive
+
       vim-git
       git-messenger-vim
       gitsigns-nvim
@@ -191,6 +192,7 @@ in {
       nodePackages.prettier
       nodePackages.vim-language-server
       nodePackages.typescript
+      nodePackages.bash-language-server
       rnix-lsp
     ];
   };
