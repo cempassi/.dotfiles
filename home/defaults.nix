@@ -46,6 +46,11 @@
     };
 
     packages = [
+      # Rust
+      (pkgs.rust-bin.stable.latest.default.override {
+        extensions = ["rust-analyzer" "rust-src"];
+      })
+
       # Rust Cli tools
       pkgs.ripgrep
       pkgs.tokei
