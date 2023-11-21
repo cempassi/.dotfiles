@@ -41,10 +41,14 @@ lspconfig.yamlls.setup({
 	},
 })
 
-lspconfig.vimls.setup({})
+lspconfig.vimls.setup({
+	on_attach = custom_on_attach,
+	capabilities = capabilities,
+})
 
 lspconfig.taplo.setup({
 	on_attach = custom_on_attach,
+	capabilities = capabilities,
 })
 
 lspconfig.tsserver.setup({
