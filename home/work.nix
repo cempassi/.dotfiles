@@ -35,13 +35,12 @@
 
       # Utils
       #pkgs.awscli2
-
-    ]
-    ;
+    ];
   };
 
   programs.zsh.shellAliases = {
     switch = "home-manager switch";
+    rebond = "(unset LC_ALL ; TERM=xterm-256color ssh aws)";
     enix = "vim ~/.dotfiles/home/macos.nix";
     hack = "sudo dscl . -append /groups/admin GroupMembership cedric.mpassi";
   };
