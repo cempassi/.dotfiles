@@ -42,7 +42,6 @@
       BAT_THEME = "Nord";
       KEYTIMEOUT = 1;
       PAGER = "bat --paging=auto --plain";
-      MAIL = "cempassi@student.42.fr";
     };
 
     packages = [
