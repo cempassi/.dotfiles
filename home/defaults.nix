@@ -72,14 +72,21 @@
       pkgs.gradle
       pkgs.lombok
 
+      # Containers
+      pkgs.podman
+      pkgs.colima
+
+      # Kubernetes
+      pkgs.kubectl
+      pkgs.kind
+      pkgs.kube3d
+
       # Utils
       pkgs.bash
       pkgs.bitwarden-cli
       pkgs.jq
       pkgs.fzf
       pkgs.ncurses6
-      pkgs.kube3d
-      pkgs.podman
 
       # JS
       pkgs.yarn
