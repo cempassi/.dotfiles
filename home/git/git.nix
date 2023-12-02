@@ -17,6 +17,7 @@
     userEmail = "cempassi@student.42.fr";
 
     extraConfig = {
+      init.defaultBranch = "main";
       pull.rebase = true;
       push.default = "current";
       pull.default = "current";
