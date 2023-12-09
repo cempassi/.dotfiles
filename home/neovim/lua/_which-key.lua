@@ -296,6 +296,18 @@ register({
 	w = { "<cmd>Lspsaga show_workspace_diagnostics<cr>", "Workspace Diagnostic" },
 }, { prefix = "<leader>e" })
 
+local function scroll_down()
+  if not require("noice.lsp").scroll(4) then
+    return "<c-f>"
+  end
+end
+
+local function scroll_up()
+  if not require("noice.lsp").scroll(-4) then
+    return "<c-b>"
+  end
+end
+
 -- LSP
 local function attach_normal_leader_lsp()
 	register({
@@ -312,6 +324,11 @@ local function attach_normal_leader_lsp()
 			D = { vim.lsp.buf.declaration, "Go to Declaration" },
 		},
 	}, { prefix = "<leader>", buffer = 0 })
+
+	register({
+    ["<down>"] = { scroll_down, "Scroll down" },
+    ["<up>"] = { scroll_up, "Scroll down" },
+  }, { mode = "i"})
 end
 
 local function attach_lsp()
