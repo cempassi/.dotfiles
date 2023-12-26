@@ -34,7 +34,8 @@
         ]))
 
       # Utils
-      pkgs.awscli
+      pkgs.awscli2
+      pkgs.ssm-session-manager-plugin
     ];
   };
 
