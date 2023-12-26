@@ -52,7 +52,7 @@
 
       # Rust Cli tools
       pkgs.ripgrep
-      #pkgs.tokei -> Build failed
+      pkgs.tokei
       pkgs.delta
       pkgs.bat
       pkgs.eza
