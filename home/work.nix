@@ -27,10 +27,11 @@
       # Python
       (pkgs.python3.withPackages (ps:
         with ps; [
-          pkgs.python310Packages.boto3
-          pkgs.python310Packages.requests
-          pkgs.python310Packages.beautifulsoup4
-          pkgs.python310Packages.truststore
+          pkgs.python311Packages.boto3
+          pkgs.python311Packages.botocore
+          pkgs.python311Packages.requests
+          pkgs.python311Packages.beautifulsoup4
+          pkgs.python311Packages.truststore
         ]))
 
       # Utils
