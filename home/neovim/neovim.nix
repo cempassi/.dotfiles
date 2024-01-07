@@ -87,6 +87,7 @@ in {
       cmp_luasnip
       cmp-treesitter
       cmp-spell
+      cmp-git
       lspkind-nvim
       friendly-snippets
       luasnip
