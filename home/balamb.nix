@@ -21,6 +21,7 @@
   };
 
   programs.zsh.shellAliases = {
-    enix = "vim ~/.dotfiles/home/macos.nix";
+    enix = "vim ~/.dotfiles/home/defaults.nix";
+    switch = "darwin-rebuild switch --flake ~/.dotfiles";
   };
 }
