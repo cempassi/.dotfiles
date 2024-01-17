@@ -93,6 +93,10 @@
       pkgs.yarn
       pkgs.nodePackages.rimraf
 
+      # Python
+      pkgs.pyenv
+      pkgs.poetry
+
       # font
       (pkgs.nerdfonts.override {fonts = ["Hasklig"];})
     ];
