@@ -65,6 +65,7 @@
       pkgs.onefetch
       pkgs.bandwhich
       pkgs.rsync
+      pkgs.websocat
 
       # Java
       pkgs.jdk19_headless
