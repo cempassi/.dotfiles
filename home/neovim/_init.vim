@@ -66,6 +66,7 @@ augroup END
 
 "python configuration
 let g:python3_host_prog='/Users/cempassi/.pyenv/versions/neovim3/bin/python'
+let g:no_python_maps='true'
 
 " Turn bell off
 set belloff=all
