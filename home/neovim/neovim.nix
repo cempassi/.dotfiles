@@ -74,6 +74,7 @@ in {
         '';
       }
       lspsaga-nvim
+      none-ls-nvim
       fidget-nvim
       hover-nvim 
 
@@ -177,10 +178,9 @@ in {
     extraPackages = with pkgs; [
       terraform-ls
       stylua
-      black
+      ruff
       selene
       shfmt
-      isort
       alejandra
       glow
       tree-sitter

@@ -14,9 +14,10 @@ null.setup({
 		}), --  JS/TS, JSON,
 		builtins.formatting.shfmt, --shell
 		builtins.formatting.terraform_fmt.with({
-			filetypes = { "terraform", "terraform-vars" },
-		}), --terraform
-		builtins.formatting.black.with({ extra_args = { "--fast" } }), --python
-		builtins.formatting.isort, --python
+      filetypes = {"terraform", "terraform-vars" }
+
+    }), --terraform
+    builtins.diagnostics.ruff, --python
+		builtins.formatting.ruff, --python
 	},
 })
