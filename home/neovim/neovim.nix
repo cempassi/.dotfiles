@@ -36,6 +36,17 @@
     };
   };
 
+  leetcode-nvim = pkgs.vimUtils.buildVimPlugin rec {
+    pname = "leetcode-nvim";
+    version = "7cec0d37bad6258d73f2cc2c2f33ffdee9324327";
+    src = pkgs.fetchFromGitHub {
+      owner = "kawre";
+      repo = "leetcode.nvim";
+      rev = version;
+      sha256 = "49joL3jkORGbrjaNcm1NnAiFBjoDQ4u3XR+/O+tc9js=";
+    };
+  };
+
 in {
   programs.neovim = {
     enable = true;
@@ -146,6 +157,9 @@ in {
 
       # Rust
       crates-nvim
+
+      #Leetcode
+      leetcode-nvim # Custom
 
       #Java
       {
