@@ -74,9 +74,11 @@ in {
         '';
       }
       lspsaga-nvim
-      null-ls-nvim
       fidget-nvim
       hover-nvim 
+
+      # Null ls replacement
+      none-ls-nvim
 
       # Completion
       nvim-cmp
@@ -96,7 +98,6 @@ in {
       dirbuf-nvim 
       leap-nvim
       neoscroll-nvim
-
 
       # Git
       vim-fugitive
