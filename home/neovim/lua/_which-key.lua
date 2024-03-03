@@ -133,7 +133,7 @@ register({
 		q = { ":cprevious<cr>", "Quickfix list" },
 		g = { ":Gitsigns prev_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermPrev<CR>", "Terminal" },
-		e = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+		e = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Next Diagnostic" },
 	},
 })
 
@@ -146,7 +146,7 @@ register({
 		c = { "g,", "Change list" },
 		g = { ":Gitsigns next_hunk<cr>", "Git Hunk" },
 		t = { ":FloatermNext<CR>", "Terminal" },
-		e = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Next Diagnostic" },
+		e = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
 	},
 })
 
