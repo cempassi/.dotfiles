@@ -29,6 +29,7 @@
     stateVersion = "22.05";
 
     sessionPath = [
+      "$HOME/.rd/bin"
       "$HOME/.luarocks/bin" # Lua
       "$HOME/.tfenv/bin" # Terraform
       "$HOME/.rd/bin" # Rancher Desktop
