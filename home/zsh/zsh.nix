@@ -51,6 +51,7 @@
       dvim = "nvim --cmd \"set rtp+=$PWD\"";
       space = "dust ~";
       vim = "nvim ";
+      vi = "nvim ";
     };
 
     localVariables = {
