@@ -193,6 +193,7 @@ in {
       terraform-ls
       stylua
       ruff
+      ruff-lsp
       selene
       shfmt
       alejandra

@@ -17,7 +17,5 @@ null.setup({
       filetypes = {"terraform", "terraform-vars" }
 
     }), --terraform
-    builtins.diagnostics.ruff, --python
-		builtins.formatting.ruff, --python
 	},
 })

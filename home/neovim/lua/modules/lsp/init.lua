@@ -189,3 +189,13 @@ lspconfig.bashls.setup({
 	on_attach = custom_on_attach,
 	capabilities = capabilities,
 })
+
+lspconfig.ruff_lsp.setup {
+  on_attach = custom_on_attach,
+  init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {},
+    }
+  }
+}
