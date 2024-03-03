@@ -99,6 +99,8 @@
       pkgs.poetry
       pkgs.python311Packages.pynvim
 
+      pkgs.pstree
+
       # font
       (pkgs.nerdfonts.override {fonts = ["Hasklig"];})
     ];
