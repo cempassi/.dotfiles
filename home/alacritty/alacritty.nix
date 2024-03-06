@@ -28,7 +28,7 @@
           style = "Bold Italic";
         };
 
-        size = 16;
+        size = 14;
         offset = {
           x = 1;
           y = 2;
@@ -61,20 +61,6 @@
       env = {
         TERM = "xterm-256color";
       };
-
-      use_thin_strokes = "true";
-      key_bindings = [
-        {
-          key = "F";
-          mods = "Command|Control";
-          action = "ToggleFullscreen";
-        }
-        {
-          key = "N";
-          mods = "Command|Control";
-          action = "SpawnNewInstance";
-        }
-      ];
     };
   };
 }
