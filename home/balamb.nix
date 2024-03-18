@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./defaults.nix
+    ./alacritty/alacritty.nix
   ];
 
   home = {

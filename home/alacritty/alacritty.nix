@@ -28,7 +28,7 @@
           style = "Bold Italic";
         };
 
-        size = 14;
+        size = 16;
         offset = {
           x = 1;
           y = 2;

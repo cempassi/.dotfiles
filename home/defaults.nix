@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./alacritty/alacritty.nix
     ./git/git.nix
     ./lldb/lldb.nix
     ./neovim/neovim.nix
