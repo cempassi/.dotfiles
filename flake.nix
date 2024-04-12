@@ -97,8 +97,27 @@
         })
       ];
     };
+
+    nixosConfigurations.galbadia = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./system/galbadia.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.cempassi = import ./home/nixos.nix;
+        }
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [
+            rust-overlay.overlays.default
+            alacritty-theme.overlays.default
+          ];
+        })
+      ];
+    };
     defaultPackage.x86_64-darwin = self.homeConfigurations."cedric.mpassi@C02Z762ELVCF".activationPackage;
     defaultPackage.aarch64-darwin = self.darwinConfigurations.Balamb.system;
-    defaultPackage.x86_64-linux = self.nixosConfigurations.nixos;
+    defaultPackage.x86_64-linux = self.nixosConfigurations.galbadia;
   };
 }
