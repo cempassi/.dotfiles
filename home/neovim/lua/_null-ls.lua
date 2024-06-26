@@ -12,10 +12,11 @@ null.setup({
 		builtins.formatting.prettier.with({
 			filetypes = { "html", "json", "yaml", "markdown", "telekasten", "js", "ts" },
 		}), --  JS/TS, JSON,
-		builtins.formatting.shfmt, --shell
+		builtins.formatting.shfmt.with({
+			filetypes = { "zsh", "sh" },
+		}), --shell
 		builtins.formatting.terraform_fmt.with({
-      filetypes = {"terraform", "terraform-vars" }
-
-    }), --terraform
+			filetypes = { "terraform", "terraform-vars" },
+		}), --terraform
 	},
 })
