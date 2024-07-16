@@ -13,10 +13,9 @@
     homeDirectory = "/Users/cedric.mpassi";
     sessionVariables = {
       NODE_EXTRA_CA_CERTS = "${config.home.homeDirectory}/.local/certs/ca-bundle.crt";
-      NIX_SSL_CERT_FILE = "${config.home.homeDirectory}/.local/certs/ca-bundle.crt";
+      NIX_CONFIG="experimental-features = nix-command flakes";
       NIX_PATH = "$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin";
       MAVEN_OPTS = "-Djavax.net.ssl.trustStore=/Users/cedric.mpassi/.local/certs/nexus.crt -Djavax.net.ssl.trustStorePassword=changeit";
-      REQUESTS_CA_BUNDLE = "/etc/ssl/cert.pem";
     };
 
     packages = [
@@ -43,9 +42,7 @@
   };
 
   programs.zsh.shellAliases = {
-    switch = "home-manager switch";
-    rebond = "(unset LC_ALL ; TERM=xterm-256color ssh aws)";
+    switch = "home-manager switch --flake /Users/cedric.mpassi/.dotfiles";
     enix = "vim ~/.dotfiles/home/work.nix";
-    hack = "sudo dscl . -append /groups/admin GroupMembership cedric.mpassi";
   };
 }

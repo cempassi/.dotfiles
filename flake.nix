@@ -29,26 +29,9 @@
     homeage,
     ...
   }: {
-    homeConfigurations."cedric.mpassi@C02Z762ELVCF" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+    homeConfigurations."cedric.mpassi@WJETAG-MXH5HD23NKV" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
-        #homeage.homeManagerModules.homeage
-        #{
-        #  homeage = {
-        #    # Absolute path to identity (created not through home-manager)
-        #    identityPaths = ["~/.ssh/id_ed25519"];
-
-        #    # "activation" if system doesn't support systemd
-        #    installationType = "activation";
-
-        #    file."gitconfig-work" = {
-        #      # Path to encrypted file tracked by the git repository
-        #      source = ./.secrets/gitconfig-work.age;
-        #      # Path expected by git config: (./home/git/git.nix:12)
-        #      path = "/Users/cedric.mpassi/.config/git/work";
-        #    };
-        #  };
-        #}
         ./home/work.nix
         ({pkgs, ...}: {
           nixpkgs.overlays = [
@@ -116,8 +99,5 @@
         })
    ];
     };
-    defaultPackage.x86_64-darwin = self.homeConfigurations."cedric.mpassi@C02Z762ELVCF".activationPackage;
-    defaultPackage.aarch64-darwin = self.darwinConfigurations.Balamb.system;
-    defaultPackage.x86_64-linux = self.nixosConfigurations.galbadia;
   };
 }

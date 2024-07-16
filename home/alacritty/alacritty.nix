@@ -28,7 +28,7 @@
           style = "Bold Italic";
         };
 
-        size = 16;
+        size = 12;
         offset = {
           x = 1;
           y = 2;
@@ -59,7 +59,7 @@
 
       live_config_reload = true;
       env = {
-        TERM = "xterm-256color";
+        TERM = "alacritty";
       };
     };
   };
