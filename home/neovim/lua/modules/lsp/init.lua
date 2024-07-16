@@ -180,7 +180,7 @@ lspconfig.pyright.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.rnix.setup({
+lspconfig.nil_ls.setup({
 	on_attach = custom_on_attach,
 	capabilities = capabilities,
 })
