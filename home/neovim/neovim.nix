@@ -191,6 +191,7 @@ in {
 
     extraPackages = with pkgs; [
       terraform-ls
+      nil
       stylua
       ruff
       ruff-lsp
@@ -203,15 +204,14 @@ in {
       jdt-language-server
       shellcheck
       taplo
+      pyright
       nodePackages.yaml-language-server
       nodePackages.typescript-language-server
       nodePackages.typescript
-      nodePackages.pyright
       nodePackages.prettier
       nodePackages.vim-language-server
       nodePackages.typescript
       nodePackages.bash-language-server
-      rnix-lsp
     ];
   };
 
