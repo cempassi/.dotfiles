@@ -67,12 +67,6 @@
       pkgs.rsync
       pkgs.websocat
 
-      # Java
-      pkgs.jdk19_headless
-      pkgs.maven
-      pkgs.gradle
-      pkgs.lombok
-
       # Containers
       pkgs.podman
       pkgs.colima
