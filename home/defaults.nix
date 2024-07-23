@@ -78,6 +78,7 @@
       pkgs.kubectl
       pkgs.kind
       pkgs.kube3d
+      pkgs.k9s
 
       # Utils
       pkgs.bash
