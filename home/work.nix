@@ -35,7 +35,7 @@
         ]))
 
       # Utils
-      pkgs.awscli2
+      pkgs.azure-cli
       pkgs.ssm-session-manager-plugin
     ];
   };
