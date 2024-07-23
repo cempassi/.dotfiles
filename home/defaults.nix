@@ -67,6 +67,9 @@
       pkgs.rsync
       pkgs.websocat
 
+      # Code managers
+      pkgs.gh
+
       # Containers
       pkgs.podman
       pkgs.colima

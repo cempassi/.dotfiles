@@ -15,8 +15,6 @@
     };
 
     packages = [
-      # Code managers
-      pkgs.gh
 
       # Dev dependencies
       pkgs.protobuf

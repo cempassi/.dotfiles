@@ -20,8 +20,6 @@
     };
 
     packages = [
-      # Code manager
-      pkgs.glab
 
       # Jira
       pkgs.jira-cli-go
