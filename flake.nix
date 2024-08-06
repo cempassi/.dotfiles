@@ -29,6 +29,14 @@
     homeage,
     ...
   }: {
+    devShells.aarch64-darwin.python39 = nixpkgs.legacyPackages.aarch64-darwin.mkShell {
+      nativeBuildInputs = with nixpkgs; let
+        devpython =
+          nixpkgs.legacyPackages.aarch64-darwin.python39.withPackages
+          (packages: with packages; [virtualenv pip setuptools wheel]);
+      in [devpython];
+    };
+
     homeConfigurations."cedric.mpassi@WJETAG-MXH5HD23NKV" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
@@ -97,7 +105,7 @@
             alacritty-theme.overlays.default
           ];
         })
-   ];
+      ];
     };
   };
 }
