@@ -98,6 +98,7 @@
       pkgs.python311Packages.pynvim
 
       pkgs.pstree
+      pkgs.awscli2
 
       # font
       (pkgs.nerdfonts.override {fonts = ["Hasklig"];})
