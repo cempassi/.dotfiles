@@ -6,24 +6,20 @@ end
 -- -- -- -- -- Settings -- -- -- -- --
 
 key.setup({
-	window = {
-		border = "double", -- none, single, double, shadow
-		position = "bottom", -- bottom, top
-		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-		winblend = 0,
+	opts = {
+		win = {
+			padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+			title = true,
+			title_pos = "center",
+			border = "single", -- none, single, double, shadow
+			position = "bottom", -- bottom, top
+		},
 	},
 	layout = {
-		height = { min = 4, max = 25 }, -- min and max height of the columns
-		width = { min = 20, max = 50 }, -- min and max width of the columns
 		spacing = 4, -- spacing between columns
 		align = "center", -- align columns left, center or right
 	},
 })
-
--- -- -- -- -- Global Mappings -- -- -- -- --
-
-local register = key.register
 
 -- Change escape to jk in all modes
 key.add({
