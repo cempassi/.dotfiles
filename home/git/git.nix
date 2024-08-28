@@ -18,6 +18,7 @@
 
     extraConfig = {
       init.defaultBranch = "main";
+      github.user = "cempassi";
       pull.rebase = true;
       push.default = "current";
       pull.default = "current";
