@@ -65,6 +65,8 @@
       export TERMINFO_DIRS=$HOME/.local/share/terminfo
       export PATH=$NIX_PATH:$PATH
       zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+      eval "$(pyenv init -)"
+      eval "$(pyenv virtualenv-init -)"
     '';
   };
 }
