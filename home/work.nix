@@ -37,6 +37,7 @@
 
       pkgs.gnupg
       pkgs.openssl
+      pkgs.git-crypt
     ];
   };
 
