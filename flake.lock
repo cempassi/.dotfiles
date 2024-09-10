@@ -30,15 +30,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1709022067,
-        "narHash": "sha256-twWbyNZh4yKDpJ8Cg9zWMCJylhJKc0kPDFBOXmw+Itw=",
-        "owner": "cempassi",
+        "lastModified": 1725961517,
+        "narHash": "sha256-fRnGgth3NfdEPntdnY7btBxl94bXrTHGsO3GfQFYZfs=",
+        "owner": "alexghr",
         "repo": "alacritty-theme.nix",
-        "rev": "aae2d818dd044ee56ec5c9a727fe7bc9acc2ecd7",
+        "rev": "912f7de97495bbd06ce780041196aee5c43ba84b",
         "type": "github"
       },
       "original": {
-        "owner": "cempassi",
+        "owner": "alexghr",
         "repo": "alacritty-theme.nix",
         "type": "github"
       }
