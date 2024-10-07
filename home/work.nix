@@ -38,6 +38,9 @@
       pkgs.gnupg
       pkgs.openssl
       pkgs.git-crypt
+
+      #Terraform and Terragrunt version manager
+      pkgs.tenv
     ];
   };
 
