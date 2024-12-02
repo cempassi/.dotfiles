@@ -45,7 +45,7 @@ in {
 
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
-  fonts.packages = [(pkgs.nerdfonts.override {fonts = ["Hasklig"];})];
+  fonts.fontconfig.enable = true;
   services.nix-daemon.enable = true;
   system.defaults = {
     dock.autohide = true;
