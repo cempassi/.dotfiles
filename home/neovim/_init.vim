@@ -49,7 +49,7 @@ colorscheme nordic
 lua require('init')
 lua require('after')
 
-set guifont=Hasklug\ NF\ Mono\,\ Light:h10:w0
+set guifont=Hasklug\ Nerd\ Font\ Mono\,\ Light:h10:w0
 set termguicolors
 "let g:monochrome_style="subtle"
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
