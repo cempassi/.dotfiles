@@ -74,6 +74,9 @@
       pkgs.podman
       pkgs.colima
 
+      # Virtualisation
+      pkgs.vfkit
+
       # Kubernetes
       pkgs.kubectl
       pkgs.kind
@@ -82,7 +85,6 @@
 
       # Utils
       pkgs.bash
-      pkgs.bitwarden-cli
       pkgs.jq
       pkgs.fzf
       pkgs.ncurses6
@@ -90,7 +92,6 @@
       # JS
       pkgs.yarn
       pkgs.nodePackages.rimraf
-
 
       # Python
       pkgs.pyenv
@@ -101,7 +102,7 @@
       pkgs.awscli2
 
       # font
-      (pkgs.nerdfonts.override {fonts = ["Hasklig"];})
+      pkgs.nerd-fonts.hasklug
     ];
   };
 
