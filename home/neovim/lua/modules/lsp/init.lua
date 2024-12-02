@@ -52,7 +52,7 @@ lspconfig.taplo.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
 	capabilities = capabilities,
 	filetypes = { "javascript", "typescript", "typescriptreact" },
 	on_attach = custom_on_attach,
@@ -191,7 +191,7 @@ lspconfig.bashls.setup({
 	capabilities = capabilities,
 })
 
-lspconfig.ruff_lsp.setup {
+lspconfig.ruff.setup {
   on_attach = custom_on_attach,
   init_options = {
     settings = {
