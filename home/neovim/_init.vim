@@ -49,7 +49,7 @@ colorscheme nordic
 lua require('init')
 lua require('after')
 
-set guifont=Hasklug\ Nerd\ Font\ Mono\,\ Light:h10:w0
+set guifont=Hasklug\ Nerd\ Font\ Mono
 set termguicolors
 "let g:monochrome_style="subtle"
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
@@ -65,7 +65,6 @@ augroup save
 augroup END
 
 "python configuration
-let g:python3_host_prog='/Users/cempassi/.pyenv/versions/neovim3/bin/python'
 let g:no_python_maps='true'
 
 " Turn bell off
