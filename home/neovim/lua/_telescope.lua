@@ -86,4 +86,4 @@ telescope.setup {
 --telescope.load_extension('projects')
 --telescope.load_extension("themes")
 --telescope.load_extension('terraform_doc')
-require('telescope').load_extension('possession')
+--require('telescope').load_extension('possession')
