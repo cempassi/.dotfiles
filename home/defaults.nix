@@ -100,6 +100,8 @@
 
       pkgs.pstree
       pkgs.awscli2
+      pkgs.git-crypt
+      pkgs.gnupg
 
       # font
       pkgs.nerd-fonts.hasklug
