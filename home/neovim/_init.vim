@@ -1,10 +1,10 @@
 
 if v:progname == 'vi'
-	set noloadplugins
+  set noloadplugins
 endif
 
 if &compatible
-	set nocompatible
+  set nocompatible
 endif
 
 " Map leader key
@@ -71,7 +71,7 @@ let g:no_python_maps='true'
 set belloff=all
 
 if has('nvim')
-	set signcolumn=number
+  set signcolumn=number
 endif
 
 "Reload file after external modification
@@ -80,23 +80,21 @@ au FocusGained * :checktime
 
 " Persistent undo
 " Keep undo history across sessions by storing it in a file
-if has('persistent_undo')
-	" define a path to store persistent_undo files.
-	let target_path = expand('~/.local/share/nvim/undodir')
+" define a path to store persistent_undo files.
+let undo_path = expand('~/.local/share/nvim/undodir')
 
-	" create the directory and any parent directories
-	" if the location does not exist.
-	if !isdirectory(target_path)
-		call mkdir(target_path, "p")
-	endif
-
-	" Point Vim to the defined undo directory.
-	let &undodir = target_path
-
-	" Enable undo persistence.
-	set undofile
-	set undolevels=1000
+" create the directory and any parent directories
+" if the location does not exist.
+if !isdirectory(undo_path)
+  call mkdir(undo_path, "p")
 endif
+
+" Point Vim to the defined undo directory.
+let &undodir = undo_path
+
+" Enable undo persistence.
+set undofile
+set undolevels=1000
 
 " Man page reader
 let $PAGER=''
@@ -114,15 +112,15 @@ set complete-=i
 set foldmethod=syntax
 
 if has ('folding')
-	if has ('windows')
-		set fillchars=vert:\│ 			"Box drawing
-		set fillchars=vert:\│ 			"Box drawing
-		set fillchars+=fold:∙
-		set fillchars+=eob:\ 
-	endif
-	set foldenable
-	set foldnestmax=1
-	set foldmethod=syntax
+  if has ('windows')
+    set fillchars=vert:\│ 			"Box drawing
+    set fillchars=vert:\│ 			"Box drawing
+    set fillchars+=fold:∙
+    set fillchars+=eob:\ 
+  endif
+  set foldenable
+  set foldnestmax=1
+  set foldmethod=syntax
   set foldlevelstart=5
 endif
 
@@ -137,7 +135,7 @@ set expandtab
 
 " Remove trailing whitespaces
 function! TrailingWhitespaces()
-	:%s/\s\+$//ge
+  :%s/\s\+$//ge
 endfunction
 
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
@@ -146,9 +144,9 @@ autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 "just after opening it, if the '" mark is set:
 
 au BufReadPost *
-			\ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-			\ |   exe "normal! g`\""
-			\ | endif
+      \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+      \ |   exe "normal! g`\""
+      \ | endif
 
 
 "Formating options
@@ -175,7 +173,7 @@ tnoremap   <silent>   <leader><leader>  <C-\><C-n>:FloatermToggle<CR>
 let g:webdevicons_enable_startify = 1
 
 if exists("g:loaded_webdevicons")
-	call webdevicons#refresh()
+  call webdevicons#refresh()
 endif
 
 " Replace netrw
