@@ -17,7 +17,6 @@ in {
   users.users.cempassi.home = "/Users/cempassi";
   environment = {
     shells = with pkgs; [bash zsh];
-    loginShell = pkgs.zsh;
     shellAliases = {
       switch = "darwin-rebuild switch --flake ~/.dotfiles";
     };
@@ -45,8 +44,6 @@ in {
 
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
-  fonts.fontconfig.enable = true;
-  services.nix-daemon.enable = true;
   system.defaults = {
     dock.autohide = true;
     NSGlobalDomain.InitialKeyRepeat = 14;
