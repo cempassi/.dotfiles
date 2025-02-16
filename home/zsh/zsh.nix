@@ -32,7 +32,6 @@
       plugins = [
         "vi-mode"
         "rust"
-        "docker"
         "git"
       ];
       theme = "personal";
