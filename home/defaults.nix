@@ -59,7 +59,6 @@
       pkgs.zoxide
       pkgs.fd
       pkgs.bottom
-      pkgs.diskonaut
       pkgs.du-dust
       pkgs.rage
       pkgs.onefetch
