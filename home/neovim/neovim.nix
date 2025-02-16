@@ -1,51 +1,29 @@
 {
-  config,
   pkgs,
+  lib,
   ...
-}: let
-  austere-nvim = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "austere-nvim";
-    version = "18a350626bbc59af0a195e1ec5d39d5bac44f945";
-    src = pkgs.fetchFromGitHub {
-      owner = "cempassi";
-      repo = "austere.nvim";
-      rev = version;
-      sha256 = "/0wMZY8Gic47LnykaQq2xJO+6n8JYM34V1KtJmQB0+U=";
+}: let  
+
+fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPlugin {
+    pname = "${lib.strings.sanitizeDerivationName repo}";
+    version = ref;
+    src = builtins.fetchGit {
+      url = "git@github.com:${repo}.git";
+      ref = ref;
+      rev = rev;
     };
   };
 
-  incline-nvim = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "incline-nvim";
-    version = "44d4e6f4dcf2f98cf7b62a14e3c10749fc5c6e35";
-    src = pkgs.fetchFromGitHub {
-      owner = "b0o";
-      repo = "incline.nvim";
-      rev = version;
-      sha256 = "oXmZK4cVyuSqmDUwJK0v7YL2g3Kr7zbMgk178D+zzys=";
-    };
-  };
-
-  possession-nvim = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "possession-nvim";
-    version = "bc229593043097641c867322c7b9fe44b29e463a";
-    src = pkgs.fetchFromGitHub {
-      owner = "jedrzejboczar";
-      repo = "possession.nvim";
-      rev = version;
-      sha256 = "6Lztxmy6ykfXhUQ8XLeWpZXh4QVdQ8LbtN6h7Z0v3b8=";
-    };
-  };
-
-  leetcode-nvim = pkgs.vimUtils.buildVimPlugin rec {
-    pname = "leetcode-nvim";
-    version = "7cec0d37bad6258d73f2cc2c2f33ffdee9324327";
-    src = pkgs.fetchFromGitHub {
-      owner = "kawre";
-      repo = "leetcode.nvim";
-      rev = version;
-      sha256 = "49joL3jkORGbrjaNcm1NnAiFBjoDQ4u3XR+/O+tc9js=";
-    };
-  };
+#  possession-nvim = pkgs.vimUtils.buildVimPlugin rec {
+#    pname = "possession-nvim";
+#    version = "bc229593043097641c867322c7b9fe44b29e463a";
+#    src = pkgs.fetchFromGitHub {
+#      owner = "jedrzejboczar";
+#      repo = "possession.nvim";
+#      rev = version;
+#      sha256 = "6Lztxmy6ykfXhUQ8XLeWpZXh4QVdQ8LbtN6h7Z0v3b8=";
+#    };
+#  };
 
 in {
   programs.neovim = {
@@ -59,6 +37,7 @@ in {
     '';
 
     plugins = with pkgs.vimPlugins; [
+      (fromGitHub "16fc9c073e3ea4175b66ad94375df6d73fc114c0" "main" "b0o/incline.nvim")
       # Start
       dashboard-nvim
       vim-startuptime
@@ -73,7 +52,7 @@ in {
       #telescope-terraform-doc-nvim # Custom
 
       #Session
-      possession-nvim
+      #possession-nvim
 
       # LSP
       {
@@ -123,7 +102,7 @@ in {
 
       # Theme
       nordic-nvim
-      austere-nvim # Custom
+      #austere-nvim # Custom
 
       # Edition
       nvim-comment
@@ -132,12 +111,11 @@ in {
       vim-repeat
 
       # Treesitter
-      nvim-treesitter
+      nvim-treesitter.withAllGrammars
       playground
 
       # Statusline
       lualine-nvim
-      incline-nvim # Custom
 
       # Terminal
       vim-floaterm
@@ -158,8 +136,6 @@ in {
       # Rust
       crates-nvim
 
-      #Leetcode
-      leetcode-nvim # Custom
 
       #Java
       {
