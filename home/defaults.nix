@@ -88,6 +88,7 @@
       pkgs.jq
       pkgs.fzf
       pkgs.ncurses6
+      pkgs.xz
 
       # JS
       pkgs.yarn
