@@ -9,6 +9,7 @@
     ./neovim/neovim.nix
     ./tmux/tmux.nix
     ./zsh/zsh.nix
+    ./neovide/neovide.nix
   ];
 
   # Let Home Manager install and manage itself
@@ -65,7 +66,6 @@
       pkgs.bandwhich
       pkgs.rsync
       pkgs.websocat
-      pkgs.neovide
 
       # Code managers
       pkgs.gh
