@@ -170,7 +170,7 @@ in {
       nil
       stylua
       ruff
-      ruff-lsp
+      # ruff-lsp
       selene
       shfmt
       alejandra
