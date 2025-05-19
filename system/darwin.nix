@@ -49,7 +49,7 @@ in {
     NSGlobalDomain.InitialKeyRepeat = 14;
     NSGlobalDomain.KeyRepeat = 1;
   };
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
   system.activationScripts.pam.text = ''
     # PAM settings
     echo >&2 "setting up pam-reattach..."
