@@ -77,6 +77,9 @@
       # Virtualisation
       pkgs.vfkit
 
+      # MacOs Tiling Window Manager
+      pkgs.aerospace
+
       # Kubernetes
       pkgs.kubectl
       pkgs.kind
