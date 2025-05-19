@@ -13,6 +13,7 @@
   '';
 in {
   # here go the darwin preferences and config items
+  system.primaryUser = "cempassi";
   programs.zsh.enable = true;
   users.users.cempassi.home = "/Users/cempassi";
   environment = {
