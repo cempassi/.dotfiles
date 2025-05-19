@@ -46,6 +46,11 @@
 
       #Terraform and Terragrunt version manager
       pkgs.tenv
+
+      # HTTP Load Testing 
+      pkgs.k6
+      pkgs.vegeta
+      pkgs.wrk
     ];
   };
 
