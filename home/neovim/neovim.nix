@@ -26,7 +26,6 @@ in {
     '';
 
     plugins = with pkgs.vimPlugins; [
-      (fromGitHub "16fc9c073e3ea4175b66ad94375df6d73fc114c0" "main" "b0o/incline.nvim")
       # Start
       dashboard-nvim
       vim-startuptime
@@ -34,6 +33,7 @@ in {
       # UI
       nui-nvim
       noice-nvim
+      incline-nvim
 
       # Telescope
       telescope-github-nvim
