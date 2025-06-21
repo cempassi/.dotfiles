@@ -40,9 +40,11 @@
       # Utils
       (pkgs.azure-cli.withExtensions [pkgs.azure-cli.extensions.azure-devops pkgs.azure-cli.extensions.ssh])
 
+
       pkgs.gnupg
       pkgs.openssl
       pkgs.git-crypt
+      pkgs.nmap
 
       #Terraform and Terragrunt version manager
       pkgs.tenv
@@ -57,5 +59,9 @@
   programs.zsh.shellAliases = {
     switch = "home-manager switch --flake /Users/cedric.mpassi/.dotfiles";
     enix = "vim ~/.dotfiles/home/work.nix";
+  };
+
+  programs.java = {
+    enable = true;
   };
 }
