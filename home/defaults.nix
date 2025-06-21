@@ -66,6 +66,7 @@
       pkgs.bandwhich
       pkgs.rsync
       pkgs.websocat
+      pkgs.xh
 
       # Code managers
       pkgs.gh
