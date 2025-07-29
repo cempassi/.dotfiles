@@ -138,6 +138,7 @@ function! TrailingWhitespaces()
 endfunction
 
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+au BufRead,BufNewFile Dockerfile*  set filetype=dockerfile
 
 "This autocommand jumps to the last known position in a file
 "just after opening it, if the '" mark is set:
