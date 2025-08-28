@@ -46,6 +46,9 @@
       pkgs.git-crypt
       pkgs.nmap
 
+      pkgs.jdk
+      pkgs.maven
+
       #Terraform and Terragrunt version manager
       pkgs.tenv
 
