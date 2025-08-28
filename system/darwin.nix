@@ -19,7 +19,7 @@ in {
   environment = {
     shells = with pkgs; [bash zsh];
     shellAliases = {
-      switch = "darwin-rebuild switch --flake ~/.dotfiles";
+      switch = "sudo darwin-rebuild switch --flake ~/.dotfiles";
     };
     systemPackages = with pkgs; [
       coreutils
@@ -47,8 +47,9 @@ in {
   system.keyboard.remapCapsLockToEscape = true;
   system.defaults = {
     dock.autohide = true;
+    dock.orientation = "left";
     NSGlobalDomain.InitialKeyRepeat = 14;
-    NSGlobalDomain.KeyRepeat = 1;
+    NSGlobalDomain.KeyRepeat = 6;
   };
   security.pam.services.sudo_local.touchIdAuth = true;
   system.activationScripts.pam.text = ''
@@ -56,4 +57,5 @@ in {
     echo >&2 "setting up pam-reattach..."
     ${mkSudoPamReattachAuthScript pkgs.pam-reattach}
   '';
+
 }
