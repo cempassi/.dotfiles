@@ -29,7 +29,5 @@
   programs.zsh.shellAliases = {
     enix = "vim ~/.dotfiles/home/defaults.nix";
     switch = "sudo darwin-rebuild switch --flake ~/.dotfiles";
-    desktop = "alacritty msg config font.size=18";
-    laptop = "alacritty msg config font.size=12";
   };
 }

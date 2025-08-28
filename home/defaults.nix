@@ -117,4 +117,9 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.zsh.shellAliases = {
+    dtp = "alacritty msg config font.size=18";
+    ltp = "alacritty msg config font.size=12";
+  };
 }
