@@ -109,6 +109,10 @@
 
       # font
       pkgs.nerd-fonts.hasklug
+
+      # System info
+      pkgs.stats
+
     ];
   };
 
