@@ -38,7 +38,7 @@
       ]))
 
       # Utils
-      (pkgs.azure-cli.withExtensions [pkgs.azure-cli.extensions.azure-devops pkgs.azure-cli.extensions.ssh])
+      #(pkgs.azure-cli.withExtensions [pkgs.azure-cli.extensions.azure-devops pkgs.azure-cli.extensions.ssh])
 
 
       pkgs.gnupg
