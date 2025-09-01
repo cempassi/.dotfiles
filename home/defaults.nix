@@ -66,6 +66,7 @@
       pkgs.rsync
       pkgs.websocat
       pkgs.xh
+      pkgs.television
 
       # Code managers
       pkgs.gh
