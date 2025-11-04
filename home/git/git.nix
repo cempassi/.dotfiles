@@ -125,7 +125,6 @@
       "Thumbs.db"
       ".python-version"
       "secrets.zsh"
-      "*.gpg"
       "neovim/.config/nvim/plugin/packer_compiled.lua"
       "plugin/packer_compiled.lua"
       "dist/"
