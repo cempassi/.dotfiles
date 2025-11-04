@@ -28,6 +28,7 @@
     stateVersion = "22.05";
 
     sessionPath = [
+      "$HOME/.local/bin"
       "$HOME/.rd/bin"
       "$HOME/.luarocks/bin" # Lua
       "$HOME/.tfenv/bin" # Terraform
