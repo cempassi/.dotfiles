@@ -79,6 +79,9 @@
       # Virtualisation
       pkgs.vfkit
 
+      # Build Systems
+      pkgs.cmake
+
       # MacOs Tiling Window Manager
       pkgs.aerospace
 
@@ -88,12 +91,17 @@
       pkgs.kube3d
       pkgs.k9s
 
+      # Cloud cli
+      pkgs.awscli2
+
       # Utils
       pkgs.bash
       pkgs.jq
       pkgs.fzf
       pkgs.ncurses6
       pkgs.xz
+      pkgs.pstree
+      pkgs.stats
 
       # JS
       pkgs.yarn
@@ -104,16 +112,14 @@
       pkgs.poetry
       pkgs.python311Packages.pynvim
 
-      pkgs.pstree
-      pkgs.awscli2
+      # Git
       pkgs.git-crypt
       pkgs.gnupg
 
       # font
       pkgs.nerd-fonts.hasklug
 
-      # System info
-      pkgs.stats
+      pkgs.manix
 
     ];
   };
