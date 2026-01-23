@@ -47,10 +47,10 @@ in {
   system.keyboard.remapCapsLockToEscape = true;
   system.defaults = {
     dock.autohide = true;
-    dock.orientation = "left";
-    NSGlobalDomain.InitialKeyRepeat = 14;
-    NSGlobalDomain.KeyRepeat = 6;
-  };
+    dock.orientation = "right";
+    NSGlobalDomain.InitialKeyRepeat = 15;
+      NSGlobalDomain.KeyRepeat = 2;
+    };
   security.pam.services.sudo_local.touchIdAuth = true;
   system.activationScripts.pam.text = ''
     # PAM settings
