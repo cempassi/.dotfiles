@@ -22,6 +22,7 @@
       ]))
       pkgs.protobuf
       pkgs.go
+      pkgs.cfssl
       pkgs.nixos-generators
 
       # C 
