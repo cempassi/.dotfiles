@@ -23,6 +23,11 @@
       pkgs.protobuf
       pkgs.go
       pkgs.nixos-generators
+
+      # C 
+      pkgs.clang
+      pkgs.clang-tools
+      pkgs.bear
     ];
   };
 
