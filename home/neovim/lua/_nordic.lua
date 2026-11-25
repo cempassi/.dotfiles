@@ -1,4 +1,4 @@
-require 'nordic'.colorscheme {
+require 'nordic'.setup {
   -- Underline style used for spelling
   -- Options: 'none', 'underline', 'undercurl'
   underline_option = 'none',

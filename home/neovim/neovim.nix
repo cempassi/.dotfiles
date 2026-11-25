@@ -2,28 +2,26 @@
   pkgs,
   lib,
   ...
-}: let  
-
-fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPlugin {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
-    src = builtins.fetchGit {
-      url = "git@github.com:${repo}.git";
-      ref = ref;
-      rev = rev;
+}: let
+  fromGitHub = rev: ref: repo:
+    pkgs.vimUtils.buildVimPlugin {
+      pname = "${lib.strings.sanitizeDerivationName repo}";
+      version = ref;
+      src = builtins.fetchGit {
+        url = "git@github.com:${repo}.git";
+        ref = ref;
+        rev = rev;
+      };
     };
-  };
-
 in {
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-
-    extraConfig = ''
-      source ~/.config/nvim/_init.vim
-    '';
+    initLua =  builtins.readFile ./_init.lua ;
+    withPython3 = true;
+    withRuby = false;
 
     plugins = with pkgs.vimPlugins; [
       # Start
@@ -34,28 +32,24 @@ in {
       nui-nvim
       noice-nvim
       incline-nvim
+      mini-nvim
 
       # Telescope
       telescope-github-nvim
       telescope-nvim
       #telescope-terraform-doc-nvim # Custom
 
-      #Session
-      #possession-nvim
-
       # LSP
       {
         plugin = nvim-lspconfig;
         config = ''
-          lua << EOF
-          tsserver_path = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib/tsserver.js"
-          EOF
+          tsserver_path = "${pkgs.typescript}/lib/node_modules/typescript/lib/tsserver.js"
         '';
       }
       lspsaga-nvim
       none-ls-nvim
       fidget-nvim
-      hover-nvim 
+      hover-nvim
 
       # Null ls replacement
       none-ls-nvim
@@ -68,26 +62,26 @@ in {
       cmp-cmdline
       cmp_luasnip
       cmp-treesitter
-      cmp-spell
+      # cmp-spell
       cmp-git
       lspkind-nvim
       friendly-snippets
       luasnip
 
       # File Navigation
-      dirbuf-nvim 
+      dirbuf-nvim
       leap-nvim
       neoscroll-nvim
 
       # Git
       vim-fugitive
 
-      vim-git
+      #vim-git
       git-messenger-vim
       gitsigns-nvim
 
       # REST Api calls
-      rest-nvim
+      #rest-nvim
 
       # Theme
       nordic-nvim
@@ -101,13 +95,13 @@ in {
 
       # Treesitter
       nvim-treesitter.withAllGrammars
-      playground
+      #playground
 
       # Statusline
       lualine-nvim
 
       # Terminal
-      vim-floaterm
+      toggleterm-nvim
 
       # Tasks
       asynctasks-vim
@@ -125,15 +119,12 @@ in {
       # Rust
       crates-nvim
 
-
       #Java
       {
-        plugin =nvim-jdtls ;
+        plugin = nvim-jdtls;
         config = ''
-          lua << EOF
           jdtls_path = "${pkgs.jdt-language-server}"
           lombok_path = "${pkgs.lombok}"
-          EOF
         '';
       }
 
@@ -151,7 +142,7 @@ in {
       nvim-notify
       popup-nvim
       nvim-colorizer-lua
-      specs-nvim
+      #specs-nvim
     ];
 
     extraPackages = with pkgs; [
@@ -159,7 +150,6 @@ in {
       nil
       stylua
       ruff
-      # ruff-lsp
       selene
       shfmt
       alejandra
@@ -170,13 +160,13 @@ in {
       shellcheck
       taplo
       pyright
-      nodePackages.yaml-language-server
-      nodePackages.typescript-language-server
-      nodePackages.typescript
-      nodePackages.prettier
-      nodePackages.vim-language-server
-      nodePackages.typescript
-      nodePackages.bash-language-server
+      yaml-language-server
+      typescript-language-server
+      typescript
+      prettier
+      vim-language-server
+      typescript
+      bash-language-server
     ];
   };
 

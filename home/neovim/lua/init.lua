@@ -1,7 +1,7 @@
 -- Insert here dev plugins with vim.opt.runtimepath:prepend()
 
 -- Lsp Configuration
-require("modules.lsp")
+--require("modules.lsp")
 
 -- Plugin Config Loading
 require("_auto_pairs")
@@ -35,7 +35,6 @@ require("_which-key")
 
 require("crates").setup()
 require("fidget").setup({})
-require("nordic").colorscheme()
 
 require("colorizer").setup()
 
@@ -55,4 +54,35 @@ autocmd("BufEnter", {
 autocmd("BufNewFile", {
   pattern = "*.tfvars",
   command = "set filetype=terraform ",
+})
+
+require("toggleterm").setup({
+  direction = "float",
+  start_in_insert = true,
+})
+
+local servers = {
+  "bashls", --Bash
+  "clangd", -- C/C++
+  "lua_ls", -- lua
+  "nil_ls", -- Nix
+  "terraformls", -- Terraform
+  "rust_analyzer", -- Rust
+  "ruff", -- Python
+  "taplo", -- TOML
+  "vimls", --vim
+  "yamlls", -- YAML
+
+}
+vim.lsp.enable(servers)
+
+vim.diagnostic.config({
+  virtual_lines = true
+})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    -- Set LSP Mappings
+    require("_which-key").lsp()
+  end,
 })
