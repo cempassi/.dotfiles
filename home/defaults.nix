@@ -54,13 +54,12 @@
       # Rust Cli tools
       pkgs.ripgrep
       pkgs.tokei
-      pkgs.delta
       pkgs.bat
       pkgs.eza
       pkgs.zoxide
       pkgs.fd
       pkgs.bottom
-      pkgs.du-dust
+      pkgs.dust
       pkgs.rage
       pkgs.onefetch
       pkgs.bandwhich
@@ -80,7 +79,7 @@
       pkgs.vfkit
 
       # Build Systems
-      pkgs.cmake
+      pkgs.cmake  
 
       # MacOs Tiling Window Manager
       pkgs.aerospace
@@ -88,7 +87,7 @@
       # Kubernetes
       pkgs.kubectl
       pkgs.kind
-      pkgs.kube3d
+      pkgs.k3d
       pkgs.k9s
 
       # Cloud cli
@@ -105,7 +104,6 @@
 
       # JS
       pkgs.yarn
-      pkgs.nodePackages.rimraf
 
       # Python
       pkgs.pyenv
@@ -120,6 +118,7 @@
       pkgs.nerd-fonts.hasklug
 
       pkgs.manix
+      pkgs.tealdeer
 
     ];
   };
@@ -132,5 +131,10 @@
   programs.zsh.shellAliases = {
     dtp = "alacritty msg config font.size=18";
     ltp = "alacritty msg config font.size=12";
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 }
