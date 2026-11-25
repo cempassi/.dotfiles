@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ ... }: {
   programs.git = {
     enable = true;
 
@@ -13,10 +9,9 @@
       }
     ];
 
-    userName = "Cedric M'Passi";
-    userEmail = "cempassi@student.42.fr";
-
-    extraConfig = {
+    settings = {
+      user.name = "Cedric M'Passi";
+      user.email = "cempassi@student.42.fr";
       init.defaultBranch = "main";
       github.user = "cempassi";
       pull.rebase = true;
@@ -30,6 +25,18 @@
         nvimdiff = {
           cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
         };
+      };
+
+      alias = {
+        ls = "log -n 20 --relative-date --graph --abbrev-commit --decorate";
+        ll = "log --relative-date --graph --abbrev-commit --decorate";
+        resolve = "! git diff --name-only | uniq | xargs nvim";
+        btree = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s'";
+        tree = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always";
+        graph = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always --simplify-by-decoration";
+        info = "! onefetch";
+        stale = "! git branch -r --merged master | grep -v master | sed 's|origin/||' ";
+        cleanup = "! git branch -r --merged master | grep -v master | sed 's|origin/||' | xargs -n 1 git push --delete origin";
       };
 
       color = {
@@ -50,29 +57,6 @@
           added = "green";
           changed = "blue";
           untracked = "red";
-        };
-      };
-    };
-
-    aliases = {
-      ls = "log -n 20 --relative-date --graph --abbrev-commit --decorate";
-      ll = "log --relative-date --graph --abbrev-commit --decorate";
-      resolve = "! git diff --name-only | uniq | xargs nvim";
-      btree = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s'";
-      tree = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always";
-      graph = "log --graph --date=relative --pretty='%C(yellow)[%h] %Cblue[%ad] %C(auto)%d %s' --all --decorate=short  --color=always --simplify-by-decoration";
-      info = "! onefetch";
-      stale = "! git branch -r --merged master | grep -v master | sed 's|origin/||' ";
-      cleanup = "! git branch -r --merged master | grep -v master | sed 's|origin/||' | xargs -n 1 git push --delete origin";
-    };
-
-    delta = {
-      enable = true;
-      options = {
-        features = "side-by-side line-numbers decorations";
-        whitespace-error-style = "22 reverse";
-        decorations = {
-          syntax-theme = "base16";
         };
       };
     };
